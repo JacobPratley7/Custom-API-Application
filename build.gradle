@@ -1,5 +1,12 @@
 plugins {
     id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'application'
+}
+
+javafx {
+    version = "12.0.2"
+    modules = [ 'javafx.controls', 'javafx.media' , 'javafx.fxml']
 }
 
 group 'org.example'
@@ -12,6 +19,10 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    implementation group: 'org.apache.httpcomponents.client5', name: 'httpclient5', version: '5.0.3'
+    implementation 'org.json:json:20171018'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
 
 test {
