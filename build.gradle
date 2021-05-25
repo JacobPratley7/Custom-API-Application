@@ -23,8 +23,15 @@ dependencies {
     implementation 'org.json:json:20171018'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
     implementation 'com.google.code.gson:gson:2.8.6'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation "org.mockito:mockito-core:3.+"
 }
 
 test {
     useJUnitPlatform()
+}
+
+application {
+    mainClass = 'MainApplication'
 }
