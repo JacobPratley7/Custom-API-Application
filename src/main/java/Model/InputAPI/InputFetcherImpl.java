@@ -24,5 +24,62 @@ import java.util.List;
 
 public class InputFetcherImpl {
 
+    public String getLeagueData(String auth) throws IOException {
+        String json = null;
+        try(CloseableHttpClient httpClient = HttpClients.createDefault()) {
+            String url = "https://api.pandascore.co/leagues?page[size]=50&page[number]=1";
+            HttpGet httpGet = new HttpGet(url);
+            String authToken = "Bearer ".concat(auth);
+            httpGet.setHeader("Authorization", authToken);
+            URI uri = new URIBuilder(httpGet.getUri()).build();
+            ((HttpUriRequestBase) httpGet).setUri(uri);
+            CloseableHttpResponse response = httpClient.execute(httpGet);
+            HttpEntity entity = response.getEntity();
+
+            try {
+                json = EntityUtils.toString(entity);
+                System.out.println("\n" + json + "\n");
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            EntityUtils.consume(entity);
+            return json;
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+
+        return json;
+    }
+
+    public String getSeries(String auth, String leagueID) throws IOException {
+        String json = null;
+        try(CloseableHttpClient httpClient = HttpClients.createDefault()) {
+            String url = (("https://api.pandascore.co/leagues/").concat(leagueID)).concat("/series?page[size]=50&page[number]=1");
+            HttpGet httpGet = new HttpGet(url);
+            String authToken = "Bearer ".concat(auth);
+            httpGet.setHeader("Authorization", authToken);
+            URI uri = new URIBuilder(httpGet.getUri()).build();
+            ((HttpUriRequestBase) httpGet).setUri(uri);
+            CloseableHttpResponse response = httpClient.execute(httpGet);
+            HttpEntity entity = response.getEntity();
+
+            try {
+                json = EntityUtils.toString(entity);
+                //System.out.println("\n" + json + "\n");
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            EntityUtils.consume(entity);
+            return json;
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+
+        return json;
+    }
+
+
 
 }

@@ -1,14 +1,14 @@
-MainApplication.java
- MainApplication
-Model/InputAPI/InputObjects/VideoGame.java
- Model.InputAPI.InputObjects.VideoGame
-Model/InputAPI/InputFetcherImpl.java
- Model.InputAPI.InputFetcherImpl
 Model/InputAPI/InputObjects/Series.java
  Model.InputAPI.InputObjects.Series
-Model/InputAPI/InputFetcherDummy.java
- Model.InputAPI.InputFetcherDummy
+Model/InputAPI/InputObjects/VideoGame.java
+ Model.InputAPI.InputObjects.VideoGame
 Model/InputAPI/InputObjects/League.java
  Model.InputAPI.InputObjects.League
+MainApplication.java
+ MainApplication
+Model/InputAPI/InputFetcherImpl.java
+ Model.InputAPI.InputFetcherImpl
+Model/InputAPI/InputFetcherDummy.java
+ Model.InputAPI.InputFetcherDummy
 Model/InputAPI/InputFetcher.java
  Model.InputAPI.InputFetcher

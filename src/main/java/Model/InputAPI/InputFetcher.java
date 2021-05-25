@@ -1,7 +1,7 @@
 package Model.InputAPI;
 
 import Model.InputAPI.InputObjects.League;
-import org.json.simple.JSONObject;
+import org.json.*;
 
 import java.util.List;
 
