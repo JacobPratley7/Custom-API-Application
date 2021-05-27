@@ -22,9 +22,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InputFetcherImpl {
+public class InputFetcherImpl implements InputFetcher {
 
-    public String getLeagueData(String auth) throws IOException {
+    public String getLeagues(String auth) throws IOException {
         String json = null;
         try(CloseableHttpClient httpClient = HttpClients.createDefault()) {
             String url = "https://api.pandascore.co/leagues?page[size]=50&page[number]=1";

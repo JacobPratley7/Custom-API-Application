@@ -3,20 +3,14 @@ package Model.InputAPI;
 import Model.InputAPI.InputObjects.League;
 import org.json.*;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface InputFetcher {
 
-    String getLeagues(String authToken);
+    String getLeagues(String authToken) throws IOException;
 
-    JSONObject generateLeagueJSONObject(String jsonData);
+    String getSeries(String authToken, String leagueID) throws IOException;
 
-    String generateLeagueOutputString(JSONObject jsonObject);
-
-    String getSeries(String authToken, String leagueID);
-
-    JSONObject generateSeriesJSONObject(String jsonData);
-
-    String generateSeriesOutputString(JSONObject jsonObject);
 
 }
