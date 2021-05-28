@@ -11,4 +11,19 @@ import java.io.IOException;
 
 public class ApplicationFacade {
 
+    private String inputAuth;
+    private String outputAuth;
+    private InputFetcher inputFetcher;
+
+    public ApplicationFacade(InputFetcher inputFetcher, InputFetcher fake) {
+        this.inputFetcher = inputFetcher;
+    }
+
+    private League convertToLeagueObject(JSONObject leagueData) {
+        return null;
+    }
+
+    public String getLeagueData(String inputAuth) throws IOException {
+        return null;
+    }
 }
