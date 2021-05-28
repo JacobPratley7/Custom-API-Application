@@ -58,10 +58,58 @@ public class ApplicationFacade {
     }
 
     private Series convertToSeriesObject(JSONObject seriesData) {
-        return null;
+        Series newSeries = new Series();
+        newSeries.setID(seriesData.get("id"));
+        newSeries.setBeginAt(seriesData.get("begin_at"));
+        newSeries.setDescription(seriesData.get("description"));
+        newSeries.setEndAt(seriesData.get("end_at"));
+        newSeries.setFullName(seriesData.get("full_name"));
+        newSeries.setLeagueID(seriesData.get("league_id"));
+        newSeries.setModifiedAt(seriesData.get("modified_at"));
+        newSeries.setName(seriesData.get("name"));
+        newSeries.setSeason(seriesData.get("season"));
+        newSeries.setSlug(seriesData.get("slug"));
+        newSeries.setTier(seriesData.get("tier"));
+        newSeries.setVideoGameTitle(seriesData.get("videogame_title"));
+        newSeries.setWinnerId(seriesData.get("winner_id"));
+        newSeries.setWinnerType(seriesData.get("winner_type"));
+        newSeries.setYear(seriesData.get("year"));
+
+        return newSeries;
     }
 
     public String getSeriesData(String auth, String leagueID) throws IOException {
-        return null;
+        String jsonData = this.inputFetcher.getSeries(auth, leagueID);
+        if(jsonData.contains("error")) {
+            JSONObject errorMessage = new JSONObject(jsonData);
+            String output = "error: ".concat(errorMessage.getString("error"));
+            return output;
+        } else {
+            JSONArray seriesData = new JSONArray(jsonData);
+            String seriesOutput = "";
+            for(int i = 0; i < seriesData.length(); i++) {
+                JSONObject current = (JSONObject) seriesData.get(i);
+                Series currentSeries = convertToSeriesObject(current);
+                seriesOutput = (seriesOutput.concat("begin at: ")).concat(currentSeries.getBeginAt());
+                seriesOutput = (seriesOutput.concat("\ndescription: ")).concat(currentSeries.getDescription());
+                seriesOutput = (seriesOutput.concat("\nend at: ")).concat(currentSeries.getEndAt());
+                seriesOutput = (seriesOutput.concat("\nfull name: ")).concat(currentSeries.getFullName());
+                seriesOutput = (seriesOutput.concat("\nid: ")).concat(currentSeries.getID());
+                seriesOutput = (seriesOutput.concat("\nleague id: ")).concat(currentSeries.getLeagueId());
+                seriesOutput = (seriesOutput.concat("\nmodified at: ")).concat(currentSeries.getModifiedAt());
+                seriesOutput = (seriesOutput.concat("\nname: ")).concat(currentSeries.getName());
+                seriesOutput = (seriesOutput.concat("\nseason: ")).concat(currentSeries.getSeason());
+                seriesOutput = (seriesOutput.concat("\nslug: ")).concat(currentSeries.getSlug());
+                seriesOutput = (seriesOutput.concat("\ntier: ")).concat(currentSeries.getTier());
+                seriesOutput = (seriesOutput.concat("\nvideogame title: ")).concat(currentSeries.getVideoGameTitle());
+                seriesOutput = (seriesOutput.concat("\nwinner id: ")).concat(currentSeries.getWinnerId());
+                seriesOutput = (seriesOutput.concat("\nwinner type: ")).concat(currentSeries.getWinnerType());
+                seriesOutput = (seriesOutput.concat("\nyear: ")).concat(currentSeries.getYear());
+                seriesOutput = seriesOutput.concat("\n");
+                seriesOutput = seriesOutput.concat("\n");
+            }
+
+            return seriesOutput;
+        }
     }
 }
