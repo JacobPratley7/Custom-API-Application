@@ -19,6 +19,8 @@ public class ApplicationFacade {
         this.inputFetcher = inputFetcher;
     }
 
+
+
     private League convertToLeagueObject(JSONObject leagueData) {
         League newLeague = new League();
         newLeague.setID(leagueData.get("id"));
@@ -31,6 +33,27 @@ public class ApplicationFacade {
     }
 
     public String getLeagueData(String inputAuth) throws IOException {
-        return null;
+        String jsonData = this.inputFetcher.getLeagues(inputAuth);
+        if(jsonData.contains("error")) {
+            JSONObject errorMessage = new JSONObject(jsonData);
+            String output = "error: ".concat(errorMessage.getString("error"));
+            return output;
+        } else {
+            JSONArray leagueData = new JSONArray(jsonData);
+            String leagueOutput = "";
+            for(int i = 0; i < leagueData.length(); i++) {
+                JSONObject current = (JSONObject) leagueData.get(i);
+                League currentLeague = convertToLeagueObject(current);
+                leagueOutput = (leagueOutput.concat("id: ")).concat(currentLeague.getID());
+                leagueOutput = (leagueOutput.concat("\nimage url: ")).concat(currentLeague.getImageUrl());
+                leagueOutput = (leagueOutput.concat("\nmodified at: ")).concat(currentLeague.getModifiedAt());
+                leagueOutput = (leagueOutput.concat("\nname: ")).concat(currentLeague.getName());
+                leagueOutput = (leagueOutput.concat("\nslug: ")).concat(currentLeague.getSlug());
+                leagueOutput = (leagueOutput.concat("\nurl: ")).concat(currentLeague.getUrl());
+                leagueOutput = leagueOutput.concat("\n");
+                leagueOutput = leagueOutput.concat("\n");
+            }
+            return leagueOutput;
+        }
     }
 }
