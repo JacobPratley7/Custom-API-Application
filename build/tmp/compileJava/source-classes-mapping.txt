@@ -1,5 +1,5 @@
-MainApplication.java
- MainApplication
+Model/ApplicationFacade.java
+ Model.ApplicationFacade
 Model/InputAPI/InputObjects/VideoGame.java
  Model.InputAPI.InputObjects.VideoGame
 Model/InputAPI/InputFetcherImpl.java
@@ -12,5 +12,7 @@ Model/InputAPI/InputFetcher.java
  Model.InputAPI.InputFetcher
 Model/InputAPI/InputObjects/League.java
  Model.InputAPI.InputObjects.League
-Model/ApplicationFacade.java
- Model.ApplicationFacade
+MainApplication.java
+ MainApplication
+View/ApplicationWindow.java
+ View.ApplicationWindow

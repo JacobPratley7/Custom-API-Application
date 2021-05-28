@@ -3,6 +3,7 @@ import Model.InputAPI.InputFetcherImpl;
 
 import java.io.IOException;
 
+import View.ApplicationWindow;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Orientation;
@@ -20,7 +21,12 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        Stage window = primaryStage;
+        ApplicationWindow appWindow = new ApplicationWindow(window);
+        appWindow.initialize();
 
+        window.setTitle("My Application");
+        window.show();
     }
 
 
