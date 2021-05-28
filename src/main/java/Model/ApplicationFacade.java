@@ -20,7 +20,14 @@ public class ApplicationFacade {
     }
 
     private League convertToLeagueObject(JSONObject leagueData) {
-        return null;
+        League newLeague = new League();
+        newLeague.setID(leagueData.get("id"));
+        newLeague.setImageUrl(leagueData.get("image_url"));
+        newLeague.setModifiedAt(leagueData.get("modified_at"));
+        newLeague.setName(leagueData.get("name"));
+        newLeague.setSlug(leagueData.get("slug"));
+        newLeague.setUrl(leagueData.get("url"));
+        return newLeague;
     }
 
     public String getLeagueData(String inputAuth) throws IOException {
