@@ -8,9 +8,9 @@ Model/InputAPI/InputObjects/Series.java
  Model.InputAPI.InputObjects.Series
 Model/InputAPI/InputFetcherDummy.java
  Model.InputAPI.InputFetcherDummy
-Model/ApplicationFacade.java
- Model.ApplicationFacade
-Model/InputAPI/InputObjects/League.java
- Model.InputAPI.InputObjects.League
 Model/InputAPI/InputFetcher.java
  Model.InputAPI.InputFetcher
+Model/InputAPI/InputObjects/League.java
+ Model.InputAPI.InputObjects.League
+Model/ApplicationFacade.java
+ Model.ApplicationFacade

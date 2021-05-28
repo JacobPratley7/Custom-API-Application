@@ -56,4 +56,12 @@ public class ApplicationFacade {
             return leagueOutput;
         }
     }
+
+    private Series convertToSeriesObject(JSONObject seriesData) {
+        return null;
+    }
+
+    public String getSeriesData(String auth, String leagueID) throws IOException {
+        return null;
+    }
 }
