@@ -164,5 +164,9 @@ public class ApplicationFacade {
         }
     }
 
+    public String sendReport() {
+        return null;
+    }
+
 
 }
