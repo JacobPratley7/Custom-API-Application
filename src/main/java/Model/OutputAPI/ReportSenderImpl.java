@@ -39,7 +39,7 @@ public class ReportSenderImpl implements ReportSender {
             String json;
             try {
                 json = EntityUtils.toString(entity);
-                System.out.println("\n" + json + "\n");
+                return json;
             } catch (ParseException e) {
                 e.printStackTrace();
             }

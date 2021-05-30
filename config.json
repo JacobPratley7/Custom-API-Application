@@ -1,7 +1,7 @@
 {
   "inputAuthToken": "one",
-  "outputAuthToken": "two",
-  "outputUsername": "three",
-  "outputNumberTo": "four",
-  "outputNumberFrom": "five"
+  "outputAuthToken": "test",
+  "outputUsername": "test",
+  "outputNumberTo": "test",
+  "outputNumberFrom": "test"
 }

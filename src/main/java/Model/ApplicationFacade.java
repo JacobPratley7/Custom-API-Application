@@ -81,7 +81,7 @@ public class ApplicationFacade {
         return newLeague;
     }
 
-    public String getLeagueData(String inputAuth) throws IOException {
+    public String getLeagueData() throws IOException {
         String jsonData = this.inputFetcher.getLeagues(inputAuth);
         if(jsonData.contains("error")) {
             org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
@@ -127,8 +127,8 @@ public class ApplicationFacade {
         return newSeries;
     }
 
-    public String getSeriesData(String auth, String leagueID) throws IOException {
-        String jsonData = this.inputFetcher.getSeries(auth, leagueID);
+    public String getSeriesData(String leagueID) throws IOException {
+        String jsonData = this.inputFetcher.getSeries(inputAuth, leagueID);
         if(jsonData.contains("error")) {
             org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
             String output = "error: ".concat(errorMessage.getString("error"));
@@ -171,7 +171,7 @@ public class ApplicationFacade {
             String currentSeriesData = "\n\tid: ".concat(s.getID());
             currentSeriesData = currentSeriesData.concat("\n\tfull name: ").concat(s.getFullName());
             currentSeriesData = currentSeriesData.concat("\n\tslug: ").concat(s.getSlug());
-            currentSeriesData = currentSeriesData.concat("\n\t tier: ").concat(s.getTier());
+            currentSeriesData = currentSeriesData.concat("\n\ttier: ").concat(s.getTier());
             currentSeriesData = currentSeriesData.concat("\n\tyear: ").concat(s.getYear());
             currentSeriesData = currentSeriesData.concat("\n");
             currentSeriesData = currentSeriesData.concat("\n");
@@ -191,8 +191,11 @@ public class ApplicationFacade {
         String feedback = this.reportSender.sendMessage(this.outputSID, this.outputAuth, this.outputToNumber,
                 this.twilioNumber, report);
 
+        System.out.println("feedback:");
+        System.out.println(feedback);
+
         org.json.JSONObject feedbackData = new org.json.JSONObject(feedback);
-        return "Message sent Successfully!";
+        return "Message sent Successfully!\n".concat(report);
     }
 
 }

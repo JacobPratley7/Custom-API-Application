@@ -4,10 +4,12 @@
 	id: 3621
 	full name: 2021
 (	slug: cs-go-hyperion-x-oel-launch-2021
-
-	 tier: d
+		tier: d
 	year: 2021
 
+
+feedback:
+ó{"sid": "dummySID", "date_created": "Sun, 30 May 2021 01:29:42 +0000", "date_updated": "Sun, 30 May 2021 01:29:42 +0000", "date_sent": null, "account_sid": "dummy", "to": "random number", "from": "random number", "messaging_service_sid": null, "body": "report data", "status": "queued", "num_segments": "1", "num_media": "0", "direction": "outbound-api", "api_version": "2010-04-01", "price": null, "price_unit": "USD", "error_code": null, "error_message": null, "uri": "/2010-04-01/Accounts/dummyAccount/Messages/dummySID.json", "subresource_uris": {"media": "/2010-04-01/Accounts/dummyAccount/Messages/dummySID/Media.json"}}
 
 league id: 4590
 series:
@@ -15,8 +17,10 @@
 	id: 3621
 	full name: 2021
 (	slug: cs-go-hyperion-x-oel-launch-2021
-
-	 tier: d
+		tier: d
 	year: 2021
 
+
+feedback:
+ó{"sid": "dummySID", "date_created": "Sun, 30 May 2021 01:29:42 +0000", "date_updated": "Sun, 30 May 2021 01:29:42 +0000", "date_sent": null, "account_sid": "dummy", "to": "random number", "from": "random number", "messaging_service_sid": null, "body": "report data", "status": "queued", "num_segments": "1", "num_media": "0", "direction": "outbound-api", "api_version": "2010-04-01", "price": null, "price_unit": "USD", "error_code": null, "error_message": null, "uri": "/2010-04-01/Accounts/dummyAccount/Messages/dummySID.json", "subresource_uris": {"media": "/2010-04-01/Accounts/dummyAccount/Messages/dummySID/Media.json"}}
 

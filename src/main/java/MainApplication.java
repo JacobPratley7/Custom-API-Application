@@ -4,6 +4,8 @@ import Model.InputAPI.InputFetcherImpl;
 
 import java.io.IOException;
 
+import Model.OutputAPI.ReportSenderDummy;
+import Model.OutputAPI.ReportSenderImpl;
 import View.ApplicationWindow;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +30,8 @@ public class MainApplication extends Application {
 
         window.setTitle("My Application");
         window.show();
+
+
     }
 
 

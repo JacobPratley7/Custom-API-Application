@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ApplicationFacadeTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-05-30T11:58:59" hostname="LAPTOP-86H4GGTF" time="1.136">
+<testsuite name="ApplicationFacadeTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-05-30T14:25:35" hostname="LAPTOP-86H4GGTF" time="2.327">
   <properties/>
-  <testcase name="testGetLeagueDataDummy" classname="ApplicationFacadeTest" time="1.029"/>
-  <testcase name="testGetLeagueDataError" classname="ApplicationFacadeTest" time="0.049"/>
-  <testcase name="testSendReportOnline" classname="ApplicationFacadeTest" time="0.036"/>
-  <testcase name="testGetSeriesDataOnline" classname="ApplicationFacadeTest" time="0.004"/>
-  <testcase name="testGetSeriesDataDummy" classname="ApplicationFacadeTest" time="0.003"/>
-  <testcase name="testGetSeriesDataError" classname="ApplicationFacadeTest" time="0.003"/>
-  <testcase name="testSendReportDummy" classname="ApplicationFacadeTest" time="0.008"/>
-  <testcase name="testGetLeagueDataOnline" classname="ApplicationFacadeTest" time="0.002"/>
+  <testcase name="testGetLeagueDataDummy" classname="ApplicationFacadeTest" time="1.975"/>
+  <testcase name="testGetLeagueDataError" classname="ApplicationFacadeTest" time="0.086"/>
+  <testcase name="testSendReportOnline" classname="ApplicationFacadeTest" time="0.12"/>
+  <testcase name="testGetSeriesDataOnline" classname="ApplicationFacadeTest" time="0.008"/>
+  <testcase name="testGetSeriesDataDummy" classname="ApplicationFacadeTest" time="0.029"/>
+  <testcase name="testGetSeriesDataError" classname="ApplicationFacadeTest" time="0.009"/>
+  <testcase name="testSendReportDummy" classname="ApplicationFacadeTest" time="0.031"/>
+  <testcase name="testGetLeagueDataOnline" classname="ApplicationFacadeTest" time="0.058"/>
   <system-out><![CDATA[league id: 4590
 series:
 	id: 3621
 	full name: 2021
 	slug: cs-go-hyperion-x-oel-launch-2021
-	 tier: d
+	tier: d
 	year: 2021
 
+
+feedback:
+{"sid": "dummySID", "date_created": "Sun, 30 May 2021 01:29:42 +0000", "date_updated": "Sun, 30 May 2021 01:29:42 +0000", "date_sent": null, "account_sid": "dummy", "to": "random number", "from": "random number", "messaging_service_sid": null, "body": "report data", "status": "queued", "num_segments": "1", "num_media": "0", "direction": "outbound-api", "api_version": "2010-04-01", "price": null, "price_unit": "USD", "error_code": null, "error_message": null, "uri": "/2010-04-01/Accounts/dummyAccount/Messages/dummySID.json", "subresource_uris": {"media": "/2010-04-01/Accounts/dummyAccount/Messages/dummySID/Media.json"}}
 
 league id: 4590
 series:
 	id: 3621
 	full name: 2021
 	slug: cs-go-hyperion-x-oel-launch-2021
-	 tier: d
+	tier: d
 	year: 2021
 
+
+feedback:
+{"sid": "dummySID", "date_created": "Sun, 30 May 2021 01:29:42 +0000", "date_updated": "Sun, 30 May 2021 01:29:42 +0000", "date_sent": null, "account_sid": "dummy", "to": "random number", "from": "random number", "messaging_service_sid": null, "body": "report data", "status": "queued", "num_segments": "1", "num_media": "0", "direction": "outbound-api", "api_version": "2010-04-01", "price": null, "price_unit": "USD", "error_code": null, "error_message": null, "uri": "/2010-04-01/Accounts/dummyAccount/Messages/dummySID.json", "subresource_uris": {"media": "/2010-04-01/Accounts/dummyAccount/Messages/dummySID/Media.json"}}
 
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
