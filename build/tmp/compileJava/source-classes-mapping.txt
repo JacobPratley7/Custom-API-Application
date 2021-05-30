@@ -1,18 +1,24 @@
-Model/InputAPI/InputFetcher.java
- Model.InputAPI.InputFetcher
+MainApplication.java
+ MainApplication
 Model/InputAPI/InputObjects/VideoGame.java
  Model.InputAPI.InputObjects.VideoGame
 View/ApplicationWindow.java
  View.ApplicationWindow
+Model/OutputAPI/ReportSenderImpl.java
+ Model.OutputAPI.ReportSenderImpl
 Model/InputAPI/InputFetcherImpl.java
  Model.InputAPI.InputFetcherImpl
+Model/OutputAPI/ReportSenderDummy.java
+ Model.OutputAPI.ReportSenderDummy
 Model/InputAPI/InputObjects/Series.java
  Model.InputAPI.InputObjects.Series
 Model/InputAPI/InputFetcherDummy.java
  Model.InputAPI.InputFetcherDummy
 Model/ApplicationFacade.java
  Model.ApplicationFacade
+Model/OutputAPI/ReportSender.java
+ Model.OutputAPI.ReportSender
 Model/InputAPI/InputObjects/League.java
  Model.InputAPI.InputObjects.League
-MainApplication.java
- MainApplication
+Model/InputAPI/InputFetcher.java
+ Model.InputAPI.InputFetcher

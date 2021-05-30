@@ -5,6 +5,7 @@ import Model.InputAPI.InputFetcherDummy;
 import Model.InputAPI.InputFetcherImpl;
 import Model.InputAPI.InputObjects.League;
 import Model.InputAPI.InputObjects.Series;
+import Model.OutputAPI.ReportSender;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.hc.client5.http.auth.AuthScope;
 import org.apache.hc.client5.http.auth.CredentialsProvider;
@@ -17,13 +18,15 @@ import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.core5.http.HttpEntity;
 import org.apache.hc.core5.http.NameValuePair;
-import org.apache.hc.core5.http.ParseException;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.apache.hc.core5.http.message.BasicNameValuePair;
 import org.json.*;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -39,16 +42,34 @@ public class ApplicationFacade {
     private String outputToNumber;
     private String twilioNumber;
     private InputFetcher inputFetcher;
+    private ReportSender reportSender;
 
-    public ApplicationFacade(InputFetcher inputFetcher, InputFetcher fake) {
+    public ApplicationFacade(InputFetcher inputFetcher, ReportSender reportSender) {
         this.inputFetcher = inputFetcher;
+        this.reportSender = reportSender;
 
+        JSONParser jsonParser = new JSONParser();
+        try {
+            Object fileContents = jsonParser.parse(new FileReader("config.json"));
+            org.json.simple.JSONObject configDetails = (JSONObject) fileContents;
+            this.inputAuth = (String) configDetails.get("inputAuthToken");
 
+            this.outputAuth = (String) configDetails.get("outputAuthToken");
+            this.outputSID = (String) configDetails.get("outputUsername");
+            this.outputToNumber = (String) configDetails.get("outputNumberTo");
+            this.twilioNumber = (String) configDetails.get("outputNumberFrom");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
 
-    private League convertToLeagueObject(JSONObject leagueData) {
+    private League convertToLeagueObject(org.json.JSONObject leagueData) {
         League newLeague = new League();
         newLeague.setID(leagueData.get("id"));
         newLeague.setImageUrl(leagueData.get("image_url"));
@@ -62,14 +83,14 @@ public class ApplicationFacade {
     public String getLeagueData(String inputAuth) throws IOException {
         String jsonData = this.inputFetcher.getLeagues(inputAuth);
         if(jsonData.contains("error")) {
-            JSONObject errorMessage = new JSONObject(jsonData);
+            org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
             String output = "error: ".concat(errorMessage.getString("error"));
             return output;
         } else {
             JSONArray leagueData = new JSONArray(jsonData);
             String leagueOutput = "";
             for(int i = 0; i < leagueData.length(); i++) {
-                JSONObject current = (JSONObject) leagueData.get(i);
+                org.json.JSONObject current = (org.json.JSONObject) leagueData.get(i);
                 League currentLeague = convertToLeagueObject(current);
                 leagueOutput = (leagueOutput.concat("id: ")).concat(currentLeague.getID());
                 leagueOutput = (leagueOutput.concat("\nimage url: ")).concat(currentLeague.getImageUrl());
@@ -84,7 +105,7 @@ public class ApplicationFacade {
         }
     }
 
-    private Series convertToSeriesObject(JSONObject seriesData) {
+    private Series convertToSeriesObject(org.json.JSONObject seriesData) {
         Series newSeries = new Series();
         newSeries.setID(seriesData.get("id"));
         newSeries.setBeginAt(seriesData.get("begin_at"));
@@ -108,14 +129,14 @@ public class ApplicationFacade {
     public String getSeriesData(String auth, String leagueID) throws IOException {
         String jsonData = this.inputFetcher.getSeries(auth, leagueID);
         if(jsonData.contains("error")) {
-            JSONObject errorMessage = new JSONObject(jsonData);
+            org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
             String output = "error: ".concat(errorMessage.getString("error"));
             return output;
         } else {
             JSONArray seriesData = new JSONArray(jsonData);
             String seriesOutput = "";
             for(int i = 0; i < seriesData.length(); i++) {
-                JSONObject current = (JSONObject) seriesData.get(i);
+                org.json.JSONObject current = (org.json.JSONObject) seriesData.get(i);
                 Series currentSeries = convertToSeriesObject(current);
                 seriesOutput = (seriesOutput.concat("begin at: ")).concat(currentSeries.getBeginAt());
                 seriesOutput = (seriesOutput.concat("\ndescription: ")).concat(currentSeries.getDescription());

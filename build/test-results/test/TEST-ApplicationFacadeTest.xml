@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ApplicationFacadeTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-05-28T16:24:30" hostname="LAPTOP-86H4GGTF" time="1.099">
+<testsuite name="ApplicationFacadeTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-05-30T04:22:41" hostname="LAPTOP-86H4GGTF" time="1.603">
   <properties/>
-  <testcase name="testGetLeagueDataDummy" classname="ApplicationFacadeTest" time="0.971"/>
-  <testcase name="testGetLeagueDataError" classname="ApplicationFacadeTest" time="0.077"/>
-  <testcase name="testGetSeriesDataOnline" classname="ApplicationFacadeTest" time="0.012"/>
+  <testcase name="testGetLeagueDataDummy" classname="ApplicationFacadeTest" time="1.504"/>
+  <testcase name="testGetLeagueDataError" classname="ApplicationFacadeTest" time="0.073"/>
+  <testcase name="testGetSeriesDataOnline" classname="ApplicationFacadeTest" time="0.006"/>
   <testcase name="testGetSeriesDataDummy" classname="ApplicationFacadeTest" time="0.007"/>
-  <testcase name="testGetSeriesDataError" classname="ApplicationFacadeTest" time="0.005"/>
+  <testcase name="testGetSeriesDataError" classname="ApplicationFacadeTest" time="0.004"/>
   <testcase name="testGetLeagueDataOnline" classname="ApplicationFacadeTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
