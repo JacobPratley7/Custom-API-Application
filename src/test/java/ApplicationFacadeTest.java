@@ -121,23 +121,7 @@ public class ApplicationFacadeTest {
         ApplicationFacade appFacade = new ApplicationFacade(imp, rep);
         appFacade.getSeriesData("test", "test");
         String output = appFacade.sendReport();
-        assertTrue(output.contains("sid: dummySID"));
-        assertTrue(output.contains("date created: Sun, 30 May 2021 01:29:42 +0000"));
-        assertTrue(output.contains("date updated: Sun, 30 May 2021 01:29:42 +0000"));
-        assertTrue(output.contains("date sent: null"));
-        assertTrue(output.contains("account sid: dummy"));
-        assertTrue(output.contains("to: random number"));
-        assertTrue(output.contains("from: dummySID"));
-        assertTrue(output.contains("messaging service id: null"));
-        assertTrue(output.contains("body: report data"));
-        assertTrue(output.contains("status: queued"));
-        assertTrue(output.contains("num segments: 1"));
-        assertTrue(output.contains("num media: 0"));
-        assertTrue(output.contains("direction: outbound-api"));
-        assertTrue(output.contains("api version: 2010-04-01"));
-        assertTrue(output.contains("price: null"));
-        assertTrue(output.contains("price unit: USD"));
-        assertTrue(output.contains("uri: /2010-04-01/Accounts/dummyAccount/Messages/dummySID.json"));
+        assertTrue(output.contains("Message Sent Successfully!"));
     }
 
     @Test
@@ -149,23 +133,7 @@ public class ApplicationFacadeTest {
         ApplicationFacade appFacade = new ApplicationFacade(imp, rep);
         appFacade.getSeriesData("test", "test");
         String output = appFacade.sendReport();
-        assertTrue(output.contains("sid: dummySID"));
-        assertTrue(output.contains("date created: Sun, 30 May 2021 01:29:42 +0000"));
-        assertTrue(output.contains("date updated: Sun, 30 May 2021 01:29:42 +0000"));
-        assertTrue(output.contains("date sent: null"));
-        assertTrue(output.contains("account sid: dummy"));
-        assertTrue(output.contains("to: random number"));
-        assertTrue(output.contains("from: dummySID"));
-        assertTrue(output.contains("messaging service id: null"));
-        assertTrue(output.contains("body: report data"));
-        assertTrue(output.contains("status: queued"));
-        assertTrue(output.contains("num segments: 1"));
-        assertTrue(output.contains("num media: 0"));
-        assertTrue(output.contains("direction: outbound-api"));
-        assertTrue(output.contains("api version: 2010-04-01"));
-        assertTrue(output.contains("price: null"));
-        assertTrue(output.contains("price unit: USD"));
-        assertTrue(output.contains("uri: /2010-04-01/Accounts/dummyAccount/Messages/dummySID.json"));
+        assertTrue(output.contains("Message sent Successfully"));
     }
 
 

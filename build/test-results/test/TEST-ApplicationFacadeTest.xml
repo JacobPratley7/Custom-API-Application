@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ApplicationFacadeTest" tests="8" skipped="0" failures="2" errors="0" timestamp="2021-05-30T11:14:22" hostname="LAPTOP-86H4GGTF" time="2.581">
+<testsuite name="ApplicationFacadeTest" tests="8" skipped="0" failures="2" errors="0" timestamp="2021-05-30T11:35:33" hostname="LAPTOP-86H4GGTF" time="1.102">
   <properties/>
-  <testcase name="testGetLeagueDataDummy" classname="ApplicationFacadeTest" time="2.49"/>
-  <testcase name="testGetLeagueDataError" classname="ApplicationFacadeTest" time="0.045"/>
-  <testcase name="testSendReportOnline" classname="ApplicationFacadeTest" time="0.032">
-    <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
-	at ApplicationFacadeTest.testSendReportOnline(ApplicationFacadeTest.java:124)
+  <testcase name="testGetLeagueDataDummy" classname="ApplicationFacadeTest" time="0.947"/>
+  <testcase name="testGetLeagueDataError" classname="ApplicationFacadeTest" time="0.068"/>
+  <testcase name="testSendReportOnline" classname="ApplicationFacadeTest" time="0.059">
+    <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at ApplicationFacadeTest.testSendReportOnline(ApplicationFacadeTest.java:131)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -60,10 +63,13 @@
   </testcase>
   <testcase name="testGetSeriesDataOnline" classname="ApplicationFacadeTest" time="0.002"/>
   <testcase name="testGetSeriesDataDummy" classname="ApplicationFacadeTest" time="0.002"/>
-  <testcase name="testGetSeriesDataError" classname="ApplicationFacadeTest" time="0.001"/>
-  <testcase name="testSendReportDummy" classname="ApplicationFacadeTest" time="0.003">
-    <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
-	at ApplicationFacadeTest.testSendReportDummy(ApplicationFacadeTest.java:152)
+  <testcase name="testGetSeriesDataError" classname="ApplicationFacadeTest" time="0.003"/>
+  <testcase name="testSendReportDummy" classname="ApplicationFacadeTest" time="0.013">
+    <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at ApplicationFacadeTest.testSendReportDummy(ApplicationFacadeTest.java:158)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -116,7 +122,27 @@
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <testcase name="testGetLeagueDataOnline" classname="ApplicationFacadeTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="testGetLeagueDataOnline" classname="ApplicationFacadeTest" time="0.007"/>
+  <system-out><![CDATA[league id: 4590
+series:
+	id: 3621
+	full name: 2021
+	slug: cs-go-hyperion-x-oel-launch-2021
+	 tier: d
+	year: 2021
+
+
+messaging service sid: null
+league id: 4590
+series:
+	id: 3621
+	full name: 2021
+	slug: cs-go-hyperion-x-oel-launch-2021
+	 tier: d
+	year: 2021
+
+
+messaging service sid: null
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
