@@ -43,6 +43,7 @@ public class ApplicationFacade {
     private String twilioNumber;
     private InputFetcher inputFetcher;
     private ReportSender reportSender;
+    private List<Series> lastRetrievedSeries;
 
     public ApplicationFacade(InputFetcher inputFetcher, ReportSender reportSender) {
         this.inputFetcher = inputFetcher;
@@ -133,11 +134,13 @@ public class ApplicationFacade {
             String output = "error: ".concat(errorMessage.getString("error"));
             return output;
         } else {
+            this.lastRetrievedSeries = new ArrayList<>();
             JSONArray seriesData = new JSONArray(jsonData);
             String seriesOutput = "";
             for(int i = 0; i < seriesData.length(); i++) {
                 org.json.JSONObject current = (org.json.JSONObject) seriesData.get(i);
                 Series currentSeries = convertToSeriesObject(current);
+                this.lastRetrievedSeries.add(currentSeries);
                 seriesOutput = (seriesOutput.concat("begin at: ")).concat(currentSeries.getBeginAt());
                 seriesOutput = (seriesOutput.concat("\ndescription: ")).concat(currentSeries.getDescription());
                 seriesOutput = (seriesOutput.concat("\nend at: ")).concat(currentSeries.getEndAt());
@@ -160,4 +163,6 @@ public class ApplicationFacade {
             return seriesOutput;
         }
     }
+
+
 }

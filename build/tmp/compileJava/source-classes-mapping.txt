@@ -2,8 +2,8 @@ MainApplication.java
  MainApplication
 Model/InputAPI/InputObjects/VideoGame.java
  Model.InputAPI.InputObjects.VideoGame
-View/ApplicationWindow.java
- View.ApplicationWindow
+Model/InputAPI/InputFetcher.java
+ Model.InputAPI.InputFetcher
 Model/OutputAPI/ReportSenderImpl.java
  Model.OutputAPI.ReportSenderImpl
 Model/InputAPI/InputFetcherImpl.java
@@ -14,11 +14,11 @@ Model/InputAPI/InputObjects/Series.java
  Model.InputAPI.InputObjects.Series
 Model/InputAPI/InputFetcherDummy.java
  Model.InputAPI.InputFetcherDummy
-Model/ApplicationFacade.java
- Model.ApplicationFacade
-Model/OutputAPI/ReportSender.java
- Model.OutputAPI.ReportSender
 Model/InputAPI/InputObjects/League.java
  Model.InputAPI.InputObjects.League
-Model/InputAPI/InputFetcher.java
- Model.InputAPI.InputFetcher
+Model/OutputAPI/ReportSender.java
+ Model.OutputAPI.ReportSender
+View/ApplicationWindow.java
+ View.ApplicationWindow
+Model/ApplicationFacade.java
+ Model.ApplicationFacade
