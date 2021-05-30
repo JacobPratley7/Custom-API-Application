@@ -15,17 +15,20 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class ApplicationWindow {
 
     private Stage window;
+    private ApplicationFacade appFacade;
     private ApplicationFacade model;
     private Scene homePage, leaguesPage, seriesPage, sentDataPage;
     //private List<Scene> allPages;
 
-    public ApplicationWindow(Stage window) {
+    public ApplicationWindow(Stage window, ApplicationFacade appFacade) {
         this.window = window;
+        this.appFacade = appFacade;
     }
 
     public void initialize() {
@@ -44,12 +47,23 @@ public class ApplicationWindow {
         homePageLabel.setFont(new Font("Modena", 30));
         Button getLeagueData = new Button("Get League Data");
         getLeagueData.setOnAction(e -> {window.setScene(leaguesPage);
-            leagueDataText.setText("test text for now");});
+            try {
+                leagueDataText.setText(appFacade.getLeagueData());
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
 
         Label getSeriesLabel = new Label("Get Information on Series for a particular League");
         getSeriesLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
         Button getSeriesData = new Button("Get Series Data");
-        getSeriesData.setOnAction(e -> {window.setScene(seriesPage); seriesDataText.setText("test string for name");});
+        getSeriesData.setOnAction(e -> {window.setScene(seriesPage);
+            try {
+                seriesDataText.setText(appFacade.getSeriesData(leagueIDSlug.getText()));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
 
 
         VBox homePageLayout = new VBox(10);
@@ -72,7 +86,7 @@ public class ApplicationWindow {
         returnButton.setOnAction(e -> {window.setScene(homePage);});
 
 
-        leaguePageLayout.getChildren().addAll(sendLeagueDataLabel, sendLeagueData, leagues,
+        leaguePageLayout.getChildren().addAll(sendLeagueDataLabel, leagues,
                 leagueDataText, returnButton);
 
         ScrollPane leagueScrollPane = new ScrollPane();
@@ -89,7 +103,12 @@ public class ApplicationWindow {
         series.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
 
         sendSeriesData.setOnAction(e -> {window.setScene(sentDataPage);
-            sentDataText.setText("sent!");});
+            try {
+                sentDataText.setText(appFacade.sendReport());
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
         Button returnButtonTwo = new Button("Home");
         returnButtonTwo.setOnAction(e -> {window.setScene(homePage);});
 

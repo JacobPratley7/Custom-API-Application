@@ -22,10 +22,14 @@ import javafx.stage.Stage;
 
 public class MainApplication extends Application {
 
+    private static ApplicationManager manager;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         Stage window = primaryStage;
-        ApplicationWindow appWindow = new ApplicationWindow(window);
+
+        ApplicationWindow appWindow = new ApplicationWindow(window, manager.getAppFacade());
         appWindow.initialize();
 
         window.setTitle("My Application");
@@ -34,8 +38,14 @@ public class MainApplication extends Application {
 
     }
 
+    private static void initializeManager(String inputMode, String outputMode) {
+        manager = new ApplicationManager(inputMode, outputMode);
+    }
+
 
     public static void main(String[] args) throws IOException {
+        initializeManager(args[0], args[1]);
+
         launch(args);
     }
 }
