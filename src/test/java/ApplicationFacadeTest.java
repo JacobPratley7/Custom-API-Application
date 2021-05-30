@@ -121,7 +121,7 @@ public class ApplicationFacadeTest {
         ApplicationFacade appFacade = new ApplicationFacade(imp, rep);
         appFacade.getSeriesData("test", "test");
         String output = appFacade.sendReport();
-        assertTrue(output.contains("Message Sent Successfully!"));
+        assertTrue(output.contains("Message sent Successfully!"));
     }
 
     @Test

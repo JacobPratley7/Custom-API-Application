@@ -164,8 +164,35 @@ public class ApplicationFacade {
         }
     }
 
-    public String sendReport() {
-        return null;
+    private String generateReport() {
+        String report = "league id: ".concat(this.lastRetrievedSeries.get(0).getLeagueId());
+        report = report.concat("\nseries:");
+        for(Series s: this.lastRetrievedSeries) {
+            String currentSeriesData = "\n\tid: ".concat(s.getID());
+            currentSeriesData = currentSeriesData.concat("\n\tfull name: ").concat(s.getFullName());
+            currentSeriesData = currentSeriesData.concat("\n\tslug: ").concat(s.getSlug());
+            currentSeriesData = currentSeriesData.concat("\n\t tier: ").concat(s.getTier());
+            currentSeriesData = currentSeriesData.concat("\n\tyear: ").concat(s.getYear());
+            currentSeriesData = currentSeriesData.concat("\n");
+            currentSeriesData = currentSeriesData.concat("\n");
+            if(report.length() + currentSeriesData.length() > 1600) {
+                break;
+            } else {
+                report = report.concat(currentSeriesData);
+            }
+        }
+
+        return report;
+    }
+
+    public String sendReport() throws IOException {
+        String report = this.generateReport();
+        System.out.println(report);
+        String feedback = this.reportSender.sendMessage(this.outputSID, this.outputAuth, this.outputToNumber,
+                this.twilioNumber, report);
+
+        org.json.JSONObject feedbackData = new org.json.JSONObject(feedback);
+        return "Message sent Successfully!";
     }
 
 }
