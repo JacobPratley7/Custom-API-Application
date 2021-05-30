@@ -5,18 +5,45 @@ import Model.InputAPI.InputFetcherDummy;
 import Model.InputAPI.InputFetcherImpl;
 import Model.InputAPI.InputObjects.League;
 import Model.InputAPI.InputObjects.Series;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.hc.client5.http.auth.AuthScope;
+import org.apache.hc.client5.http.auth.CredentialsProvider;
+import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.entity.UrlEncodedFormEntity;
+import org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.core5.http.NameValuePair;
+import org.apache.hc.core5.http.ParseException;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.message.BasicNameValuePair;
 import org.json.*;
+import org.json.simple.parser.JSONParser;
 
+
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ApplicationFacade {
 
     private String inputAuth;
     private String outputAuth;
+    private String outputSID;
+    private String outputToNumber;
+    private String twilioNumber;
     private InputFetcher inputFetcher;
 
     public ApplicationFacade(InputFetcher inputFetcher, InputFetcher fake) {
         this.inputFetcher = inputFetcher;
+
+
     }
 
 

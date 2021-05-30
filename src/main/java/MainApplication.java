@@ -1,4 +1,5 @@
 import Model.ApplicationFacade;
+import Model.InputAPI.InputFetcherDummy;
 import Model.InputAPI.InputFetcherImpl;
 
 import java.io.IOException;
@@ -28,7 +29,6 @@ public class MainApplication extends Application {
         window.setTitle("My Application");
         window.show();
     }
-
 
 
     public static void main(String[] args) throws IOException {
