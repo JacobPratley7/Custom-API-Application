@@ -20,30 +20,19 @@ public class Series {
     private String winnerType;
     private String year;
 
-//    public Series(String beginAt, String description, String endAt, String fullName, int id, int leagueId,
-//                  String modifiedAt, String name, String season, String slug, String tier,
-//                  String videoGameTitle, String winnerId, String winnerType, int year) {
-//        this.beginAt = beginAt;
-//        this.description = description;
-//        this.endAt = endAt;
-//        this.fullName = fullName;
-//        this.id = id;
-//        this.leagueId = leagueId;
-//        this.modifiedAt = modifiedAt;
-//        this.name = name;
-//        this.season = season;
-//        this.slug = slug;
-//        this.tier = tier;
-//        this.videoGameTitle = videoGameTitle;
-//        this.winnerId = winnerId;
-//        this.winnerType = winnerType;
-//        this.year = year;
-//    }
 
+    /**
+     * Simple accessor for beginAt
+     * @return series begin at time
+     */
     public String getBeginAt() {
         return this.beginAt;
     }
 
+    /**
+     * Sets beginAt for series object
+     * @param beginAt The beginAt time to assign to the series object
+     */
     public void setBeginAt(Object beginAt) {
         if(beginAt.equals(JSONObject.NULL)) {
             this.beginAt = "null";
@@ -52,10 +41,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for description
+     * @return series description
+     */
     public String getDescription() {
         return this.description;
     }
 
+    /**
+     * Sets description for series object
+     * @param description The description to assign to the series object
+     */
     public void setDescription(Object description) {
         if(description.equals(JSONObject.NULL)) {
             this.description = "null";
@@ -64,10 +61,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for endAt
+     * @return series end at time
+     */
     public String getEndAt() {
         return this.endAt;
     }
 
+    /**
+     * Sets endAt for series object
+     * @param endAt The endAt time to assign to the series object
+     */
     public void setEndAt(Object endAt) {
         if(endAt.equals(JSONObject.NULL)) {
             this.endAt = "null";
@@ -76,10 +81,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for fullName
+     * @return series full name
+     */
     public String getFullName() {
         return this.fullName;
     }
 
+    /**
+     * Sets fullName for series object
+     * @param fullName The full name to assign to the series object
+     */
     public void setFullName(Object fullName) {
         if(fullName.equals(JSONObject.NULL)) {
             this.fullName = "null";
@@ -88,10 +101,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for id
+     * @return series id
+     */
     public String getID() {
         return this.id;
     }
 
+    /**
+     * Sets id for series object
+     * @param id The id to assign to the series object
+     */
     public void setID(Object id) {
         if(id.equals(JSONObject.NULL)) {
             this.id = "null";
@@ -101,10 +122,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for id
+     * @return league id
+     */
     public String getLeagueId() {
         return this.leagueId;
     }
 
+    /**
+     * Sets leagueID for series object
+     * @param leagueId The league id to assign to the series object
+     */
     public void setLeagueID(Object leagueId) {
         if(leagueId.equals(JSONObject.NULL)) {
             this.leagueId = "null";
@@ -114,10 +143,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for modifiedAt
+     * @return series modified at time
+     */
     public String getModifiedAt() {
         return this.modifiedAt;
     }
 
+    /**
+     * Sets modifiedAt for series object
+     * @param modifiedAt The modified at time to assign to the series object
+     */
     public void setModifiedAt(Object modifiedAt) {
         if(modifiedAt.equals(JSONObject.NULL)) {
             this.modifiedAt = "null";
@@ -126,10 +163,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for name
+     * @return series name
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     * Sets name for series object
+     * @param name The name to assign to the series object
+     */
     public void setName(Object name) {
         if(name.equals(JSONObject.NULL)) {
             this.name = "null";
@@ -138,10 +183,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for season
+     * @return series season
+     */
     public String getSeason() {
         return this.season;
     }
 
+    /**
+     * Sets season for series object
+     * @param season The season to assign to the series object
+     */
     public void setSeason(Object season) {
         if(season.equals(JSONObject.NULL)) {
             this.season = "null";
@@ -150,10 +203,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for slug
+     * @return series slug
+     */
     public String getSlug() {
         return this.slug;
     }
 
+    /**
+     * Sets slug for series object
+     * @param slug The slug to assign to the series object
+     */
     public void setSlug(Object slug) {
         if(slug.equals(JSONObject.NULL)) {
             this.slug = "null";
@@ -162,10 +223,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for tier
+     * @return series tier
+     */
     public String getTier() {
         return this.tier;
     }
 
+    /**
+     * Sets tier for series object
+     * @param tier The tier to assign to the series object
+     */
     public void setTier(Object tier) {
         if(tier.equals(JSONObject.NULL)) {
             this.tier = "null";
@@ -174,10 +243,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for videogameTitle
+     * @return series video game title
+     */
     public String getVideoGameTitle() {
         return this.videoGameTitle;
     }
 
+    /**
+     * Sets videogameTitle for series object
+     * @param videoGameTitle The video game title to assign to the series object
+     */
     public void setVideoGameTitle(Object videoGameTitle) {
         if(videoGameTitle.equals(JSONObject.NULL)) {
             this.videoGameTitle = "null";
@@ -186,10 +263,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for winnerId
+     * @return series winner id
+     */
     public String getWinnerId() {
         return this.winnerId;
     }
 
+    /**
+     * Sets winnerId for series object
+     * @param winnerId The winner id to assign to the series object
+     */
     public void setWinnerId(Object winnerId) {
         if(winnerId.equals(JSONObject.NULL)) {
             this.winnerId = "null";
@@ -199,10 +284,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for winnerType
+     * @return series winner type
+     */
     public String getWinnerType() {
         return this.winnerType;
     }
 
+    /**
+     * Sets winnerType for series object
+     * @param winnerType The winner type to assign to the series object
+     */
     public void setWinnerType(Object winnerType) {
         if(winnerType.equals(JSONObject.NULL)) {
             this.winnerType = "null";
@@ -211,10 +304,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for year
+     * @return series year
+     */
     public String getYear() {
         return this.year;
     }
 
+    /**
+     * Sets year for series object
+     * @param year The year to assign to the series object
+     */
     public void setYear(Object year) {
         if(year.equals(JSONObject.NULL)) {
             this.year = "null";

@@ -8,12 +8,22 @@ import Model.OutputAPI.ReportSenderImpl;
 import View.ApplicationWindow;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class ApplicationManager {
 
     private ApplicationFacade appFacade;
 
+    /**
+     * Constructs ApplicationManager object.
+     * Also responsible for constructing the ApplicationFacade object that will be
+     * used by the rest of the application
+     *
+     * @param inputMode String representing the desired input API functionality
+     * @param outputMode String representing the desired output API functionality
+     * @return new ApplicationManager instance
+     */
     public ApplicationManager(String inputMode, String outputMode) {
         InputFetcher inFetcher;
         ReportSender repSender;
@@ -33,6 +43,7 @@ public class ApplicationManager {
     }
 
 
+    /** Returns the stored ApplicationFacade */
     public ApplicationFacade getAppFacade() {
         return appFacade;
     }

@@ -24,13 +24,17 @@ public class ApplicationWindow {
     private ApplicationFacade appFacade;
     private ApplicationFacade model;
     private Scene homePage, leaguesPage, seriesPage, sentDataPage;
-    //private List<Scene> allPages;
+
 
     public ApplicationWindow(Stage window, ApplicationFacade appFacade) {
         this.window = window;
         this.appFacade = appFacade;
     }
 
+    /**
+     * Initializes all Scene objects used by the main application.
+     * Creates all buttons/inputFields/text objects, assigns them to the appropriate Scene.
+     */
     public void initialize() {
 
         Text leagueDataText = new Text();

@@ -24,13 +24,19 @@ import java.util.List;
 
 public class InputFetcherImpl implements InputFetcher {
 
-    public String getLeagues(String auth) throws IOException {
+    /**
+     * Retrieves league information
+     * @param authToken The user's authentication token for the input API
+     * @return String in json format representing league data
+     * @throws IOException if error is to occur whilst accessing input API
+     */
+    public String getLeagues(String authToken) throws IOException {
         String json = null;
         try(CloseableHttpClient httpClient = HttpClients.createDefault()) {
             String url = "https://api.pandascore.co/leagues?page[size]=50&page[number]=1";
             HttpGet httpGet = new HttpGet(url);
-            String authToken = "Bearer ".concat(auth);
-            httpGet.setHeader("Authorization", authToken);
+            String auth = "Bearer ".concat(authToken);
+            httpGet.setHeader("Authorization", auth);
             URI uri = new URIBuilder(httpGet.getUri()).build();
             ((HttpUriRequestBase) httpGet).setUri(uri);
             CloseableHttpResponse response = httpClient.execute(httpGet);
@@ -52,13 +58,20 @@ public class InputFetcherImpl implements InputFetcher {
         return json;
     }
 
-    public String getSeries(String auth, String leagueID) throws IOException {
+    /**
+     * Retrieves series information for a particular league
+     * @param authToken The user's authentication token for the input API
+     * @param leagueID The id of the league the user wants to get series information on
+     * @return String in json format representing series data
+     * @throws IOException if error is to occur whilst accessing input API
+     */
+    public String getSeries(String authToken, String leagueID) throws IOException {
         String json = null;
         try(CloseableHttpClient httpClient = HttpClients.createDefault()) {
             String url = (("https://api.pandascore.co/leagues/").concat(leagueID)).concat("/series?page[size]=50&page[number]=1");
             HttpGet httpGet = new HttpGet(url);
-            String authToken = "Bearer ".concat(auth);
-            httpGet.setHeader("Authorization", authToken);
+            String auth = "Bearer ".concat(authToken);
+            httpGet.setHeader("Authorization", auth);
             URI uri = new URIBuilder(httpGet.getUri()).build();
             ((HttpUriRequestBase) httpGet).setUri(uri);
             CloseableHttpResponse response = httpClient.execute(httpGet);

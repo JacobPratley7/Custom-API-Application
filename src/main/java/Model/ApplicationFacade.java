@@ -45,6 +45,12 @@ public class ApplicationFacade {
     private ReportSender reportSender;
     private List<Series> lastRetrievedSeries;
 
+    /**
+     * Class Constructor. Will also retrieve/store the cpntents of the config file
+     * @param inputFetcher The InputFetcher object used to access the input API
+     * @param reportSender The ReportSender object used to access the output API
+     * @return new ApplicationFacade instance
+     */
     public ApplicationFacade(InputFetcher inputFetcher, ReportSender reportSender) {
         this.inputFetcher = inputFetcher;
         this.reportSender = reportSender;
@@ -81,6 +87,13 @@ public class ApplicationFacade {
         return newLeague;
     }
 
+    /**
+     * Retrieves league information from input API,
+     * then formats this data into a more human readable string.
+     *
+     * @return String in human readable format representing league data
+     * @throws IOException if error is to occur whilst accessing input API
+     */
     public String getLeagueData() throws IOException {
         String jsonData = this.inputFetcher.getLeagues(inputAuth);
         if(jsonData.contains("error")) {
@@ -123,10 +136,17 @@ public class ApplicationFacade {
         newSeries.setWinnerId(seriesData.get("winner_id"));
         newSeries.setWinnerType(seriesData.get("winner_type"));
         newSeries.setYear(seriesData.get("year"));
-
         return newSeries;
     }
 
+    /**
+     * Retrieves series information from input API,
+     * then formats this data into a more human readable string.
+     *
+     * @param leagueID the id or the slug of the league the users wants series data on
+     * @return String in human readable format representing series data
+     * @throws IOException if error is to occur whilst accessing input API
+     */
     public String getSeriesData(String leagueID) throws IOException {
         String jsonData = this.inputFetcher.getSeries(inputAuth, leagueID);
         if(jsonData.contains("error")) {
@@ -189,6 +209,14 @@ public class ApplicationFacade {
         return report;
     }
 
+    /**
+     * Generates a report and sends it the the pre-configured number.
+     * Returns a string displaying the report if the message was sent successfully,
+     * or the error message if the message was not able to send
+     *
+     * @return String displaying either the report or the error message
+     * @throws IOException if error is to occur whilst accessing output API
+     */
     public String sendReport() throws IOException {
         String report = this.generateReport();
         String feedback = this.reportSender.sendMessage(this.outputSID, this.outputAuth, this.outputToNumber,
