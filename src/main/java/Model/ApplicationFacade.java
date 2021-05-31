@@ -84,6 +84,11 @@ public class ApplicationFacade {
         newLeague.setName(leagueData.get("name"));
         newLeague.setSlug(leagueData.get("slug"));
         newLeague.setUrl(leagueData.get("url"));
+        org.json.JSONObject videoGame = leagueData.getJSONObject("videogame");
+        newLeague.setVideoGameCurrentVersion(videoGame.get("current_version"));
+        newLeague.setVideoGameName(videoGame.get("name"));
+        newLeague.setVideoGameSlug(videoGame.get("slug"));
+        newLeague.setVideoGameID(videoGame.get("id"));
         return newLeague;
     }
 
@@ -112,6 +117,11 @@ public class ApplicationFacade {
                 leagueOutput = (leagueOutput.concat("\nname: ")).concat(currentLeague.getName());
                 leagueOutput = (leagueOutput.concat("\nslug: ")).concat(currentLeague.getSlug());
                 leagueOutput = (leagueOutput.concat("\nurl: ")).concat(currentLeague.getUrl());
+                leagueOutput = leagueOutput.concat("\nvideo game:");
+                leagueOutput = (leagueOutput.concat("\n\tcurrent version: ")).concat(currentLeague.getVideoGameCurrentVersion());
+                leagueOutput = (leagueOutput.concat("\n\tid: ")).concat(currentLeague.getVideoGameID());
+                leagueOutput = (leagueOutput.concat("\n\tname: ")).concat(currentLeague.getVideoGameName());
+                leagueOutput = (leagueOutput.concat("\n\tslug: ")).concat(currentLeague.getVideoGameSlug());
                 leagueOutput = leagueOutput.concat("\n");
                 leagueOutput = leagueOutput.concat("\n");
             }

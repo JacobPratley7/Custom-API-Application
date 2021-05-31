@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ApplicationFacadeTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-05-31T08:02:42" hostname="LAPTOP-86H4GGTF" time="1.493">
+<testsuite name="ApplicationFacadeTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2021-05-31T14:49:23" hostname="LAPTOP-86H4GGTF" time="1.789">
   <properties/>
-  <testcase name="testSendReportNothingToReport" classname="ApplicationFacadeTest" time="1.396"/>
-  <testcase name="testGetLeagueDataDummy" classname="ApplicationFacadeTest" time="0.052"/>
-  <testcase name="testGetLeagueDataError" classname="ApplicationFacadeTest" time="0.003"/>
-  <testcase name="testSendReportOnline" classname="ApplicationFacadeTest" time="0.006"/>
-  <testcase name="testGetSeriesDataOnline" classname="ApplicationFacadeTest" time="0.008"/>
-  <testcase name="testGetSeriesDataDummy" classname="ApplicationFacadeTest" time="0.004"/>
+  <testcase name="testSendReportNothingToReport" classname="ApplicationFacadeTest" time="1.646"/>
+  <testcase name="testGetLeagueDataDummy" classname="ApplicationFacadeTest" time="0.054"/>
+  <testcase name="testGetLeagueDataError" classname="ApplicationFacadeTest" time="0.018"/>
+  <testcase name="testSendReportOnline" classname="ApplicationFacadeTest" time="0.022"/>
+  <testcase name="testGetSeriesDataOnline" classname="ApplicationFacadeTest" time="0.006"/>
+  <testcase name="testGetSeriesDataDummy" classname="ApplicationFacadeTest" time="0.003"/>
   <testcase name="testGetSeriesDataError" classname="ApplicationFacadeTest" time="0.003"/>
-  <testcase name="testSendReportDummy" classname="ApplicationFacadeTest" time="0.005"/>
-  <testcase name="testSendReportError" classname="ApplicationFacadeTest" time="0.006"/>
-  <testcase name="testGetLeagueDataOnline" classname="ApplicationFacadeTest" time="0.001"/>
+  <testcase name="testSendReportDummy" classname="ApplicationFacadeTest" time="0.006"/>
+  <testcase name="testSendReportError" classname="ApplicationFacadeTest" time="0.005"/>
+  <testcase name="testGetLeagueDataOnlineUpdated" classname="ApplicationFacadeTest" time="0.006"/>
+  <testcase name="testGetLeagueDataOnline" classname="ApplicationFacadeTest" time="0.002"/>
+  <testcase name="testGetLeagueDataDummyUpdated" classname="ApplicationFacadeTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

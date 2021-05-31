@@ -1,6 +1,2 @@
-InputFetcherTest.java
- InputFetcherTest
-InputFetcherDummyTest.java
- InputFetcherDummyTest
 ApplicationFacadeTest.java
  ApplicationFacadeTest

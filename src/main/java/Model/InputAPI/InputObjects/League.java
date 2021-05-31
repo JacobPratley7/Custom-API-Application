@@ -14,6 +14,10 @@ public class League {
     private String slug;
     private String url;
     private VideoGame videoGame;
+    private String videoGameCurrentVersion;
+    private String videoGameID;
+    private String videoGameName;
+    private String videoGameSlug;
 
     public League() {
 
@@ -154,6 +158,55 @@ public class League {
      */
     public VideoGame getVideoGame() {
         return this.videoGame;
+    }
+
+    public String getVideoGameCurrentVersion() {
+        return this.videoGameCurrentVersion;
+    }
+
+    public void setVideoGameCurrentVersion(Object currentVersion) {
+        if(currentVersion.equals(JSONObject.NULL)) {
+            this.videoGameCurrentVersion = "null";
+        } else {
+            this.videoGameCurrentVersion = (String) currentVersion;
+        }
+    }
+
+    public String getVideoGameID () {
+        return this.videoGameID;
+    }
+
+    public void setVideoGameID(Object id) {
+        if(id.equals(JSONObject.NULL)) {
+            this.videoGameID = "null";
+        } else {
+            int intID = (int) id;
+            this.videoGameID = Integer.toString(intID);
+        }
+    }
+
+    public String getVideoGameName() {
+        return this.videoGameName;
+    }
+
+    public void setVideoGameName(Object name) {
+        if(name.equals(JSONObject.NULL)) {
+            this.videoGameName = "null";
+        } else {
+            this.videoGameName = (String) name;
+        }
+    }
+
+    public String getVideoGameSlug() {
+        return this.videoGameSlug;
+    }
+
+    public void setVideoGameSlug(Object slug) {
+        if(slug.equals(JSONObject.NULL)) {
+            this.videoGameSlug = "null";
+        } else {
+            this.videoGameSlug = (String) slug;
+        }
     }
 
 
