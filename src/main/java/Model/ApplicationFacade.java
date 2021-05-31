@@ -130,6 +130,7 @@ public class ApplicationFacade {
     public String getSeriesData(String leagueID) throws IOException {
         String jsonData = this.inputFetcher.getSeries(inputAuth, leagueID);
         if(jsonData.contains("error")) {
+            this.lastRetrievedSeries = null;
             org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
             String output = "error: ".concat(errorMessage.getString("error"));
             return output;
@@ -165,6 +166,9 @@ public class ApplicationFacade {
     }
 
     private String generateReport() {
+        if(this.lastRetrievedSeries == null) {
+            return "No data to report";
+        }
         String report = "league id: ".concat(this.lastRetrievedSeries.get(0).getLeagueId());
         report = report.concat("\nseries:");
         for(Series s: this.lastRetrievedSeries) {
@@ -175,7 +179,7 @@ public class ApplicationFacade {
             currentSeriesData = currentSeriesData.concat("\n\tyear: ").concat(s.getYear());
             currentSeriesData = currentSeriesData.concat("\n");
             currentSeriesData = currentSeriesData.concat("\n");
-            if(report.length() + currentSeriesData.length() > 1600) {
+            if(report.length() + currentSeriesData.length() >= 1600) {
                 break;
             } else {
                 report = report.concat(currentSeriesData);
@@ -187,14 +191,18 @@ public class ApplicationFacade {
 
     public String sendReport() throws IOException {
         String report = this.generateReport();
-        System.out.println(report);
         String feedback = this.reportSender.sendMessage(this.outputSID, this.outputAuth, this.outputToNumber,
                 this.twilioNumber, report);
-
-        System.out.println("feedback:");
-        System.out.println(feedback);
-
         org.json.JSONObject feedbackData = new org.json.JSONObject(feedback);
+        if(feedback.contains("more_info")) {
+            String output = "Something went wrong.";
+            output = output.concat("code: ").concat(Integer.toString(feedbackData.getInt("code")));
+            output = output.concat("\nmessage: ").concat(feedbackData.getString("message"));
+            output = output.concat("\nmore info: ").concat(feedbackData.getString("more_info"));
+            return output;
+
+        }
+
         return "Message sent Successfully!\n".concat(report);
     }
 
