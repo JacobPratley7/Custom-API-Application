@@ -5,6 +5,7 @@ import Model.InputAPI.InputFetcherDummy;
 import Model.InputAPI.InputFetcherImpl;
 import Model.InputAPI.InputObjects.League;
 import Model.InputAPI.InputObjects.Series;
+import Model.InputAPI.InputObjects.Tournament;
 import Model.OutputAPI.ReportSender;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.hc.client5.http.auth.AuthScope;
@@ -146,8 +147,11 @@ public class ApplicationFacade {
         newSeries.setWinnerId(seriesData.get("winner_id"));
         newSeries.setWinnerType(seriesData.get("winner_type"));
         newSeries.setYear(seriesData.get("year"));
+
         return newSeries;
     }
+
+
 
     /**
      * Retrieves series information from input API,
@@ -183,6 +187,7 @@ public class ApplicationFacade {
                 seriesOutput = (seriesOutput.concat("\nseason: ")).concat(currentSeries.getSeason());
                 seriesOutput = (seriesOutput.concat("\nslug: ")).concat(currentSeries.getSlug());
                 seriesOutput = (seriesOutput.concat("\ntier: ")).concat(currentSeries.getTier());
+
                 seriesOutput = (seriesOutput.concat("\nvideogame title: ")).concat(currentSeries.getVideoGameTitle());
                 seriesOutput = (seriesOutput.concat("\nwinner id: ")).concat(currentSeries.getWinnerId());
                 seriesOutput = (seriesOutput.concat("\nwinner type: ")).concat(currentSeries.getWinnerType());

@@ -2,6 +2,8 @@ package Model.InputAPI.InputObjects;
 
 import org.json.JSONObject;
 
+import java.util.List;
+
 public class Series {
 
     private String beginAt;
@@ -19,6 +21,10 @@ public class Series {
     private String winnerId;
     private String winnerType;
     private String year;
+    private String videoGameID;
+    private String videoGameSlug;
+    private String videoGameName;
+    private List<Tournament> tournaments;
 
 
     /**
@@ -324,4 +330,51 @@ public class Series {
             this.year = Integer.toString(intYear);
         }
     }
+
+    public String getVideoGameID() {
+        return this.videoGameID;
+    }
+
+    public void setVideoGameID(Object videoGameID) {
+        if(videoGameID.equals(JSONObject.NULL)) {
+            this.videoGameID = "null";
+        } else {
+            int intID = (int) videoGameID;
+            this.videoGameID = Integer.toString(intID);
+        }
+    }
+
+    public String getVideoGameSlug() {
+        return this.videoGameSlug;
+    }
+
+    public void setVideoGameSlug(Object videoGameSlug) {
+        if(videoGameSlug.equals(JSONObject.NULL)) {
+            this.videoGameSlug = "null";
+        } else {
+            this.videoGameSlug = (String) videoGameSlug;
+        }
+    }
+
+    public String getVideoGameName() {
+        return this.videoGameName;
+    }
+
+    public void setVideoGameName(Object videoGameName) {
+        if(videoGameName.equals(JSONObject.NULL)) {
+            this.videoGameName = "null";
+        } else {
+            this.videoGameName = (String) videoGameName;
+        }
+    }
+
+    public List<Tournament> getTournaments() {
+        return this.tournaments;
+    }
+
+    public void setTournaments(List<Tournament> tournaments) {
+        this.tournaments = tournaments;
+    }
+
+
 }
