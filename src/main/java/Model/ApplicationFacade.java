@@ -147,9 +147,43 @@ public class ApplicationFacade {
         newSeries.setWinnerId(seriesData.get("winner_id"));
         newSeries.setWinnerType(seriesData.get("winner_type"));
         newSeries.setYear(seriesData.get("year"));
-
+        org.json.JSONObject videoGame = seriesData.getJSONObject("videogame");
+        newSeries.setVideoGameID(videoGame.get("id"));
+        newSeries.setVideoGameName(videoGame.get("name"));
+        newSeries.setVideoGameSlug(videoGame.get("slug"));
+        JSONArray tournaments = seriesData.getJSONArray("tournaments");
+        newSeries.setTournaments(generateTournamentList(tournaments));
         return newSeries;
     }
+
+    private List<Tournament> generateTournamentList(JSONArray tournaments) {
+        List<Tournament> newList = new ArrayList<>();
+        for(int i = 0; i < tournaments.length(); i++) {
+            org.json.JSONObject currentTournament = (org.json.JSONObject) tournaments.get(i);
+            newList.add(convertToTournamentObject(currentTournament));
+        }
+
+        return newList;
+    }
+
+    private Tournament convertToTournamentObject(org.json.JSONObject tournamentData) {
+        Tournament newTournament = new Tournament();
+        newTournament.setBeginAt(tournamentData.get("begin_at"));
+        newTournament.setEndAt(tournamentData.get("end_at"));
+        newTournament.setID(tournamentData.get("id"));
+        newTournament.setLeagueID(tournamentData.get("league_id"));
+        newTournament.setLiveSupported(tournamentData.get("live_supported"));
+        newTournament.setName(tournamentData.get("name"));
+        newTournament.setPrizePool(tournamentData.get("prizepool"));
+        newTournament.setSeriesID(tournamentData.get("serie_id"));
+        newTournament.setSlug(tournamentData.get("slug"));
+        newTournament.setWinnerID(tournamentData.get("winner_id"));
+        newTournament.setWinnerType(tournamentData.get("winner_type"));
+        newTournament.setModifiedAt(tournamentData.get("modified_at"));
+        return newTournament;
+    }
+
+
 
 
 
@@ -187,7 +221,28 @@ public class ApplicationFacade {
                 seriesOutput = (seriesOutput.concat("\nseason: ")).concat(currentSeries.getSeason());
                 seriesOutput = (seriesOutput.concat("\nslug: ")).concat(currentSeries.getSlug());
                 seriesOutput = (seriesOutput.concat("\ntier: ")).concat(currentSeries.getTier());
-
+                seriesOutput = seriesOutput.concat("\ntournaments:");
+                List<Tournament> currentTournaments = currentSeries.getTournaments();
+                for(Tournament t: currentTournaments) {
+                    seriesOutput = seriesOutput.concat("\n\tbegin at: ").concat(t.getBeginAt());
+                    seriesOutput = seriesOutput.concat("\n\tend at: ").concat(t.getEndAt());
+                    seriesOutput = seriesOutput.concat("\n\tid: ").concat(t.getID());
+                    seriesOutput = seriesOutput.concat("\n\tleague id: ").concat(t.getLeagueID());
+                    seriesOutput = seriesOutput.concat("\n\tlive supported: ").concat(t.getLiveSupported());
+                    seriesOutput = seriesOutput.concat("\n\tmodified at: ").concat(t.getModifiedAt());
+                    seriesOutput = seriesOutput.concat("\n\tname: ").concat(t.getName());
+                    seriesOutput = seriesOutput.concat("\n\tprize pool: ").concat(t.getPrizePool());
+                    seriesOutput = seriesOutput.concat("\n\tserie id: ").concat(t.getSeriesID());
+                    seriesOutput = seriesOutput.concat("\n\tslug: ").concat(t.getSlug());
+                    seriesOutput = seriesOutput.concat("\n\twinner id: ").concat(t.getWinnerID());
+                    seriesOutput = seriesOutput.concat("\n\twinner type: ").concat(t.getWinnerType());
+                    seriesOutput = seriesOutput.concat("\n");
+                    seriesOutput = seriesOutput.concat("\n");
+                }
+                seriesOutput = seriesOutput.concat("\nvideogame:");
+                seriesOutput = seriesOutput.concat("\n\tid: ").concat(currentSeries.getVideoGameID());
+                seriesOutput = seriesOutput.concat("\n\tname: ").concat(currentSeries.getVideoGameName());
+                seriesOutput = seriesOutput.concat("\n\tslug: ").concat(currentSeries.getVideoGameSlug());
                 seriesOutput = (seriesOutput.concat("\nvideogame title: ")).concat(currentSeries.getVideoGameTitle());
                 seriesOutput = (seriesOutput.concat("\nwinner id: ")).concat(currentSeries.getWinnerId());
                 seriesOutput = (seriesOutput.concat("\nwinner type: ")).concat(currentSeries.getWinnerType());
