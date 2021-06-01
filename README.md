@@ -19,3 +19,7 @@
 - RED: tests compile, do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/d394557d68b89f3426f5ad11a0ff9457f1b8998c
 - GREEN: tests pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/89e7f44764d274a5d9c8c4985db67085a901b024
 - REFACTOR: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/532139e64c0aba9da6ea5afb6e1a51c81f8a033e
+
+4. ApplicationFacadeSeriesOperationsUpdated
+- RED: test do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/8e25f43f8d22a2f58475f662232843a9c1c6aed5
+- GREEN: 
