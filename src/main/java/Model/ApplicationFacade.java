@@ -239,7 +239,7 @@ public class ApplicationFacade {
                     seriesOutput = seriesOutput.concat("\n");
                     seriesOutput = seriesOutput.concat("\n");
                 }
-                seriesOutput = seriesOutput.concat("\nvideogame:");
+                seriesOutput = seriesOutput.concat("\nvideo game:");
                 seriesOutput = seriesOutput.concat("\n\tid: ").concat(currentSeries.getVideoGameID());
                 seriesOutput = seriesOutput.concat("\n\tname: ").concat(currentSeries.getVideoGameName());
                 seriesOutput = seriesOutput.concat("\n\tslug: ").concat(currentSeries.getVideoGameSlug());
