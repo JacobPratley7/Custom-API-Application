@@ -1,5 +1,11 @@
 # SCD2_2021_Exam
 
+# Running the Application
+To run the application, you will need to modify the configuration file, "config.json". Here, you will need to enter your credentials for the input and output APIs, and for the output API, you will also need to provide a valid 'To' and 'From' number. Credentials should be in String format. E.g., if you input API auth token is 'hello', then next to inputAuthToken enter "hello". All keys in the config file correspond to the details you must enter. Here, outputUsername refers to your twilio SID.
+
+last working commit: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/6eb5426de4c49540487e54133e4100538e5ef712
+
+
 # RED-GREEN-REFACTOR LOG
 
 1. ApplicationFacadeLeagueOperations
