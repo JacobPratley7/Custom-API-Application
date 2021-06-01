@@ -331,10 +331,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for videoGameID
+     * @return series video game id
+     */
     public String getVideoGameID() {
         return this.videoGameID;
     }
 
+    /**
+     * Sets videoGameId for series object
+     * @param videoGameID The video game id to assign to the series object
+     */
     public void setVideoGameID(Object videoGameID) {
         if(videoGameID.equals(JSONObject.NULL)) {
             this.videoGameID = "null";
@@ -344,10 +352,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for videoGameSlug
+     * @return series video game slug
+     */
     public String getVideoGameSlug() {
         return this.videoGameSlug;
     }
 
+    /**
+     * Sets videoGameSlug for series object
+     * @param videoGameSlug The video game slug to assign to the series object
+     */
     public void setVideoGameSlug(Object videoGameSlug) {
         if(videoGameSlug.equals(JSONObject.NULL)) {
             this.videoGameSlug = "null";
@@ -356,10 +372,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for videoGameName
+     * @return series video game name
+     */
     public String getVideoGameName() {
         return this.videoGameName;
     }
 
+    /**
+     * Sets videoGameName for series object
+     * @param videoGameName The video game name to assign to the series object
+     */
     public void setVideoGameName(Object videoGameName) {
         if(videoGameName.equals(JSONObject.NULL)) {
             this.videoGameName = "null";
@@ -368,10 +392,18 @@ public class Series {
         }
     }
 
+    /**
+     * Simple accessor for tournaments
+     * @return series tournaments
+     */
     public List<Tournament> getTournaments() {
         return this.tournaments;
     }
 
+    /**
+     * Sets tournaments for series object
+     * @param tournaments The list of tournaments to assign to the series object
+     */
     public void setTournaments(List<Tournament> tournaments) {
         this.tournaments = tournaments;
     }

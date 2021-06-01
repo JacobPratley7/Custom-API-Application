@@ -160,10 +160,18 @@ public class League {
         return this.videoGame;
     }
 
+    /**
+     * Simple accessor for videoGameCurrentVersion
+     * @return league video game current version
+     */
     public String getVideoGameCurrentVersion() {
         return this.videoGameCurrentVersion;
     }
 
+    /**
+     * Sets videoGameCurrentVersion for league object
+     * @param currentVersion The current version to assign to the league object
+     */
     public void setVideoGameCurrentVersion(Object currentVersion) {
         if(currentVersion.equals(JSONObject.NULL)) {
             this.videoGameCurrentVersion = "null";
@@ -172,10 +180,18 @@ public class League {
         }
     }
 
+    /**
+     * Simple accessor for videoGameID
+     * @return league video game id
+     */
     public String getVideoGameID () {
         return this.videoGameID;
     }
 
+    /**
+     * Sets videoGameID for league object
+     * @param id The video game id to assign to the league object
+     */
     public void setVideoGameID(Object id) {
         if(id.equals(JSONObject.NULL)) {
             this.videoGameID = "null";
@@ -185,10 +201,18 @@ public class League {
         }
     }
 
+    /**
+     * Simple accessor for videoGameName
+     * @return league video game name
+     */
     public String getVideoGameName() {
         return this.videoGameName;
     }
 
+    /**
+     * Sets videoGameName for league object
+     * @param name The video game name to assign to the league object
+     */
     public void setVideoGameName(Object name) {
         if(name.equals(JSONObject.NULL)) {
             this.videoGameName = "null";
@@ -197,10 +221,18 @@ public class League {
         }
     }
 
+    /**
+     * Simple accessor for videoGameSlug
+     * @return league video game slug
+     */
     public String getVideoGameSlug() {
         return this.videoGameSlug;
     }
 
+    /**
+     * Sets videoGameSlug for league object
+     * @param slug The video game slug to assign to the league object
+     */
     public void setVideoGameSlug(Object slug) {
         if(slug.equals(JSONObject.NULL)) {
             this.videoGameSlug = "null";
