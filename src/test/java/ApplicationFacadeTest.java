@@ -149,7 +149,7 @@ public class ApplicationFacadeTest {
         assertTrue(output.contains("winner id: 126439"));
         assertTrue(output.contains("winner type: Team"));
 
-        assertTrue(output.contains("videogame:"));
+        assertTrue(output.contains("video game:"));
         assertTrue(output.contains("id: 3"));
         assertTrue(output.contains("name: CS:GO"));
         assertTrue(output.contains("slug: cs-go"));
@@ -225,7 +225,7 @@ public class ApplicationFacadeTest {
         assertTrue(output.contains("winner id: 126439"));
         assertTrue(output.contains("winner type: Team"));
 
-        assertTrue(output.contains("videogame:"));
+        assertTrue(output.contains("video game:"));
         assertTrue(output.contains("id: 3"));
         assertTrue(output.contains("name: CS:GO"));
         assertTrue(output.contains("slug: cs-go"));
