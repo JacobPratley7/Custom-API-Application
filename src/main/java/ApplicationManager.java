@@ -5,11 +5,6 @@ import Model.InputAPI.InputFetcherImpl;
 import Model.OutputAPI.ReportSender;
 import Model.OutputAPI.ReportSenderDummy;
 import Model.OutputAPI.ReportSenderImpl;
-import View.ApplicationWindow;
-import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.util.List;
 
 public class ApplicationManager {
 
@@ -33,9 +28,10 @@ public class ApplicationManager {
             inFetcher = new InputFetcherDummy();
         }
 
-        if(outputMode == "online") {
+        if(outputMode.equals("online")) {
             repSender = new ReportSenderImpl();
         } else {
+
             repSender = new ReportSenderDummy();
         }
 

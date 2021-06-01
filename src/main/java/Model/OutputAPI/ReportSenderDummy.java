@@ -1,7 +1,5 @@
 package Model.OutputAPI;
 
-import java.io.IOException;
-
 public class ReportSenderDummy implements ReportSender {
 
     /**

@@ -2,15 +2,10 @@ import Model.ApplicationFacade;
 import Model.InputAPI.InputFetcher;
 import Model.InputAPI.InputFetcherDummy;
 import Model.InputAPI.InputFetcherImpl;
-import Model.InputAPI.InputObjects.League;
 import Model.OutputAPI.ReportSender;
 import Model.OutputAPI.ReportSenderImpl;
-import org.json.*;
 import org.junit.Test;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.*;
-
-import org.mockito.Mock;
 
 import java.io.IOException;
 

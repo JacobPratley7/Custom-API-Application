@@ -1,10 +1,5 @@
 package Model.InputAPI;
 
-//import org.json.simple.JSONObject;
-import org.json.*;
-
-import java.io.IOException;
-
 public class InputFetcherDummy implements InputFetcher {
 
     /**

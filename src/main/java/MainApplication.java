@@ -3,21 +3,8 @@ import Model.InputAPI.InputFetcherDummy;
 import Model.InputAPI.InputFetcherImpl;
 
 import java.io.IOException;
-
-import Model.OutputAPI.ReportSenderDummy;
-import Model.OutputAPI.ReportSenderImpl;
 import View.ApplicationWindow;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Orientation;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.shape.Box;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MainApplication extends Application {
