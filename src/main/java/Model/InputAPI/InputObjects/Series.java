@@ -409,10 +409,18 @@ public class Series {
         this.tournaments = tournaments;
     }
 
+    /**
+     * Simple accessor for league
+     * @return series league
+     */
     public League getLeague() {
         return this.league;
     }
 
+    /**
+     * Sets league for series object
+     * @param league The league to assign to the series object
+     */
     public void setLeague(League league) {
         this.league = league;
     }

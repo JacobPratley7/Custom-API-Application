@@ -112,6 +112,10 @@ public class League {
         return this.series;
     }
 
+    /**
+     * Sets series for league object
+     * @param series The list of series to assign to the league object
+     */
     public void setSeries(List<Series> series) {
         this.series = series;
     }

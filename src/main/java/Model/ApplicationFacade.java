@@ -290,9 +290,8 @@ public class ApplicationFacade {
                     seriesOutput = seriesOutput.concat("\n\twinner id: ").concat(t.getWinnerID());
                     seriesOutput = seriesOutput.concat("\n\twinner type: ").concat(t.getWinnerType());
                     seriesOutput = seriesOutput.concat("\n");
-                    seriesOutput = seriesOutput.concat("\n");
                 }
-                seriesOutput = seriesOutput.concat("\nvideo game:");
+                seriesOutput = seriesOutput.concat("video game:");
                 seriesOutput = seriesOutput.concat("\n\tid: ").concat(currentSeries.getVideoGameID());
                 seriesOutput = seriesOutput.concat("\n\tname: ").concat(currentSeries.getVideoGameName());
                 seriesOutput = seriesOutput.concat("\n\tslug: ").concat(currentSeries.getVideoGameSlug());
