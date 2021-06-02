@@ -126,9 +126,8 @@ public class ApplicationFacade {
                     leagueOutput = (leagueOutput.concat("\n\twinner type: ")).concat(s.getWinnerType());
                     leagueOutput = (leagueOutput.concat("\n\tyear: ")).concat(s.getYear());
                     leagueOutput = leagueOutput.concat("\n");
-                    leagueOutput = leagueOutput.concat("\n");
                 }
-                leagueOutput = leagueOutput.concat("\nvideo game:");
+                leagueOutput = leagueOutput.concat("video game:");
                 leagueOutput = (leagueOutput.concat("\n\tcurrent version: ")).concat(currentLeague.getVideoGameCurrentVersion());
                 leagueOutput = (leagueOutput.concat("\n\tid: ")).concat(currentLeague.getVideoGameID());
                 leagueOutput = (leagueOutput.concat("\n\tname: ")).concat(currentLeague.getVideoGameName());

@@ -160,6 +160,14 @@ public class ApplicationFacadeTest {
         assertTrue(output.contains("slug: cs-go-hyperion-x-oel-launch-2021"));
         assertTrue(output.contains("tier: d"));
 
+        assertTrue(output.contains("league:"));
+        assertTrue(output.contains("id: 4590"));
+        assertTrue(output.contains("image url: https://cdn.pandascore.co/images/league/image/4590/600px-Oceanic_Esports.png"));
+        assertTrue(output.contains("modified at: 2021-05-18T07:34:18Z"));
+        assertTrue(output.contains("name: Hyperion x OEL Launch"));
+        assertTrue(output.contains("slug: cs-go-hyperion-x-oel-launch"));
+        assertTrue(output.contains("url: "));
+
         assertTrue(output.contains("tournaments:"));
         assertTrue(output.contains("begin at: 2021-05-19T04:00:00Z"));
         assertTrue(output.contains("end at: 2021-05-23T14:10:00Z"));
@@ -235,6 +243,14 @@ public class ApplicationFacadeTest {
         assertTrue(output.contains("season: null"));
         assertTrue(output.contains("slug: cs-go-hyperion-x-oel-launch-2021"));
         assertTrue(output.contains("tier: d"));
+
+        assertTrue(output.contains("league:"));
+        assertTrue(output.contains("id: 4590"));
+        assertTrue(output.contains("image url: https://cdn.pandascore.co/images/league/image/4590/600px-Oceanic_Esports.png"));
+        assertTrue(output.contains("modified at: 2021-05-18T07:34:18Z"));
+        assertTrue(output.contains("name: Hyperion x OEL Launch"));
+        assertTrue(output.contains("slug: cs-go-hyperion-x-oel-launch"));
+        assertTrue(output.contains("url: "));
 
         assertTrue(output.contains("tournaments:"));
         assertTrue(output.contains("begin at: 2021-05-19T04:00:00Z"));
