@@ -13,7 +13,6 @@ public class League {
     private List<Series> series;
     private String slug;
     private String url;
-    private VideoGame videoGame;
     private String videoGameCurrentVersion;
     private String videoGameID;
     private String videoGameName;
@@ -158,14 +157,6 @@ public class League {
         } else {
             this.url = (String) url;
         }
-    }
-
-    /**
-     * Simple accessor for videogame
-     * @return league videogame
-     */
-    public VideoGame getVideoGame() {
-        return this.videoGame;
     }
 
     /**

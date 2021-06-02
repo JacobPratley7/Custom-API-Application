@@ -79,8 +79,6 @@ public class ApplicationWindow {
 
         //leaguesPage
         VBox leaguePageLayout = new VBox(10);
-        Label sendLeagueDataLabel = new Label("Send this data?");
-        sendLeagueDataLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
         Button sendLeagueData = new Button("Send");
         Label leagues = new Label("Leagues:");
         leagues.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
@@ -90,7 +88,7 @@ public class ApplicationWindow {
         returnButton.setOnAction(e -> {window.setScene(homePage);});
 
 
-        leaguePageLayout.getChildren().addAll(sendLeagueDataLabel, leagues,
+        leaguePageLayout.getChildren().addAll(leagues,
                 leagueDataText, returnButton);
 
         ScrollPane leagueScrollPane = new ScrollPane();
