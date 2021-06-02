@@ -1,6 +1,7 @@
 package View;
 
 import Model.ApplicationFacade;
+import Controller.ApplicationController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Orientation;
@@ -21,14 +22,13 @@ import java.util.List;
 public class ApplicationWindow {
 
     private Stage window;
-    private ApplicationFacade appFacade;
-    private ApplicationFacade model;
+    private ApplicationController controller;
     private Scene homePage, leaguesPage, seriesPage, sentDataPage;
 
 
-    public ApplicationWindow(Stage window, ApplicationFacade appFacade) {
+    public ApplicationWindow(Stage window, ApplicationController controller) {
         this.window = window;
-        this.appFacade = appFacade;
+        this.controller = controller;
     }
 
     /**
@@ -52,7 +52,7 @@ public class ApplicationWindow {
         Button getLeagueData = new Button("Get League Data");
         getLeagueData.setOnAction(e -> {window.setScene(leaguesPage);
             try {
-                leagueDataText.setText(appFacade.getLeagueData());
+                leagueDataText.setText(controller.getLeagueData());
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -63,7 +63,7 @@ public class ApplicationWindow {
         Button getSeriesData = new Button("Get Series Data");
         getSeriesData.setOnAction(e -> {window.setScene(seriesPage);
             try {
-                seriesDataText.setText(appFacade.getSeriesData(leagueIDSlug.getText()));
+                seriesDataText.setText(controller.getSeriesData(leagueIDSlug.getText()));
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -106,7 +106,7 @@ public class ApplicationWindow {
 
         sendSeriesData.setOnAction(e -> {window.setScene(sentDataPage);
             try {
-                sentDataText.setText(appFacade.sendReport());
+                sentDataText.setText(controller.sendReport());
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -133,6 +133,8 @@ public class ApplicationWindow {
         sentDataPage = new Scene(sentDataLayout, 800, 640);
 
         window.setScene(homePage);
+        window.setTitle("My Application");
+        window.show();
     }
 
 

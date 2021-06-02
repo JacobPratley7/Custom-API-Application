@@ -1,3 +1,4 @@
+import Controller.ApplicationController;
 import Model.ApplicationFacade;
 import Model.InputAPI.InputFetcherDummy;
 import Model.InputAPI.InputFetcherImpl;
@@ -9,29 +10,25 @@ import javafx.stage.Stage;
 
 public class MainApplication extends Application {
 
-    private static ApplicationManager manager;
+    private static ApplicationController controller;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Stage window = primaryStage;
+        this.controller.setAppWindow(primaryStage);
 
-        ApplicationWindow appWindow = new ApplicationWindow(window, manager.getAppFacade());
+
+        ApplicationWindow appWindow = controller.getAppWindow();
         appWindow.initialize();
-
-        window.setTitle("My Application");
-        window.show();
-
-
     }
 
-    private static void initializeManager(String inputMode, String outputMode) {
-        manager = new ApplicationManager(inputMode, outputMode);
+    private static void initializeController(String inputMode, String outputMode) {
+        controller = new ApplicationController(inputMode, outputMode);
     }
 
 
     public static void main(String[] args) throws IOException {
-        initializeManager(args[0], args[1]);
+        initializeController(args[0], args[1]);
 
         launch(args);
     }

@@ -14,13 +14,15 @@ Model/OutputAPI/ReportSenderImpl.java
  Model.OutputAPI.ReportSenderImpl
 Model/InputAPI/InputObjects/Tournament.java
  Model.InputAPI.InputObjects.Tournament
+Model/InputAPI/InputObjects/League.java
+ Model.InputAPI.InputObjects.League
+Model/ApplicationFacade.java
+ Model.ApplicationFacade
+Model/InputAPI/InputObjects/Series.java
+ Model.InputAPI.InputObjects.Series
 MainApplication.java
  MainApplication
 View/ApplicationWindow.java
  View.ApplicationWindow
-Model/InputAPI/InputObjects/Series.java
- Model.InputAPI.InputObjects.Series
-Model/ApplicationFacade.java
- Model.ApplicationFacade
-Model/InputAPI/InputObjects/League.java
- Model.InputAPI.InputObjects.League
+Controller/ApplicationController.java
+ Controller.ApplicationController
