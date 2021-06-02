@@ -25,6 +25,7 @@ public class Series {
     private String videoGameSlug;
     private String videoGameName;
     private List<Tournament> tournaments;
+    private League league;
 
 
     /**
@@ -406,6 +407,14 @@ public class Series {
      */
     public void setTournaments(List<Tournament> tournaments) {
         this.tournaments = tournaments;
+    }
+
+    public League getLeague() {
+        return this.league;
+    }
+
+    public void setLeague(League league) {
+        this.league = league;
     }
 
 

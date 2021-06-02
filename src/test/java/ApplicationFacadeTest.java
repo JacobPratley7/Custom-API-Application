@@ -45,6 +45,21 @@ public class ApplicationFacadeTest {
         assertTrue(output.contains("name: CS:GO"));
         assertTrue(output.contains("slug: cs-go"));
 
+        assertTrue(output.contains("begin at: 2021-05-19T04:00:00Z"));
+        assertTrue(output.contains("description: null"));
+        assertTrue(output.contains("end at: 2021-05-23T14:10:00Z"));
+        assertTrue(output.contains("full name: 2021"));
+        assertTrue(output.contains("id: 3621"));
+        assertTrue(output.contains("league id: 4590"));
+        assertTrue(output.contains("modified at: 2021-05-23T18:55:54Z"));
+        assertTrue(output.contains("name: null"));
+        assertTrue(output.contains("slug: cs-go-hyperion-x-oel-launch-2021"));
+        assertTrue(output.contains("tier: d"));
+        assertTrue(output.contains("winner id: 126439"));
+        assertTrue(output.contains("winner type: Team"));
+        assertTrue(output.contains("year: 2021"));
+        assertTrue(output.contains("season: null"));
+
 
     }
 
@@ -73,6 +88,21 @@ public class ApplicationFacadeTest {
         assertTrue(output.contains("id: 3"));
         assertTrue(output.contains("name: CS:GO"));
         assertTrue(output.contains("slug: cs-go"));
+
+        assertTrue(output.contains("begin at: 2021-05-19T04:00:00Z"));
+        assertTrue(output.contains("description: null"));
+        assertTrue(output.contains("end at: 2021-05-23T14:10:00Z"));
+        assertTrue(output.contains("full name: 2021"));
+        assertTrue(output.contains("id: 3621"));
+        assertTrue(output.contains("league id: 4590"));
+        assertTrue(output.contains("modified at: 2021-05-23T18:55:54Z"));
+        assertTrue(output.contains("name: null"));
+        assertTrue(output.contains("slug: cs-go-hyperion-x-oel-launch-2021"));
+        assertTrue(output.contains("tier: d"));
+        assertTrue(output.contains("winner id: 126439"));
+        assertTrue(output.contains("winner type: Team"));
+        assertTrue(output.contains("year: 2021"));
+        assertTrue(output.contains("season: null"));
     }
 
     @Test

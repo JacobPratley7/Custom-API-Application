@@ -112,6 +112,10 @@ public class League {
         return this.series;
     }
 
+    public void setSeries(List<Series> series) {
+        this.series = series;
+    }
+
     /**
      * Simple accessor for slug
      * @return league slug
@@ -240,6 +244,7 @@ public class League {
             this.videoGameSlug = (String) slug;
         }
     }
+
 
 
 

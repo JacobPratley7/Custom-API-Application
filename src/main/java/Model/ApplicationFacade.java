@@ -67,6 +67,7 @@ public class ApplicationFacade {
         newLeague.setName(leagueData.get("name"));
         newLeague.setSlug(leagueData.get("slug"));
         newLeague.setUrl(leagueData.get("url"));
+        JSONArray series = leagueData.getJSONArray("series");
         org.json.JSONObject videoGame = leagueData.getJSONObject("videogame");
         newLeague.setVideoGameCurrentVersion(videoGame.get("current_version"));
         newLeague.setVideoGameName(videoGame.get("name"));
@@ -111,6 +112,8 @@ public class ApplicationFacade {
             return leagueOutput;
         }
     }
+
+
 
     private Series convertToSeriesObject(org.json.JSONObject seriesData) {
         Series newSeries = new Series();
