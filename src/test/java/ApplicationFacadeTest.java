@@ -330,5 +330,38 @@ public class ApplicationFacadeTest {
         assertTrue(output.contains("more info: https://www.twilio.com/docs/errors/20404"));
     }
 
+    @Test
+    public void testGetSeriesDataInputNull() throws IOException {
+        InputFetcher imp = mock(InputFetcherImpl.class);
+        when(imp.getSeries(anyString(), anyString())).thenReturn("[{\"begin_at\":\"2021-05-19T04:00:00Z\",\"description\":null,\"end_at\":\"2021-05-23T14:10:00Z\",\"full_name\":\"2021\",\"id\":3621,\"league\":{\"id\":4590,\"image_url\":\"https://cdn.pandascore.co/images/league/image/4590/600px-Oceanic_Esports.png\",\"modified_at\":\"2021-05-18T07:34:18Z\",\"name\":\"Hyperion x OEL Launch\",\"slug\":\"cs-go-hyperion-x-oel-launch\",\"url\":\"\"},\"league_id\":4590,\"modified_at\":\"2021-05-23T18:55:54Z\",\"name\":null,\"season\":null,\"slug\":\"cs-go-hyperion-x-oel-launch-2021\",\"tier\":\"d\",\"tournaments\":[{\"begin_at\":\"2021-05-19T04:00:00Z\",\"end_at\":\"2021-05-23T14:10:00Z\",\"id\":6082,\"league_id\":4590,\"live_supported\":false,\"modified_at\":\"2021-05-24T08:29:01Z\",\"name\":\"Playoffs\",\"prizepool\":null,\"serie_id\":3621,\"slug\":\"cs-go-hyperion-x-oel-launch-2021-playoffs\",\"winner_id\":126439,\"winner_type\":\"Team\"}],\"videogame\":{\"id\":3,\"name\":\"CS:GO\",\"slug\":\"cs-go\"},\"videogame_title\":null,\"winner_id\":126439,\"winner_type\":\"Team\",\"year\":2021}]");
+        ReportSender repSender = mock(ReportSenderImpl.class);
+        when(repSender.sendMessage(anyString(), anyString(), anyString(), anyString(), anyString())).thenReturn("{\"code\": 20404, \"message\": \"The requested resource /2010-04-01/Accounts/test/Messages.json was not found\", \"more_info\": \"https://www.twilio.com/docs/errors/20404\", \"status\": 404}");
+        ApplicationFacade appFacade = new ApplicationFacade(imp, repSender);
+        String output = appFacade.getSeriesData(null);
+        assertTrue(output.contains("error: please provide a valid id or slug"));
+    }
+
+    @Test
+    public void testGetSeriesDataInputEmpty() throws IOException {
+        InputFetcher imp = mock(InputFetcherImpl.class);
+        when(imp.getSeries(anyString(), anyString())).thenReturn("[{\"begin_at\":\"2021-05-19T04:00:00Z\",\"description\":null,\"end_at\":\"2021-05-23T14:10:00Z\",\"full_name\":\"2021\",\"id\":3621,\"league\":{\"id\":4590,\"image_url\":\"https://cdn.pandascore.co/images/league/image/4590/600px-Oceanic_Esports.png\",\"modified_at\":\"2021-05-18T07:34:18Z\",\"name\":\"Hyperion x OEL Launch\",\"slug\":\"cs-go-hyperion-x-oel-launch\",\"url\":\"\"},\"league_id\":4590,\"modified_at\":\"2021-05-23T18:55:54Z\",\"name\":null,\"season\":null,\"slug\":\"cs-go-hyperion-x-oel-launch-2021\",\"tier\":\"d\",\"tournaments\":[{\"begin_at\":\"2021-05-19T04:00:00Z\",\"end_at\":\"2021-05-23T14:10:00Z\",\"id\":6082,\"league_id\":4590,\"live_supported\":false,\"modified_at\":\"2021-05-24T08:29:01Z\",\"name\":\"Playoffs\",\"prizepool\":null,\"serie_id\":3621,\"slug\":\"cs-go-hyperion-x-oel-launch-2021-playoffs\",\"winner_id\":126439,\"winner_type\":\"Team\"}],\"videogame\":{\"id\":3,\"name\":\"CS:GO\",\"slug\":\"cs-go\"},\"videogame_title\":null,\"winner_id\":126439,\"winner_type\":\"Team\",\"year\":2021}]");
+        ReportSender repSender = mock(ReportSenderImpl.class);
+        when(repSender.sendMessage(anyString(), anyString(), anyString(), anyString(), anyString())).thenReturn("{\"code\": 20404, \"message\": \"The requested resource /2010-04-01/Accounts/test/Messages.json was not found\", \"more_info\": \"https://www.twilio.com/docs/errors/20404\", \"status\": 404}");
+        ApplicationFacade appFacade = new ApplicationFacade(imp, repSender);
+        String output = appFacade.getSeriesData("");
+        assertTrue(output.contains("error: please provide a valid id or slug"));
+    }
+
+    @Test
+    public void testGetSeriesDataInputNonASCII() throws IOException {
+        InputFetcher imp = mock(InputFetcherImpl.class);
+        when(imp.getSeries(anyString(), anyString())).thenReturn("[{\"begin_at\":\"2021-05-19T04:00:00Z\",\"description\":null,\"end_at\":\"2021-05-23T14:10:00Z\",\"full_name\":\"2021\",\"id\":3621,\"league\":{\"id\":4590,\"image_url\":\"https://cdn.pandascore.co/images/league/image/4590/600px-Oceanic_Esports.png\",\"modified_at\":\"2021-05-18T07:34:18Z\",\"name\":\"Hyperion x OEL Launch\",\"slug\":\"cs-go-hyperion-x-oel-launch\",\"url\":\"\"},\"league_id\":4590,\"modified_at\":\"2021-05-23T18:55:54Z\",\"name\":null,\"season\":null,\"slug\":\"cs-go-hyperion-x-oel-launch-2021\",\"tier\":\"d\",\"tournaments\":[{\"begin_at\":\"2021-05-19T04:00:00Z\",\"end_at\":\"2021-05-23T14:10:00Z\",\"id\":6082,\"league_id\":4590,\"live_supported\":false,\"modified_at\":\"2021-05-24T08:29:01Z\",\"name\":\"Playoffs\",\"prizepool\":null,\"serie_id\":3621,\"slug\":\"cs-go-hyperion-x-oel-launch-2021-playoffs\",\"winner_id\":126439,\"winner_type\":\"Team\"}],\"videogame\":{\"id\":3,\"name\":\"CS:GO\",\"slug\":\"cs-go\"},\"videogame_title\":null,\"winner_id\":126439,\"winner_type\":\"Team\",\"year\":2021}]");
+        ReportSender repSender = mock(ReportSenderImpl.class);
+        when(repSender.sendMessage(anyString(), anyString(), anyString(), anyString(), anyString())).thenReturn("{\"code\": 20404, \"message\": \"The requested resource /2010-04-01/Accounts/test/Messages.json was not found\", \"more_info\": \"https://www.twilio.com/docs/errors/20404\", \"status\": 404}");
+        ApplicationFacade appFacade = new ApplicationFacade(imp, repSender);
+        String output = appFacade.getSeriesData("®");
+        assertTrue(output.contains("error: please provide a valid id or slug"));
+    }
+
 
 }
