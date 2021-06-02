@@ -57,6 +57,16 @@ public class ApplicationFacade {
         }
     }
 
+    private League convertToLeagueObjectSimple(org.json.JSONObject leagueData) {
+        League newLeague = new League();
+        newLeague.setID(leagueData.get("id"));
+        newLeague.setImageUrl(leagueData.get("image_url"));
+        newLeague.setModifiedAt(leagueData.get("modified_at"));
+        newLeague.setName(leagueData.get("name"));
+        newLeague.setSlug(leagueData.get("slug"));
+        newLeague.setUrl(leagueData.get("url"));
+        return newLeague;
+    }
 
 
     private League convertToLeagueObject(org.json.JSONObject leagueData) {
@@ -173,6 +183,11 @@ public class ApplicationFacade {
         newSeries.setSeason(seriesData.get("season"));
         newSeries.setSlug(seriesData.get("slug"));
         newSeries.setTier(seriesData.get("tier"));
+
+        org.json.JSONObject newLeagueData = seriesData.getJSONObject("league");
+        League newLeague = convertToLeagueObjectSimple(newLeagueData);
+        newSeries.setLeague(newLeague);
+
         newSeries.setVideoGameTitle(seriesData.get("videogame_title"));
         newSeries.setWinnerId(seriesData.get("winner_id"));
         newSeries.setWinnerType(seriesData.get("winner_type"));
@@ -251,6 +266,14 @@ public class ApplicationFacade {
                 seriesOutput = (seriesOutput.concat("\nseason: ")).concat(currentSeries.getSeason());
                 seriesOutput = (seriesOutput.concat("\nslug: ")).concat(currentSeries.getSlug());
                 seriesOutput = (seriesOutput.concat("\ntier: ")).concat(currentSeries.getTier());
+                seriesOutput = seriesOutput.concat("\nleague: ");
+                seriesOutput = (seriesOutput.concat("\n\tid: ")).concat(currentSeries.getLeague().getID());
+                seriesOutput = (seriesOutput.concat("\n\timage url: ")).concat(currentSeries.getLeague().getImageUrl());
+                seriesOutput = (seriesOutput.concat("\n\tmodified at: ")).concat(currentSeries.getLeague().getModifiedAt());
+                seriesOutput = (seriesOutput.concat("\n\tname: ")).concat(currentSeries.getLeague().getName());
+                seriesOutput = (seriesOutput.concat("\n\tslug: ")).concat(currentSeries.getLeague().getSlug());
+                seriesOutput = (seriesOutput.concat("\n\turl: ")).concat(currentSeries.getLeague().getUrl());
+
                 seriesOutput = seriesOutput.concat("\ntournaments:");
                 List<Tournament> currentTournaments = currentSeries.getTournaments();
                 for(Tournament t: currentTournaments) {
