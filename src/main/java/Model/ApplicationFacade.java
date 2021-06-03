@@ -41,7 +41,9 @@ public class ApplicationFacade {
         this.reportSender = reportSender;
         this.dbManager = dbManager;
 
-
+        this.dbManager.deleteTable();
+        this.dbManager.createTable();
+        this.dbManager.insertData("{\"error\":\"no cached data available\"}");
 
         JSONParser jsonParser = new JSONParser();
         try {
@@ -109,7 +111,13 @@ public class ApplicationFacade {
      */
     public String getLeagueData(boolean cachedDataWanted) throws IOException {
 
-        String jsonData = this.inputFetcher.getLeagues(inputAuth);
+        String jsonData = null;
+        if(cachedDataWanted) {
+            jsonData = this.dbManager.retrieveData();
+        } else {
+            jsonData = this.inputFetcher.getLeagues(inputAuth);
+            this.dbManager.updateData(jsonData);
+        }
 
         if(jsonData.contains("error")) {
             org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
