@@ -1,5 +1,6 @@
 package Model;
 
+import Model.Database.DataBaseManager;
 import Model.InputAPI.InputFetcher;
 import Model.InputAPI.InputObjects.League;
 import Model.InputAPI.InputObjects.Series;
@@ -26,6 +27,7 @@ public class ApplicationFacade {
     private String twilioNumber;
     private InputFetcher inputFetcher;
     private ReportSender reportSender;
+    private DataBaseManager dbManager;
     private List<Series> lastRetrievedSeries;
 
     /**
@@ -55,6 +57,8 @@ public class ApplicationFacade {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
     }
 
     private League convertToLeagueObjectSimple(org.json.JSONObject leagueData) {

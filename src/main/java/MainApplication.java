@@ -19,16 +19,7 @@ public class MainApplication extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         this.controller.setAppWindow(primaryStage);
-
-        DataBaseManager db = new DataBaseManager();
-        System.out.println(db.deleteTable());
-        System.out.println(db.createTable());
-        System.out.println(db.insertData("hello there"));
-        System.out.println(db.retrieveData());
-        System.out.println(db.updateData("general kenobi"));
-        System.out.println(db.retrieveData());
-
-
+        
 
         ApplicationWindow appWindow = controller.getAppWindow();
         appWindow.initialize();
