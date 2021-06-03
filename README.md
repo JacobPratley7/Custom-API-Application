@@ -9,10 +9,10 @@ last working commit: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit
 
 # Acknowledgements
 For the code relating to the database components, a majority of the code used was a combination of the following links. I do not claim that this code is my own.
-https://www.sqlitetutorial.net/sqlite-java/create-database/
-https://www.javatpoint.com/java-sqlite
-https://www.sqlitetutorial.net/sqlite-java/create-table/
-https://www.sqlitetutorial.net/sqlite-java/update/
+- https://www.sqlitetutorial.net/sqlite-java/create-database/
+- https://www.javatpoint.com/java-sqlite
+- https://www.sqlitetutorial.net/sqlite-java/create-table/
+- https://www.sqlitetutorial.net/sqlite-java/update/
 # RED-GREEN-REFACTOR LOG
 
 1. ApplicationFacadeLeagueOperations
