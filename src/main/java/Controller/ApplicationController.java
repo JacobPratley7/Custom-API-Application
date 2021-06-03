@@ -27,19 +27,24 @@ public class ApplicationController {
      * @return new ApplicationManager instance
      */
     public ApplicationController(String inputMode, String outputMode) {
-        InputFetcher inFetcher;
-        ReportSender repSender;
+        InputFetcher inFetcher = null;
+        ReportSender repSender = null;
         if(inputMode.equals("online")) {
             inFetcher = new InputFetcherImpl();
-        } else {
+        } else if(inputMode.equals("offline")){
             inFetcher = new InputFetcherDummy();
+        } else {
+            System.out.println("Please provide a valid input mode");
+            System.exit(0);
         }
 
         if(outputMode.equals("online")) {
             repSender = new ReportSenderImpl();
-        } else {
-
+        } else if(outputMode.equals("offline")){
             repSender = new ReportSenderDummy();
+        } else {
+            System.out.println("Please provide a valid output mode");
+            System.exit(0);
         }
 
         this.appFacade = new ApplicationFacade(inFetcher, repSender);
