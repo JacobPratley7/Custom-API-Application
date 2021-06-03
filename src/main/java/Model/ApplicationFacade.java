@@ -230,7 +230,17 @@ public class ApplicationFacade {
 
 
 
+    private boolean confirmInputValid(String input) {
+        if(input == null) {
+            return false;
+        }
 
+        if(input.equals("")) {
+            return false;
+        }
+
+        return input.chars().allMatch(c -> c < 128);
+    }
 
 
     /**
@@ -242,6 +252,9 @@ public class ApplicationFacade {
      * @throws IOException if error is to occur whilst accessing input API
      */
     public String getSeriesData(String leagueID) throws IOException {
+        if(confirmInputValid(leagueID) == false) {
+            return "error: please provide a valid id or slug";
+        }
         String jsonData = this.inputFetcher.getSeries(inputAuth, leagueID);
         if(jsonData.contains("error")) {
             this.lastRetrievedSeries = null;
