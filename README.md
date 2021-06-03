@@ -45,3 +45,7 @@ last working commit: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit
 7. ApplicationFacadeSeriesOperations: updated to display series data
 - RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/a8aed4ed5daa26fa0e7dab94b13bf40ab7466f92
 - GREEN: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/7f458b2001ac4846667e251049aaa3e1854f0035
+
+7. ApplicationFacadeSeriesOperationsDefensiveChecks
+ - RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/fe12df0fa9e1b5af90bc78c009542fe9eb03cd4e
+ - GREEN
