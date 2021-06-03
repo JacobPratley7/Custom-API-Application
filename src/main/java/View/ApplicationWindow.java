@@ -23,7 +23,7 @@ public class ApplicationWindow {
 
     private Stage window;
     private ApplicationController controller;
-    private Scene homePage, leaguesPage, seriesPage, sentDataPage;
+    private Scene homePage, leaguesPage, seriesPage, sentDataPage, inputModePage;
 
 
     public ApplicationWindow(Stage window, ApplicationController controller) {
@@ -50,13 +50,7 @@ public class ApplicationWindow {
         getLeaguesLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
         homePageLabel.setFont(new Font("Modena", 30));
         Button getLeagueData = new Button("Get League Data");
-        getLeagueData.setOnAction(e -> {window.setScene(leaguesPage);
-            try {
-                leagueDataText.setText(controller.getLeagueData(false));
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        });
+        getLeagueData.setOnAction(e -> {window.setScene(inputModePage);});
 
         Label getSeriesLabel = new Label("Get Information on Series for a particular League");
         getSeriesLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
@@ -75,6 +69,31 @@ public class ApplicationWindow {
                 getSeriesLabel, leagueIDSlug, getSeriesData);
 
         homePage = new Scene(homePageLayout, 800, 640);
+
+        //inputModePage
+        VBox inputModeLayout = new VBox(10);
+        Label inputModeLabel = new Label("Would you like live or cached data?");
+        inputModeLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
+        Button cachedData = new Button("Get cached data");
+        Button liveData = new Button("Get live data");
+        cachedData.setOnAction(e -> {window.setScene(leaguesPage);
+            try {
+                leagueDataText.setText(controller.getLeagueData(true));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+        liveData.setOnAction(e -> {window.setScene(leaguesPage);
+            try {
+                leagueDataText.setText(controller.getLeagueData(false));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+
+        inputModeLayout.getChildren().addAll(inputModeLabel, liveData, cachedData);
+        inputModePage = new Scene(inputModeLayout, 800, 640);
+
 
 
         //leaguesPage
