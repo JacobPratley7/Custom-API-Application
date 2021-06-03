@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.ApplicationFacade;
+import Model.Database.DataBaseManager;
 import Model.InputAPI.InputFetcher;
 import Model.InputAPI.InputFetcherDummy;
 import Model.InputAPI.InputFetcherImpl;
@@ -47,7 +48,7 @@ public class ApplicationController {
             System.exit(0);
         }
 
-        this.appFacade = new ApplicationFacade(inFetcher, repSender, null);
+        this.appFacade = new ApplicationFacade(inFetcher, repSender, new DataBaseManager());
     }
 
 
