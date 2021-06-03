@@ -7,7 +7,12 @@ To run the application, you will need to modify the configuration file, "config.
 
 last working commit: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/6eb5426de4c49540487e54133e4100538e5ef712
 
-
+# Acknowledgements
+For the code relating to the database components, a majority of the code used was a combination of the following links. I do not claim that this code is my own.
+https://www.sqlitetutorial.net/sqlite-java/create-database/
+https://www.javatpoint.com/java-sqlite
+https://www.sqlitetutorial.net/sqlite-java/create-table/
+https://www.sqlitetutorial.net/sqlite-java/update/
 # RED-GREEN-REFACTOR LOG
 
 1. ApplicationFacadeLeagueOperations
