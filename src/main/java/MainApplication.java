@@ -19,7 +19,7 @@ public class MainApplication extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         this.controller.setAppWindow(primaryStage);
-        
+
 
         ApplicationWindow appWindow = controller.getAppWindow();
         appWindow.initialize();

@@ -7,7 +7,7 @@ public class DataBaseManager {
     private static Connection dbConnection;
     private static String url = "jdbc:sqlite:C:myDatabase.db";
 
-    public static String deleteTable() {
+    public String deleteTable() {
         try {
             dbConnection = DriverManager.getConnection(url);
             Statement deleteTableStatement = dbConnection.createStatement();
@@ -29,7 +29,7 @@ public class DataBaseManager {
         }
     }
 
-    public static String createTable() {
+    public String createTable() {
         try {
             dbConnection = DriverManager.getConnection(url);
             Statement createTableStatement = dbConnection.createStatement();
@@ -50,7 +50,7 @@ public class DataBaseManager {
         }
     }
 
-    public static String insertData(String data) {
+    public String insertData(String data) {
         String query = "INSERT INTO Leagues(id, league) VALUES(?,?)";
         try {
             dbConnection = DriverManager.getConnection(url);
@@ -73,7 +73,7 @@ public class DataBaseManager {
         }
     }
 
-    public static String updateData(String data) {
+    public String updateData(String data) {
         String query = "UPDATE Leagues SET league=? WHERE id=?";
         try {
             dbConnection = DriverManager.getConnection(url);
@@ -96,7 +96,7 @@ public class DataBaseManager {
         }
     }
 
-    public static String retrieveData() {
+    public String retrieveData() {
         String query = "SELECT league FROM Leagues WHERE id=1";
         try {
             dbConnection = DriverManager.getConnection(url);

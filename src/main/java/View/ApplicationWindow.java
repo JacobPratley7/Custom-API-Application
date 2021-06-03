@@ -52,7 +52,7 @@ public class ApplicationWindow {
         Button getLeagueData = new Button("Get League Data");
         getLeagueData.setOnAction(e -> {window.setScene(leaguesPage);
             try {
-                leagueDataText.setText(controller.getLeagueData());
+                leagueDataText.setText(controller.getLeagueData(false));
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }

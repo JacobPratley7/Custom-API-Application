@@ -47,14 +47,14 @@ public class ApplicationController {
             System.exit(0);
         }
 
-        this.appFacade = new ApplicationFacade(inFetcher, repSender);
+        this.appFacade = new ApplicationFacade(inFetcher, repSender, null);
     }
 
 
 
     /** Calls the stored ApplicationFacade, returns league data */
-    public String getLeagueData() throws IOException {
-        return this.appFacade.getLeagueData();
+    public String getLeagueData(boolean cachedDataWanted) throws IOException {
+        return this.appFacade.getLeagueData(cachedDataWanted);
     }
 
     /** Calls the stored ApplicationFacade, returns series data */

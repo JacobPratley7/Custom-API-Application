@@ -36,9 +36,12 @@ public class ApplicationFacade {
      * @param reportSender The ReportSender object used to access the output API
      * @return new ApplicationFacade instance
      */
-    public ApplicationFacade(InputFetcher inputFetcher, ReportSender reportSender) {
+    public ApplicationFacade(InputFetcher inputFetcher, ReportSender reportSender, DataBaseManager dbManager) {
         this.inputFetcher = inputFetcher;
         this.reportSender = reportSender;
+        this.dbManager = dbManager;
+
+
 
         JSONParser jsonParser = new JSONParser();
         try {
@@ -104,8 +107,10 @@ public class ApplicationFacade {
      * @return String in human readable format representing league data
      * @throws IOException if error is to occur whilst accessing input API
      */
-    public String getLeagueData() throws IOException {
+    public String getLeagueData(boolean cachedDataWanted) throws IOException {
+
         String jsonData = this.inputFetcher.getLeagues(inputAuth);
+
         if(jsonData.contains("error")) {
             org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
             String output = "error: ".concat(errorMessage.getString("error"));
