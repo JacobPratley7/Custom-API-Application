@@ -68,7 +68,7 @@ public class InputFormatterTest {
         InputFormatter formatter = new InputFormatter();
 
         List<Series> series = new ArrayList<>();
-        String output = formatter.generateSeriesOutput(json, series);
+        String output = formatter.generateSeriesOutput(json);
 
         assertNotNull(output);
 
@@ -124,7 +124,7 @@ public class InputFormatterTest {
         InputFormatter formatter = new InputFormatter();
 
         List<Series> series = new ArrayList<>();
-        String output = formatter.generateSeriesOutput(json, series);
+        String output = formatter.generateSeriesOutput(json);
 
         assertNotNull(output);
 

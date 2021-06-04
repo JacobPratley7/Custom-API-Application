@@ -182,20 +182,17 @@ public class InputFormatter {
      * @param jsonData The string containing data on series
      * @return List String containing series data, formatted in a human readable way
      */
-    public String generateSeriesOutput(String jsonData, List<Series> lastRetrievedSeries) {
+    public String generateSeriesOutput(String jsonData) {
         if(jsonData.contains("error")) {
-            lastRetrievedSeries = null;
             org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
             String output = "error: ".concat(errorMessage.getString("error"));
             return output;
         } else {
-            lastRetrievedSeries = new ArrayList<>();
             JSONArray seriesData = new JSONArray(jsonData);
             String seriesOutput = "";
             for(int i = 0; i < seriesData.length(); i++) {
                 org.json.JSONObject current = (org.json.JSONObject) seriesData.get(i);
                 Series currentSeries = convertToSeriesObject(current);
-                lastRetrievedSeries.add(currentSeries);
                 seriesOutput = (seriesOutput.concat("begin at: ")).concat(currentSeries.getBeginAt());
                 seriesOutput = (seriesOutput.concat("\ndescription: ")).concat(currentSeries.getDescription());
                 seriesOutput = (seriesOutput.concat("\nend at: ")).concat(currentSeries.getEndAt());
