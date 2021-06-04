@@ -113,4 +113,8 @@ public class InputFormatter {
 
         return newSeries;
     }
+
+    public String generateSeriesOutput(String jsonData, List<Series> lastRetrievedSeries) {
+        return null;
+    }
 }
