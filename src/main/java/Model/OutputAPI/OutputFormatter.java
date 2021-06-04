@@ -2,10 +2,16 @@ package Model.OutputAPI;
 
 import Model.InputAPI.InputObjects.Series;
 
+import java.io.IOException;
 import java.util.List;
 
 public class OutputFormatter {
 
+    /**
+     * Generates a report and sends it the the pre-configured number.
+     * Returns a string displaying the report that will display the message was sent successfully,
+     * @return String displaying the report
+     */
     public String generateReport(List<Series> lastRetrievedSeries) {
         if(lastRetrievedSeries == null) {
             System.out.println("hi");

@@ -46,6 +46,11 @@ public class InputFormatter {
         return newLeague;
     }
 
+    /**
+     * Generates a String representing data on all the leagues present in the given json String
+     * @param jsonData The string containing data on leagues
+     * @return List String containing leagues data, formatted in a human readable way
+     */
     public String generateLeagueOutput(String jsonData) {
         if(jsonData.contains("error")) {
             org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
@@ -172,6 +177,11 @@ public class InputFormatter {
         return newTournament;
     }
 
+    /**
+     * Generates a String representing data pn all the series present in the given json String
+     * @param jsonData The string containing data on series
+     * @return List String containing series data, formatted in a human readable way
+     */
     public String generateSeriesOutput(String jsonData, List<Series> lastRetrievedSeries) {
         if(jsonData.contains("error")) {
             lastRetrievedSeries = null;
@@ -238,6 +248,11 @@ public class InputFormatter {
         }
     }
 
+    /**
+     * Generates a list of series objects given a json string
+     * @param jsonData The string containing data on series
+     * @return List of series objects
+     */
     public List<Series> generateSeriesList(String jsonData) {
         List<Series> lastRetrievedSeries = new ArrayList<>();
         JSONArray seriesData = new JSONArray(jsonData);

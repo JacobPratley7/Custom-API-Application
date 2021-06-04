@@ -47,10 +47,14 @@ public class ApplicationFacade {
         this.inputFormatter = new InputFormatter();
         this.outputFormatter = new OutputFormatter();
 
-        this.dbManager.deleteTable();
-        this.dbManager.createTable();
-        this.dbManager.insertData("{\"error\":\"no cached data available\"}");
+//        this.dbManager.deleteTable();
+//        this.dbManager.createTable();
+//        this.dbManager.insertData("{\"error\":\"no cached data available\"}");
 
+        readConfigFile();
+    }
+
+    private void readConfigFile() {
         JSONParser jsonParser = new JSONParser();
         try {
             Object fileContents = jsonParser.parse(new FileReader("config.json"));
@@ -68,8 +72,6 @@ public class ApplicationFacade {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     /**

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="InputFormatterTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-06-04T07:25:30" hostname="LAPTOP-86H4GGTF" time="0.007">
+<testsuite name="InputFormatterTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-06-04T09:56:04" hostname="LAPTOP-86H4GGTF" time="0.003">
   <properties/>
-  <testcase name="testGenerateLeagueOutputError" classname="InputFormatterTest" time="0.002"/>
-  <testcase name="testGenerateLeagueOutputValid" classname="InputFormatterTest" time="0.001"/>
+  <testcase name="testGenerateLeagueOutputError" classname="InputFormatterTest" time="0.0"/>
+  <testcase name="testGenerateLeagueOutputValid" classname="InputFormatterTest" time="0.002"/>
   <testcase name="testGenerateSeriesOutputError" classname="InputFormatterTest" time="0.0"/>
   <testcase name="testGenerateSeriesOutputValid" classname="InputFormatterTest" time="0.001"/>
   <testcase name="testGenerateSeriesList" classname="InputFormatterTest" time="0.0"/>
