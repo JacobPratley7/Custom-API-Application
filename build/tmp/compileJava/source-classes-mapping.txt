@@ -22,9 +22,9 @@ Model/OutputAPI/ReportSender.java
  Model.OutputAPI.ReportSender
 Model/InputAPI/InputObjects/League.java
  Model.InputAPI.InputObjects.League
-Model/InputAPI/InputFormatter.java
- Model.InputAPI.InputFormatter
-Model/ApplicationFacade.java
- Model.ApplicationFacade
 Controller/ApplicationController.java
  Controller.ApplicationController
+Model/ApplicationFacade.java
+ Model.ApplicationFacade
+Model/InputAPI/InputFormatter.java
+ Model.InputAPI.InputFormatter
