@@ -73,4 +73,4 @@ For the code relating to the database components, a majority of the code used wa
 
 12. OutputFormatterGenerateReport
 - RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/e0346c81a6a920cf4c612049f0b359512da921eb
-- GREEN: 
+- GREEN: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/0aa21fe61e6c813c56e2173c97d2a4857d8cd21e
