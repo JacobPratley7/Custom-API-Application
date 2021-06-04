@@ -69,4 +69,4 @@ For the code relating to the database components, a majority of the code used wa
 
 11. InputFormatterGenerateSeriesList
 - RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/7213c6c39ca8eadbc924627cba0b3b9e428864b6
-- GREEN: 
+- GREEN: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/436a809bde67a331e9d2ab7f4371c0757d1bbf0a
