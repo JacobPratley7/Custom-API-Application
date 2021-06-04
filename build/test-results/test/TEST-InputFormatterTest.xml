@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="InputFormatterTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2021-06-04T05:43:27" hostname="LAPTOP-86H4GGTF" time="0.007">
+<testsuite name="InputFormatterTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2021-06-04T05:54:36" hostname="LAPTOP-86H4GGTF" time="0.022">
   <properties/>
-  <testcase name="testGenerateLeagueOutputError" classname="InputFormatterTest" time="0.006">
+  <testcase name="testGenerateLeagueOutputError" classname="InputFormatterTest" time="0.021">
     <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:87)
 	at org.junit.Assert.assertTrue(Assert.java:42)
@@ -60,7 +60,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <testcase name="testGenerateLeagueOutputValid" classname="InputFormatterTest" time="0.0">
+  <testcase name="testGenerateLeagueOutputValid" classname="InputFormatterTest" time="0.001">
     <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:87)
 	at org.junit.Assert.assertTrue(Assert.java:42)
