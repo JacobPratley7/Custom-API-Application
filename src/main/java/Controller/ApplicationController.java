@@ -76,6 +76,4 @@ public class ApplicationController {
     public void setAppWindow(Stage primaryStage) {
         this.appWindow = new ApplicationWindow(primaryStage, this);
     }
-
-
 }

@@ -41,10 +41,6 @@ public class ApplicationFacade {
         this.inputFormatter = new InputFormatter();
         this.outputFormatter = new OutputFormatter();
 
-//        this.dbManager.deleteTable();
-//        this.dbManager.createTable();
-//        this.dbManager.insertData("{\"error\":\"no cached data available\"}");
-
         readConfigFile();
     }
 
