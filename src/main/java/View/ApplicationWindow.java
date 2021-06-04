@@ -24,6 +24,7 @@ public class ApplicationWindow {
     private Stage window;
     private ApplicationController controller;
     private Scene homePage, leaguesPage, seriesPage, sentDataPage, inputModePage;
+    private Text leagueDataText, seriesDataText, sentDataText;
 
 
     public ApplicationWindow(Stage window, ApplicationController controller) {
@@ -37,10 +38,22 @@ public class ApplicationWindow {
      */
     public void initialize() {
 
-        Text leagueDataText = new Text();
-        Text seriesDataText = new Text();
-        Text sentDataText = new Text();
+        leagueDataText = new Text();
+        seriesDataText = new Text();
+        sentDataText = new Text();
 
+        initializeHomePage();
+        initializeInputModePage();
+        initializeLeaguesPage();
+        initializeSeriesPage();
+        initializeSentDataPage();
+
+        window.setScene(homePage);
+        window.setTitle("My Application");
+        window.show();
+    }
+
+    private void initializeHomePage() {
         TextField leagueIDSlug = new TextField();
         leagueIDSlug.setMaxWidth(200);
 
@@ -69,34 +82,9 @@ public class ApplicationWindow {
                 getSeriesLabel, leagueIDSlug, getSeriesData);
 
         homePage = new Scene(homePageLayout, 800, 640);
+    }
 
-        //inputModePage
-        VBox inputModeLayout = new VBox(10);
-        Label inputModeLabel = new Label("Would you like live or cached data?");
-        inputModeLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
-        Button cachedData = new Button("Get cached data");
-        Button liveData = new Button("Get live data");
-        cachedData.setOnAction(e -> {window.setScene(leaguesPage);
-            try {
-                leagueDataText.setText(controller.getLeagueData(true));
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        });
-        liveData.setOnAction(e -> {window.setScene(leaguesPage);
-            try {
-                leagueDataText.setText(controller.getLeagueData(false));
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        });
-
-        inputModeLayout.getChildren().addAll(inputModeLabel, liveData, cachedData);
-        inputModePage = new Scene(inputModeLayout, 800, 640);
-
-
-
-        //leaguesPage
+    private void initializeLeaguesPage() {
         VBox leaguePageLayout = new VBox(10);
         Button sendLeagueData = new Button("Send");
         Label leagues = new Label("Leagues:");
@@ -114,8 +102,9 @@ public class ApplicationWindow {
         leagueScrollPane.setContent(leaguePageLayout);
 
         leaguesPage = new Scene(leagueScrollPane, 800, 640);
+    }
 
-        //seriesPage
+    private void initializeSeriesPage() {
         VBox seriesPageLayout = new VBox(10);
         Label sendSeriesDataLabel = new Label("Send this data?");
         sendSeriesDataLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
@@ -141,8 +130,9 @@ public class ApplicationWindow {
         seriesScrollPane.setContent(seriesPageLayout);
 
         seriesPage = new Scene(seriesScrollPane, 800, 640);
+    }
 
-        //sentDataPage
+    private void initializeSentDataPage() {
         VBox sentDataLayout = new VBox(10);
         Button returnButtonThree = new Button("Home");
         returnButtonThree.setOnAction(e -> {window.setScene(homePage);});
@@ -150,10 +140,31 @@ public class ApplicationWindow {
         sentDataLayout.getChildren().addAll(sentDataText, returnButtonThree);
 
         sentDataPage = new Scene(sentDataLayout, 800, 640);
+    }
 
-        window.setScene(homePage);
-        window.setTitle("My Application");
-        window.show();
+    private void initializeInputModePage() {
+        VBox inputModeLayout = new VBox(10);
+        Label inputModeLabel = new Label("Would you like live or cached data?");
+        inputModeLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
+        Button cachedData = new Button("Get cached data");
+        Button liveData = new Button("Get live data");
+        cachedData.setOnAction(e -> {window.setScene(leaguesPage);
+            try {
+                leagueDataText.setText(controller.getLeagueData(true));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+        liveData.setOnAction(e -> {window.setScene(leaguesPage);
+            try {
+                leagueDataText.setText(controller.getLeagueData(false));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+
+        inputModeLayout.getChildren().addAll(inputModeLabel, liveData, cachedData);
+        inputModePage = new Scene(inputModeLayout, 800, 640);
     }
 
 

@@ -31,7 +31,7 @@ public class ApplicationFacade {
     private List<Series> lastRetrievedSeries;
 
     /**
-     * Class Constructor. Will also retrieve/store the cpntents of the config file
+     * Class Constructor. Will also retrieve/store the contents of the config file
      * @param inputFetcher The InputFetcher object used to access the input API
      * @param reportSender The ReportSender object used to access the output API
      * @return new ApplicationFacade instance
@@ -118,6 +118,7 @@ public class ApplicationFacade {
             jsonData = this.inputFetcher.getLeagues(inputAuth);
             this.dbManager.updateData(jsonData);
         }
+
 
         if(jsonData.contains("error")) {
             org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
