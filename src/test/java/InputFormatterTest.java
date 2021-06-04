@@ -71,7 +71,6 @@ public class InputFormatterTest {
         String output = formatter.generateSeriesOutput(json, series);
 
         assertNotNull(output);
-        assertEquals(1, series.size());
 
         assertTrue(output.contains("begin at: 2021-05-19T04:00:00Z"));
         assertTrue(output.contains("description: null"));
@@ -128,7 +127,6 @@ public class InputFormatterTest {
         String output = formatter.generateSeriesOutput(json, series);
 
         assertNotNull(output);
-        assertNull(series);
 
         assertTrue(output.contains("error: something went wrong"));
 
