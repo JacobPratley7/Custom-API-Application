@@ -6,6 +6,7 @@ import Model.InputAPI.InputFormatter;
 import Model.InputAPI.InputObjects.League;
 import Model.InputAPI.InputObjects.Series;
 import Model.InputAPI.InputObjects.Tournament;
+import Model.OutputAPI.OutputFormatter;
 import Model.OutputAPI.ReportSender;
 import org.json.*;
 import org.json.simple.JSONObject;
@@ -31,6 +32,7 @@ public class ApplicationFacade {
     private DataBaseManager dbManager;
     private List<Series> lastRetrievedSeries;
     private InputFormatter inputFormatter;
+    private OutputFormatter outputFormatter;
 
     /**
      * Class Constructor. Will also retrieve/store the contents of the config file
@@ -43,6 +45,7 @@ public class ApplicationFacade {
         this.reportSender = reportSender;
         this.dbManager = dbManager;
         this.inputFormatter = new InputFormatter();
+        this.outputFormatter = new OutputFormatter();
 
         this.dbManager.deleteTable();
         this.dbManager.createTable();
@@ -125,30 +128,6 @@ public class ApplicationFacade {
         return output;
     }
 
-    private String generateReport() {
-        if(this.lastRetrievedSeries == null) {
-            return "No data to report";
-        }
-        String report = "league id: ".concat(this.lastRetrievedSeries.get(0).getLeagueId());
-        report = report.concat("\nseries:");
-        for(Series s: this.lastRetrievedSeries) {
-            String currentSeriesData = "\n\tid: ".concat(s.getID());
-            currentSeriesData = currentSeriesData.concat("\n\tfull name: ").concat(s.getFullName());
-            currentSeriesData = currentSeriesData.concat("\n\tslug: ").concat(s.getSlug());
-            currentSeriesData = currentSeriesData.concat("\n\ttier: ").concat(s.getTier());
-            currentSeriesData = currentSeriesData.concat("\n\tyear: ").concat(s.getYear());
-            currentSeriesData = currentSeriesData.concat("\n");
-            currentSeriesData = currentSeriesData.concat("\n");
-            if(report.length() + currentSeriesData.length() >= 1600) {
-                break;
-            } else {
-                report = report.concat(currentSeriesData);
-            }
-        }
-
-        return report;
-    }
-
     /**
      * Generates a report and sends it the the pre-configured number.
      * Returns a string displaying the report if the message was sent successfully,
@@ -158,7 +137,7 @@ public class ApplicationFacade {
      * @throws IOException if error is to occur whilst accessing output API
      */
     public String sendReport() throws IOException {
-        String report = this.generateReport();
+        String report = this.outputFormatter.generateReport(this.lastRetrievedSeries);
         String feedback = this.reportSender.sendMessage(this.outputSID, this.outputAuth, this.outputToNumber,
                 this.twilioNumber, report);
         org.json.JSONObject feedbackData = new org.json.JSONObject(feedback);
@@ -168,7 +147,6 @@ public class ApplicationFacade {
             output = output.concat("\nmessage: ").concat(feedbackData.getString("message"));
             output = output.concat("\nmore info: ").concat(feedbackData.getString("more_info"));
             return output;
-
         }
 
         return "Message sent Successfully!\n".concat(report);
