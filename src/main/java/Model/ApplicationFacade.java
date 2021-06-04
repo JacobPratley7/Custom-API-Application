@@ -68,6 +68,7 @@ public class ApplicationFacade {
      * Retrieves league information from input API,
      * then formats this data into a more human readable string.
      *
+     * @param cachedDataWanted Indicates whether or not the user requested cached data
      * @return String in human readable format representing league data
      * @throws IOException if error is to occur whilst accessing input API
      */
