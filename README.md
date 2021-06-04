@@ -58,6 +58,7 @@ For the code relating to the database components, a majority of the code used wa
 8. ApplicationFacadeCaching
 - RED: tests do not pass : https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/8f004740cf18ac80aadb11de957c70ee4ca773ea
 - GREEN: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/0f2b0f281f5eb40118d6d710e11231bc7db2a009
+- REFACTOR: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/a0c648bc470eabda57071861eaaa71354303fba2
 
 9.InputFormatterLeagueOperations
 - RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/46919c30f63f2a0df56f1270edb1d75d20993116
