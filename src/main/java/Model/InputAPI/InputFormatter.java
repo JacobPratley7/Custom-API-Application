@@ -237,4 +237,8 @@ public class InputFormatter {
             return seriesOutput;
         }
     }
+
+    public List<Series> generateSeriesList(String jsonData) {
+        return new ArrayList<>();
+    }
 }
