@@ -117,8 +117,4 @@ public class DataBaseManager {
             }
         }
     }
-
-
-
-//String query = "UPDATE userSettings SET coins=? WHERE user=?";
 }

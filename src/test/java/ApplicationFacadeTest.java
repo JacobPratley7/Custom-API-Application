@@ -7,9 +7,7 @@ import Model.OutputAPI.ReportSender;
 import Model.OutputAPI.ReportSenderImpl;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 import java.io.IOException;
-
 import static org.mockito.Mockito.*;
 
 public class ApplicationFacadeTest {

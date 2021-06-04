@@ -1,8 +1,6 @@
 package Model.OutputAPI;
 
 import Model.InputAPI.InputObjects.Series;
-
-import java.io.IOException;
 import java.util.List;
 
 public class OutputFormatter {

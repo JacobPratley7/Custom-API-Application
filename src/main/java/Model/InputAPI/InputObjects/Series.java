@@ -1,7 +1,6 @@
 package Model.InputAPI.InputObjects;
 
 import org.json.JSONObject;
-
 import java.util.List;
 
 public class Series {

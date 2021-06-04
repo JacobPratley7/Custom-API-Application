@@ -10,7 +10,6 @@ import Model.OutputAPI.ReportSenderDummy;
 import Model.OutputAPI.ReportSenderImpl;
 import View.ApplicationWindow;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class ApplicationController {

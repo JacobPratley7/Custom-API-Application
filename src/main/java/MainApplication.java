@@ -1,15 +1,8 @@
 import Controller.ApplicationController;
-import Model.ApplicationFacade;
-import Model.Database.DataBaseManager;
-import Model.InputAPI.InputFetcherDummy;
-import Model.InputAPI.InputFetcherImpl;
-
 import java.io.IOException;
 import View.ApplicationWindow;
 import javafx.application.Application;
 import javafx.stage.Stage;
-
-import javax.xml.crypto.Data;
 
 public class MainApplication extends Application {
 

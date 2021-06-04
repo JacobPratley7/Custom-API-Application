@@ -1,32 +1,32 @@
-View/ApplicationWindow.java
- View.ApplicationWindow
+Model/OutputAPI/ReportSenderDummy.java
+ Model.OutputAPI.ReportSenderDummy
 Model/InputAPI/InputFetcherDummy.java
  Model.InputAPI.InputFetcherDummy
 Model/InputAPI/InputFetcher.java
  Model.InputAPI.InputFetcher
-Model/Database/DataBaseManager.java
- Model.Database.DataBaseManager
-MainApplication.java
- MainApplication
+Model/InputAPI/InputFetcherImpl.java
+ Model.InputAPI.InputFetcherImpl
+Model/OutputAPI/ReportSender.java
+ Model.OutputAPI.ReportSender
 Model/OutputAPI/ReportSenderImpl.java
  Model.OutputAPI.ReportSenderImpl
 Model/InputAPI/InputObjects/Tournament.java
  Model.InputAPI.InputObjects.Tournament
-Model/InputAPI/InputFetcherImpl.java
- Model.InputAPI.InputFetcherImpl
-Model/OutputAPI/ReportSenderDummy.java
- Model.OutputAPI.ReportSenderDummy
-Model/InputAPI/InputObjects/Series.java
- Model.InputAPI.InputObjects.Series
-Model/OutputAPI/ReportSender.java
- Model.OutputAPI.ReportSender
-Model/InputAPI/InputObjects/League.java
- Model.InputAPI.InputObjects.League
-Model/InputAPI/InputFormatter.java
- Model.InputAPI.InputFormatter
+Model/Database/DataBaseManager.java
+ Model.Database.DataBaseManager
 Model/OutputAPI/OutputFormatter.java
  Model.OutputAPI.OutputFormatter
+MainApplication.java
+ MainApplication
+View/ApplicationWindow.java
+ View.ApplicationWindow
+Model/InputAPI/InputFormatter.java
+ Model.InputAPI.InputFormatter
+Model/InputAPI/InputObjects/Series.java
+ Model.InputAPI.InputObjects.Series
 Model/ApplicationFacade.java
  Model.ApplicationFacade
+Model/InputAPI/InputObjects/League.java
+ Model.InputAPI.InputObjects.League
 Controller/ApplicationController.java
  Controller.ApplicationController

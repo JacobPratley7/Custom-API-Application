@@ -1,23 +1,14 @@
 package View;
 
-import Model.ApplicationFacade;
 import Controller.ApplicationController;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Orientation;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Box;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.util.List;
 
 public class ApplicationWindow {
 

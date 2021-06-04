@@ -1,21 +1,9 @@
-import Model.ApplicationFacade;
-import Model.Database.DataBaseManager;
-import Model.InputAPI.InputFetcher;
-import Model.InputAPI.InputFetcherDummy;
-import Model.InputAPI.InputFetcherImpl;
-import Model.InputAPI.InputFormatter;
-import Model.InputAPI.InputObjects.League;
 import Model.InputAPI.InputObjects.Series;
 import Model.OutputAPI.OutputFormatter;
-import Model.OutputAPI.ReportSender;
-import Model.OutputAPI.ReportSenderImpl;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.mockito.Mockito.*;
 
 public class OutputFormatterTest {

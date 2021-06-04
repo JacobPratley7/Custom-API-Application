@@ -3,21 +3,15 @@ package Model;
 import Model.Database.DataBaseManager;
 import Model.InputAPI.InputFetcher;
 import Model.InputAPI.InputFormatter;
-import Model.InputAPI.InputObjects.League;
 import Model.InputAPI.InputObjects.Series;
-import Model.InputAPI.InputObjects.Tournament;
 import Model.OutputAPI.OutputFormatter;
 import Model.OutputAPI.ReportSender;
-import org.json.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ApplicationFacade {
@@ -121,7 +115,7 @@ public class ApplicationFacade {
             return "error: please provide a valid id or slug";
         }
         String jsonData = this.inputFetcher.getSeries(inputAuth, leagueID);
-        String output = this.inputFormatter.generateSeriesOutput(jsonData, this.lastRetrievedSeries);
+        String output = this.inputFormatter.generateSeriesOutput(jsonData);
         if(output.contains("error")) {
             this.lastRetrievedSeries = null;
         } else {
