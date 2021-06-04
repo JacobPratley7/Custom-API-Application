@@ -23,14 +23,12 @@ public class OutputFormatterTest {
     @Test
     public void testGenerateReportValid() {
         Series newSeries = mock(Series.class);
-        League newLeague = mock(League.class);
-        when(newLeague.getID()).thenReturn("4590");
         when(newSeries.getID()).thenReturn("3621");
         when(newSeries.getFullName()).thenReturn("2021");
         when(newSeries.getSlug()).thenReturn("cs-go-hyperion-x-oel-launch");
         when(newSeries.getTier()).thenReturn("d");
         when(newSeries.getYear()).thenReturn("2021");
-        when(newSeries.getLeague()).thenReturn(newLeague);
+        when(newSeries.getLeagueId()).thenReturn("4590");
         List<Series> series = new ArrayList<>();
         series.add(newSeries);
         OutputFormatter outputFormatter = new OutputFormatter();
