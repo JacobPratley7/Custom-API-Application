@@ -65,4 +65,4 @@ For the code relating to the database components, a majority of the code used wa
 
 10. InputFormatterSeriesOperations
 - RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/4e5bdfb3736f3812ca2981d6799b9c05edd0fb0e
-- GREEN: 
+- GREEN: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/2726d90d2956cc692e5ad87209ce9283ecedb6d7
