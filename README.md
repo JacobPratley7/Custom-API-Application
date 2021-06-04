@@ -1,7 +1,7 @@
 # SCD2_2021_Exam
 
 PASS requirements met: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/a100ba5c3735defd7b3bb82184dc6396bb8a9316
-
+CREDIT requirements met: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/34cab7c71033c2357dccc5b8954e39056408940e
 # Running the Application
 To run the application, you will need to modify the configuration file, "config.json". Here, you will need to enter your credentials for the input and output APIs, and for the output API, you will also need to provide a valid 'To' and 'From' number. Credentials should be in String format. E.g., if you input API auth token is 'hello', then next to inputAuthToken enter "hello". All keys in the config file correspond to the details you must enter. Here, outputUsername refers to your twilio SID.
 
