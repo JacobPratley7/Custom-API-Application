@@ -28,3 +28,5 @@ Model/ApplicationFacade.java
  Model.ApplicationFacade
 Controller/ApplicationController.java
  Controller.ApplicationController
+Model/OutputAPI/OutputFormatter.java
+ Model.OutputAPI.OutputFormatter
