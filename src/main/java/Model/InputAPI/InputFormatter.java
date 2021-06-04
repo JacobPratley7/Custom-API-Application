@@ -239,6 +239,14 @@ public class InputFormatter {
     }
 
     public List<Series> generateSeriesList(String jsonData) {
-        return new ArrayList<>();
+        List<Series> lastRetrievedSeries = new ArrayList<>();
+        JSONArray seriesData = new JSONArray(jsonData);
+        for(int i = 0; i < seriesData.length(); i++) {
+            org.json.JSONObject current = (org.json.JSONObject) seriesData.get(i);
+            Series currentSeries = convertToSeriesObject(current);
+            lastRetrievedSeries.add(currentSeries);
+        }
+
+        return lastRetrievedSeries;
     }
 }
