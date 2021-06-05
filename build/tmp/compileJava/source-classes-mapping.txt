@@ -24,19 +24,27 @@ Model/OutputAPI/OutputFormatter.java
  Model.OutputAPI.OutputFormatter
 MainApplication.java
  MainApplication
-View/ApplicationWindow.java
- View.ApplicationWindow
-View/ApplicationPages/SendPage.java
- View.ApplicationPages.SendPage
-View/ApplicationPages/InputModePage.java
- View.ApplicationPages.InputModePage
-View/ApplicationPages/LeaguesPage.java
- View.ApplicationPages.LeaguesPage
-Model/ApplicationFacade.java
- Model.ApplicationFacade
-View/ApplicationPages/SeriesPage.java
- View.ApplicationPages.SeriesPage
-View/ApplicationPages/HomePage.java
- View.ApplicationPages.HomePage
 Controller/ApplicationController.java
  Controller.ApplicationController
+Model/ApplicationFacade.java
+ Model.ApplicationFacade
+View/ApplicationPages/LeaguesPage.java
+ View.ApplicationPages.LeaguesPage
+View/ApplicationPages/SendPage.java
+ View.ApplicationPages.SendPage
+View/ApplicationWindow.java
+ View.ApplicationWindow
+View/ApplicationPages/InputModePage.java
+ View.ApplicationPages.InputModePage
+ View.ApplicationPages.InputModePage$1
+ View.ApplicationPages.InputModePage$2
+ View.ApplicationPages.InputModePage$3
+ View.ApplicationPages.InputModePage$4
+View/ApplicationPages/SeriesPage.java
+ View.ApplicationPages.SeriesPage
+ View.ApplicationPages.SeriesPage$1
+ View.ApplicationPages.SeriesPage$2
+View/ApplicationPages/HomePage.java
+ View.ApplicationPages.HomePage
+ View.ApplicationPages.HomePage$1
+ View.ApplicationPages.HomePage$2

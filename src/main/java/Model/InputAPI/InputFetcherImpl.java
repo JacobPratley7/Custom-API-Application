@@ -17,10 +17,11 @@ import java.net.URISyntaxException;
 public class InputFetcherImpl implements InputFetcher {
 
     /**
-     * Retrieves league information
-     * @param authToken The user's authentication token for the input API
-     * @return String in json format representing league data
-     * @throws IOException if error is to occur whilst accessing input API
+     * Retrieves league information.
+     *
+     * @param authToken The user's authentication token for the input API.
+     * @return String in json format representing league data.
+     * @throws IOException If error is to occur whilst accessing input API.
      */
     public String getLeagues(String authToken) throws IOException {
         String json = null;
@@ -51,6 +52,7 @@ public class InputFetcherImpl implements InputFetcher {
 
     /**
      * Retrieves series information for a particular league
+     *
      * @param authToken The user's authentication token for the input API
      * @param leagueID The id of the league the user wants to get series information on
      * @return String in json format representing series data
