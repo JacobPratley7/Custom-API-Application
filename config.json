@@ -1,7 +1,7 @@
 {
-  "inputAuthToken": "test",
-  "outputAuthToken": "test",
-  "outputUsername": "test",
-  "outputNumberTo": "test",
-  "outputNumberFrom": "test"
+  "inputAuthToken": "<YOUR PANDASCORE AUTH TOKEN>",
+  "outputAuthToken": "<YOUR TWILIO AUTH TOKEN>",
+  "outputUsername": "<YOUR TWILIO SID/USERNAME>",
+  "outputNumberTo": "<YOUR AUTHORIZED TO NUMBER>",
+  "outputNumberFrom": "<YOUR TWILIO NUMBER>"
 }

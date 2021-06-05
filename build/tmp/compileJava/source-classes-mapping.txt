@@ -1,15 +1,29 @@
-Model/InputAPI/InputObjects/Series.java
- Model.InputAPI.InputObjects.Series
-Model/OutputAPI/ReportSender.java
- Model.OutputAPI.ReportSender
+Model/OutputAPI/OutputFormatter.java
+ Model.OutputAPI.OutputFormatter
+View/ApplicationWindow.java
+ View.ApplicationWindow
+View/ApplicationPages/SendPage.java
+ View.ApplicationPages.SendPage
+View/ApplicationPages/LeaguesPage.java
+ View.ApplicationPages.LeaguesPage
 Model/InputAPI/InputFetcherDummy.java
  Model.InputAPI.InputFetcherDummy
-Model/InputAPI/InputFetcher.java
- Model.InputAPI.InputFetcher
+Model/ApplicationFacade.java
+ Model.ApplicationFacade
+View/ApplicationPages/HomePage.java
+ View.ApplicationPages.HomePage
+ View.ApplicationPages.HomePage$1
+ View.ApplicationPages.HomePage$2
 Model/Database/DataBaseManager.java
  Model.Database.DataBaseManager
-Model/InputAPI/InputObjects/League.java
- Model.InputAPI.InputObjects.League
+MainApplication.java
+ MainApplication
+View/ApplicationPages/InputModePage.java
+ View.ApplicationPages.InputModePage
+ View.ApplicationPages.InputModePage$1
+ View.ApplicationPages.InputModePage$2
+ View.ApplicationPages.InputModePage$3
+ View.ApplicationPages.InputModePage$4
 Model/InputAPI/InputFormatter.java
  Model.InputAPI.InputFormatter
 Model/OutputAPI/ReportSenderImpl.java
@@ -20,31 +34,17 @@ Model/InputAPI/InputFetcherImpl.java
  Model.InputAPI.InputFetcherImpl
 Model/OutputAPI/ReportSenderDummy.java
  Model.OutputAPI.ReportSenderDummy
-Model/OutputAPI/OutputFormatter.java
- Model.OutputAPI.OutputFormatter
-MainApplication.java
- MainApplication
-Controller/ApplicationController.java
- Controller.ApplicationController
-Model/ApplicationFacade.java
- Model.ApplicationFacade
-View/ApplicationPages/LeaguesPage.java
- View.ApplicationPages.LeaguesPage
-View/ApplicationPages/SendPage.java
- View.ApplicationPages.SendPage
-View/ApplicationWindow.java
- View.ApplicationWindow
-View/ApplicationPages/InputModePage.java
- View.ApplicationPages.InputModePage
- View.ApplicationPages.InputModePage$1
- View.ApplicationPages.InputModePage$2
- View.ApplicationPages.InputModePage$3
- View.ApplicationPages.InputModePage$4
+Model/InputAPI/InputObjects/Series.java
+ Model.InputAPI.InputObjects.Series
+Model/OutputAPI/ReportSender.java
+ Model.OutputAPI.ReportSender
 View/ApplicationPages/SeriesPage.java
  View.ApplicationPages.SeriesPage
  View.ApplicationPages.SeriesPage$1
  View.ApplicationPages.SeriesPage$2
-View/ApplicationPages/HomePage.java
- View.ApplicationPages.HomePage
- View.ApplicationPages.HomePage$1
- View.ApplicationPages.HomePage$2
+Model/InputAPI/InputObjects/League.java
+ Model.InputAPI.InputObjects.League
+Controller/ApplicationController.java
+ Controller.ApplicationController
+Model/InputAPI/InputFetcher.java
+ Model.InputAPI.InputFetcher
