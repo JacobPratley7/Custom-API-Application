@@ -53,13 +53,13 @@ public class ApplicationController {
 
 
     /** Calls the stored ApplicationFacade, returns league data */
-    public String getLeagueData(boolean cachedDataWanted) throws IOException {
-        return this.appFacade.getLeagueData(cachedDataWanted);
+    public String getLeagueData(boolean cachedWanted) throws IOException {
+        return this.appFacade.getLeagueData(cachedWanted);
     }
 
     /** Calls the stored ApplicationFacade, returns series data */
-    public String getSeriesData(String idOrSlug) throws IOException {
-        return this.appFacade.getSeriesData(idOrSlug);
+    public String getSeriesData(String leagueID) throws IOException {
+        return this.appFacade.getSeriesData(leagueID);
     }
 
     /** Calls the stored ApplicationFacade, returns the report */
@@ -76,4 +76,5 @@ public class ApplicationController {
     public void setAppWindow(Stage primaryStage) {
         this.appWindow = new ApplicationWindow(primaryStage, this);
     }
+
 }

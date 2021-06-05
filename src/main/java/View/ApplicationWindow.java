@@ -1,21 +1,19 @@
 package View;
 
 import Controller.ApplicationController;
+import View.ApplicationPages.*;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class ApplicationWindow {
 
     private Stage window;
     private ApplicationController controller;
-    private Scene homePage, leaguesPage, seriesPage, sentDataPage, inputModePage;
-    private Text leagueDataText, seriesDataText, sentDataText;
+    private HashMap<String, Scene> allScenes = new HashMap<>();
+    private HashMap<String, Text> allTextBoxes = new HashMap<>();
 
 
     public ApplicationWindow(Stage window, ApplicationController controller) {
@@ -27,135 +25,25 @@ public class ApplicationWindow {
      * Initializes all Scene objects used by the main application.
      * Creates all buttons/inputFields/text objects, assigns them to the appropriate Scene.
      */
-    public void initialize() {
+    public void initialize() throws IOException {
+        this.allTextBoxes.put("league", new Text());
+        this.allTextBoxes.put("series", new Text());
+        this.allTextBoxes.put("sent", new Text());
 
-        leagueDataText = new Text();
-        seriesDataText = new Text();
-        sentDataText = new Text();
 
-        initializeHomePage();
-        initializeInputModePage();
-        initializeLeaguesPage();
-        initializeSeriesPage();
-        initializeSentDataPage();
+        HomePage newHomePage = new HomePage(window, allScenes, allTextBoxes,controller);
 
-        window.setScene(homePage);
+        InputModePage newInputModePage = new InputModePage(window, allScenes, allTextBoxes,controller);
+
+        LeaguesPage newLeaguesPage = new LeaguesPage(window, allScenes, allTextBoxes,controller);
+
+        SeriesPage newSeriesPage = new SeriesPage(window, allScenes, allTextBoxes,controller);
+
+        SendPage newSendPage = new SendPage(window, allScenes, allTextBoxes, controller);
+
+        window.setScene(allScenes.get("home"));
         window.setTitle("My Application");
         window.show();
-    }
-
-    private void initializeHomePage() {
-        TextField leagueIDSlug = new TextField();
-        leagueIDSlug.setMaxWidth(200);
-
-        //home page
-        Label homePageLabel = new Label("Welcome!!!");
-        Label getLeaguesLabel = new Label("Get Information on Leagues");
-        getLeaguesLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
-        homePageLabel.setFont(new Font("Modena", 30));
-        Button getLeagueData = new Button("Get League Data");
-        getLeagueData.setOnAction(e -> {window.setScene(inputModePage);});
-
-        Label getSeriesLabel = new Label("Get Information on Series for a particular League");
-        getSeriesLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
-        Button getSeriesData = new Button("Get Series Data");
-        getSeriesData.setOnAction(e -> {window.setScene(seriesPage);
-            try {
-                seriesDataText.setText(controller.getSeriesData(leagueIDSlug.getText()));
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        });
-
-
-        VBox homePageLayout = new VBox(10);
-        homePageLayout.getChildren().addAll(homePageLabel, getLeaguesLabel, getLeagueData,
-                getSeriesLabel, leagueIDSlug, getSeriesData);
-
-        homePage = new Scene(homePageLayout, 800, 640);
-    }
-
-    private void initializeLeaguesPage() {
-        VBox leaguePageLayout = new VBox(10);
-        Button sendLeagueData = new Button("Send");
-        Label leagues = new Label("Leagues:");
-        leagues.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
-        sendLeagueData.setOnAction(e -> {window.setScene(sentDataPage);
-            sentDataText.setText("sent!");});
-        Button returnButton = new Button("Home");
-        returnButton.setOnAction(e -> {window.setScene(homePage);});
-
-
-        leaguePageLayout.getChildren().addAll(leagues,
-                leagueDataText, returnButton);
-
-        ScrollPane leagueScrollPane = new ScrollPane();
-        leagueScrollPane.setContent(leaguePageLayout);
-
-        leaguesPage = new Scene(leagueScrollPane, 800, 640);
-    }
-
-    private void initializeSeriesPage() {
-        VBox seriesPageLayout = new VBox(10);
-        Label sendSeriesDataLabel = new Label("Send this data?");
-        sendSeriesDataLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
-        Button sendSeriesData = new Button("Send");
-        Label series = new Label("Series:");
-        series.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
-
-        sendSeriesData.setOnAction(e -> {window.setScene(sentDataPage);
-            try {
-                sentDataText.setText(controller.sendReport());
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        });
-        Button returnButtonTwo = new Button("Home");
-        returnButtonTwo.setOnAction(e -> {window.setScene(homePage);});
-
-
-        seriesPageLayout.getChildren().addAll(sendSeriesDataLabel, sendSeriesData, series
-                ,seriesDataText, returnButtonTwo);
-
-        ScrollPane seriesScrollPane = new ScrollPane();
-        seriesScrollPane.setContent(seriesPageLayout);
-
-        seriesPage = new Scene(seriesScrollPane, 800, 640);
-    }
-
-    private void initializeSentDataPage() {
-        VBox sentDataLayout = new VBox(10);
-        Button returnButtonThree = new Button("Home");
-        returnButtonThree.setOnAction(e -> {window.setScene(homePage);});
-
-        sentDataLayout.getChildren().addAll(sentDataText, returnButtonThree);
-
-        sentDataPage = new Scene(sentDataLayout, 800, 640);
-    }
-
-    private void initializeInputModePage() {
-        VBox inputModeLayout = new VBox(10);
-        Label inputModeLabel = new Label("Would you like live or cached data?");
-        inputModeLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
-        Button cachedData = new Button("Get cached data");
-        Button liveData = new Button("Get live data");
-        cachedData.setOnAction(e -> {window.setScene(leaguesPage);
-            try {
-                leagueDataText.setText(controller.getLeagueData(true));
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        });
-        liveData.setOnAction(e -> {window.setScene(leaguesPage);
-            try {
-                leagueDataText.setText(controller.getLeagueData(false));
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        });
-
-        inputModeLayout.getChildren().addAll(inputModeLabel, liveData, cachedData);
-        inputModePage = new Scene(inputModeLayout, 800, 640);
     }
 
 
