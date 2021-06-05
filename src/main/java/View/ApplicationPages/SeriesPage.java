@@ -13,8 +13,17 @@ import java.util.HashMap;
 
 public class SeriesPage {
 
-    private Scene scene;
-
+    /**
+     * Constructs SeriesPage object.
+     * Also responsible for constructing the seriesPage scene that will be
+     * used by the ApplicationWindow
+     *
+     * @param window Primary stage used by the ApplicationWindow
+     * @param otherScenes the other scenes used by the ApplicationWindow
+     * @param textBoxes the other text boxes used by the ApplicationWindow
+     * @param controller the ApplicationController used by the application
+     * @return new SeriesPage instance
+     */
     public SeriesPage(Stage window, HashMap<String, Scene> otherScenes, HashMap<String, Text> textBoxes, ApplicationController controller) throws IOException {
         Scene seriesPage;
 
@@ -44,7 +53,6 @@ public class SeriesPage {
 
         seriesPage = new Scene(seriesScrollPane, 800, 640);
         otherScenes.put("series", seriesPage);
-        this.scene = seriesPage;
     }
 
 }

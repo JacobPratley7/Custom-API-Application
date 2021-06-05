@@ -11,8 +11,17 @@ import java.util.HashMap;
 
 public class SendPage {
 
-    private Scene scene;
-
+    /**
+     * Constructs SendPage object.
+     * Also responsible for constructing the sentDataPage scene that will be
+     * used by the ApplicationWindow
+     *
+     * @param window Primary stage used by the ApplicationWindow
+     * @param otherScenes the other scenes used by the ApplicationWindow
+     * @param textBoxes the other text boxes used by the ApplicationWindow
+     * @param controller the ApplicationController used by the application
+     * @return new SendPage instance
+     */
     public SendPage(Stage window, HashMap<String, Scene> otherScenes, HashMap<String, Text> textBoxes, ApplicationController controller) throws IOException {
         Scene sentDataPage;
 
@@ -24,6 +33,5 @@ public class SendPage {
 
         sentDataPage = new Scene(sentDataLayout, 800, 640);
         otherScenes.put("sent", sentDataPage);
-        this.scene = sentDataPage;
     }
 }

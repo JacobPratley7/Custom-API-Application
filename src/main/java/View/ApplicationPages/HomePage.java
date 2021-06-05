@@ -13,9 +13,18 @@ import java.util.HashMap;
 
 public class HomePage {
 
-    private Scene scene;
-
-    public HomePage(Stage window, HashMap<String, Scene> otherScenes, HashMap<String, Text> textBoxes,ApplicationController controller) {
+    /**
+     * Constructs HomePage object.
+     * Also responsible for constructing the homePage scene that will be
+     * used by the ApplicationWindow
+     *
+     * @param window Primary stage used by the ApplicationWindow
+     * @param otherScenes the other scenes used by the ApplicationWindow
+     * @param textBoxes the other text boxes used by the ApplicationWindow
+     * @param controller the ApplicationController used by the application
+     * @return new HomePage instance
+     */
+    public HomePage(Stage window, HashMap<String, Scene> otherScenes, HashMap<String, Text> textBoxes, ApplicationController controller) {
         TextField leagueIDSlug = new TextField();
         leagueIDSlug.setMaxWidth(200);
 
@@ -44,8 +53,6 @@ public class HomePage {
 
         homePage = new Scene(homePageLayout, 800, 640);
         otherScenes.put("home", homePage);
-        this.scene = homePage;
-
     }
 
 }

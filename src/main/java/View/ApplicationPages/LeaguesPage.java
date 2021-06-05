@@ -13,8 +13,17 @@ import java.util.HashMap;
 
 public class LeaguesPage {
 
-    private Scene scene;
-
+    /**
+     * Constructs LeaguesPage object.
+     * Also responsible for constructing the leaguesPage scene that will be
+     * used by the ApplicationWindow
+     *
+     * @param window Primary stage used by the ApplicationWindow
+     * @param otherScenes the other scenes used by the ApplicationWindow
+     * @param textBoxes the other text boxes used by the ApplicationWindow
+     * @param controller the ApplicationController used by the application
+     * @return new LeaguesPage instance
+     */
     public LeaguesPage(Stage window, HashMap<String, Scene> otherScenes, HashMap<String, Text> textBoxes, ApplicationController controller) throws IOException {
         Scene leaguesPage;
 
@@ -33,7 +42,6 @@ public class LeaguesPage {
 
         leaguesPage = new Scene(leagueScrollPane, 800, 640);
         otherScenes.put("league", leaguesPage);
-        this.scene = leaguesPage;
     }
 
 }
