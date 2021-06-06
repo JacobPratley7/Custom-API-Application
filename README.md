@@ -14,6 +14,19 @@ To run the application, you will need to modify the configuration file, "config.
 
 Additionally, it should be noted that in order to achieve persistance with the database, it has been assumed that there will already be a valid db file. The application thus has no means to re-create the db/tables should this file be removed.
 
+When running the application, there are a total of 5 different scenes or pages the user can traverse to. In particular, there will be a page displaying leagues information, a page displaying series information, and a page displaying whether or not the message was successfully sent. On all three of these pages, there will be a button to traverse back to the home page. However, this button will be located at the bottom of each page, so, when on any of these pages, if you cannot see them home button, simply scroll to the bottom of the page to find it. There is also a page that asks the user to select between live data and cached data. This page does not have a back button, and thus the user must select one of these two options. This will take them to the leagues page, from which they can return to the home page.
+
+There are a few important things tonote for the output api. As twilio has a character limit for text messages, I was unable to send all the data to the user and instead just selected a few attributes to send. These attributes are the following:
+ - league id
+ - seris id
+ - series full name
+ - series slug
+ - series tier
+ - series year
+Note that, apart from the league id, all other attributes are listed once per series, so for example, if a league had two series, then you would see two lots of the series attributes.
+
+Additionally, the output api allows you to send data regardless of what was returned from the input api. Hence, if the input api returned an error response, then the application would still allow to send a message to the output api. I have formatted this so that the message will just say "No data to report", but please be aware sending this will still communicate with the output api and will use some of your twilio credit.
+
 Another thing worth noting is that in the ApplicationFacade class utilizes both org.json.JSONObject and org.json.simple.JSONObject. The reason for this is that the methods used to retrieve data from the config file required org.json.simple, however, this was not implemented until after the rest of the class had been implemented with org.json. To avoid too much refactoring, both were used in the final result.
 
 
