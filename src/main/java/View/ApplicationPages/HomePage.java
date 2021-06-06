@@ -45,6 +45,8 @@ public class HomePage {
 
         getSeriesData.setOnAction(e -> {
             window.setScene(otherScenes.get("series"));
+            textBoxes.get("series").setText("");
+
             List<String> retrievedData = new ArrayList<>();
             Task<String> getSeriesTask = new Task<String>() {
                 @Override

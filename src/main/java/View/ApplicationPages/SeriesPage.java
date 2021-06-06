@@ -40,6 +40,7 @@ public class SeriesPage {
 
         sendSeriesData.setOnAction(e -> {
             window.setScene(otherScenes.get("sent"));
+            textBoxes.get("sent").setText("");
             List<String> retrievedData = new ArrayList<>();
             Task<String> sendReportTask = new Task<String>() {
                 @Override

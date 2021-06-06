@@ -39,6 +39,7 @@ public class InputModePage {
 
         cachedData.setOnAction(e -> {
             window.setScene(otherScenes.get("league"));
+            textBoxes.get("league").setText("");
             List<String> retrievedData = new ArrayList<>();
             Task<String> getLeaguesTask = new Task<String>() {
                 @Override
@@ -62,6 +63,7 @@ public class InputModePage {
 
         liveData.setOnAction(e -> {
             window.setScene(otherScenes.get("league"));
+            textBoxes.get("league").setText("");
             List<String> retrievedData = new ArrayList<>();
             Task<String> getLeaguesTask = new Task<String>() {
                 @Override

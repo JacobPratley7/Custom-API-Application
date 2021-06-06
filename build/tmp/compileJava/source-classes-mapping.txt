@@ -1,7 +1,7 @@
 Model/OutputAPI/OutputFormatter.java
  Model.OutputAPI.OutputFormatter
-View/ApplicationWindow.java
- View.ApplicationWindow
+Model/InputAPI/InputFetcher.java
+ Model.InputAPI.InputFetcher
 View/ApplicationPages/SendPage.java
  View.ApplicationPages.SendPage
 View/ApplicationPages/LeaguesPage.java
@@ -10,20 +10,14 @@ Model/InputAPI/InputFetcherDummy.java
  Model.InputAPI.InputFetcherDummy
 Model/ApplicationFacade.java
  Model.ApplicationFacade
-View/ApplicationPages/HomePage.java
- View.ApplicationPages.HomePage
- View.ApplicationPages.HomePage$1
- View.ApplicationPages.HomePage$2
+Model/InputAPI/InputObjects/League.java
+ Model.InputAPI.InputObjects.League
 Model/Database/DataBaseManager.java
  Model.Database.DataBaseManager
 MainApplication.java
  MainApplication
-View/ApplicationPages/InputModePage.java
- View.ApplicationPages.InputModePage
- View.ApplicationPages.InputModePage$1
- View.ApplicationPages.InputModePage$2
- View.ApplicationPages.InputModePage$3
- View.ApplicationPages.InputModePage$4
+Controller/ApplicationController.java
+ Controller.ApplicationController
 Model/InputAPI/InputFormatter.java
  Model.InputAPI.InputFormatter
 Model/OutputAPI/ReportSenderImpl.java
@@ -38,13 +32,19 @@ Model/InputAPI/InputObjects/Series.java
  Model.InputAPI.InputObjects.Series
 Model/OutputAPI/ReportSender.java
  Model.OutputAPI.ReportSender
+View/ApplicationWindow.java
+ View.ApplicationWindow
+View/ApplicationPages/InputModePage.java
+ View.ApplicationPages.InputModePage
+ View.ApplicationPages.InputModePage$1
+ View.ApplicationPages.InputModePage$2
+ View.ApplicationPages.InputModePage$3
+ View.ApplicationPages.InputModePage$4
 View/ApplicationPages/SeriesPage.java
  View.ApplicationPages.SeriesPage
  View.ApplicationPages.SeriesPage$1
  View.ApplicationPages.SeriesPage$2
-Model/InputAPI/InputObjects/League.java
- Model.InputAPI.InputObjects.League
-Controller/ApplicationController.java
- Controller.ApplicationController
-Model/InputAPI/InputFetcher.java
- Model.InputAPI.InputFetcher
+View/ApplicationPages/HomePage.java
+ View.ApplicationPages.HomePage
+ View.ApplicationPages.HomePage$1
+ View.ApplicationPages.HomePage$2
