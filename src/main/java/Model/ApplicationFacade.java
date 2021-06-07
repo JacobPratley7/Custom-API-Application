@@ -41,6 +41,8 @@ public class ApplicationFacade {
         this.inputFormatter = new InputFormatter();
         this.outputFormatter = new OutputFormatter();
 
+        System.out.println(this.dbManager.createTable());
+
         readConfigFile();
     }
 

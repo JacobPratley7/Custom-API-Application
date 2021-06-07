@@ -45,6 +45,7 @@ public class DataBaseManager {
             createTableStatement.setQueryTimeout(30);
             createTableStatement.executeUpdate("CREATE TABLE if NOT EXISTS Leagues (id int, league string)");
 
+
             return "Table Leagues has successfully been created/loaded";
         } catch (SQLException e) {
             return "Error: ".concat(e.getMessage());

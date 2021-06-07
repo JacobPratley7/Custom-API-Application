@@ -8,16 +8,24 @@ View/ApplicationPages/LeaguesPage.java
  View.ApplicationPages.LeaguesPage
 Model/InputAPI/InputFetcherDummy.java
  Model.InputAPI.InputFetcherDummy
-Model/ApplicationFacade.java
- Model.ApplicationFacade
+View/ApplicationPages/SeriesPage.java
+ View.ApplicationPages.SeriesPage
+ View.ApplicationPages.SeriesPage$1
+ View.ApplicationPages.SeriesPage$2
 Model/InputAPI/InputObjects/League.java
  Model.InputAPI.InputObjects.League
-Model/Database/DataBaseManager.java
- Model.Database.DataBaseManager
+View/ApplicationPages/HomePage.java
+ View.ApplicationPages.HomePage
+ View.ApplicationPages.HomePage$1
+ View.ApplicationPages.HomePage$2
 MainApplication.java
  MainApplication
-Controller/ApplicationController.java
- Controller.ApplicationController
+View/ApplicationPages/InputModePage.java
+ View.ApplicationPages.InputModePage
+ View.ApplicationPages.InputModePage$1
+ View.ApplicationPages.InputModePage$2
+ View.ApplicationPages.InputModePage$3
+ View.ApplicationPages.InputModePage$4
 Model/InputAPI/InputFormatter.java
  Model.InputAPI.InputFormatter
 Model/OutputAPI/ReportSenderImpl.java
@@ -34,17 +42,9 @@ Model/OutputAPI/ReportSender.java
  Model.OutputAPI.ReportSender
 View/ApplicationWindow.java
  View.ApplicationWindow
-View/ApplicationPages/InputModePage.java
- View.ApplicationPages.InputModePage
- View.ApplicationPages.InputModePage$1
- View.ApplicationPages.InputModePage$2
- View.ApplicationPages.InputModePage$3
- View.ApplicationPages.InputModePage$4
-View/ApplicationPages/SeriesPage.java
- View.ApplicationPages.SeriesPage
- View.ApplicationPages.SeriesPage$1
- View.ApplicationPages.SeriesPage$2
-View/ApplicationPages/HomePage.java
- View.ApplicationPages.HomePage
- View.ApplicationPages.HomePage$1
- View.ApplicationPages.HomePage$2
+Model/Database/DataBaseManager.java
+ Model.Database.DataBaseManager
+Model/ApplicationFacade.java
+ Model.ApplicationFacade
+Controller/ApplicationController.java
+ Controller.ApplicationController
