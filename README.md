@@ -1,4 +1,5 @@
 # SCD2_2021_Exam
+Simple Extension was required to complete the assignment.
 
 - PASS requirements met: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/a100ba5c3735defd7b3bb82184dc6396bb8a9316
 - CREDIT requirements met: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/c6ead66b537641028449466eec99974cb535b4ac
@@ -12,7 +13,7 @@ To run the application, you will need to modify the configuration file, "config.
 - outputNumberTo: here, you will replace the place-holder string with your "To" number for the twilio api. If you are using the free trial, you will need to configure this in your account beforehand.
 - outputNumberFrom: here, you will replace the place-holder string with your "From" number for the twilio api (the twilio number you get with your account).
 
-Additionally, it should be noted that in order to achieve persistance with the database, it has been assumed that there will already be a valid db file. The application thus has no means to re-create the db/tables should this file be removed.
+The database will be created upon first running the application. As a result, upon the first run, the database will not actually contain any information. If the user requests cached data on the first run before requesting live data, the Leagues page just won't display any information.
 
 When running the application, there are a total of 5 different scenes or pages the user can traverse to. In particular, there will be a page displaying leagues information, a page displaying series information, and a page displaying whether or not the message was successfully sent. On all three of these pages, there will be a button to traverse back to the home page. However, this button will be located at the bottom of each page, so, when on any of these pages, if you cannot see them home button, simply scroll to the bottom of the page to find it. There is also a page that asks the user to select between live data and cached data. This page does not have a back button, and thus the user must select one of these two options. This will take them to the leagues page, from which they can return to the home page.
 
