@@ -1,7 +1,7 @@
 # SCD2_2021_Exam
 Simple Extension was required to complete the assignment.
 
-Reason: I was unable to complete any work for almost all of the first week due to technical issues with gradle not being able to run my tests. I also fell ill during the second week for a few days, also preventing me from achieveing much progress.
+I was unsure wheher or not I needed to disclose the reason needing the extension to staff, so I have opted not to write it here. Please email me if you need to know the reasons.
 
 - PASS requirements met: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/a100ba5c3735defd7b3bb82184dc6396bb8a9316
 - CREDIT requirements met: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/c6ead66b537641028449466eec99974cb535b4ac
