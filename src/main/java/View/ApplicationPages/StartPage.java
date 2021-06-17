@@ -15,11 +15,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class StartupPage {
+public class StartPage {
 
     /**
-     * Constructs HomePage object.
-     * Also responsible for constructing the homePage scene that will be
+     * Constructs StartupPage object.
+     * Also responsible for constructing the startPage scene that will be
      * used by the ApplicationWindow.
      *
      * @param window Primary stage used by the ApplicationWindow.
@@ -27,7 +27,7 @@ public class StartupPage {
      * @param textBoxes The other text boxes used by the ApplicationWindow.
      * @param controller The ApplicationController used by the application.
      */
-    public StartupPage(Stage window, HashMap<String, Scene> otherScenes, HashMap<String, Text> textBoxes, ApplicationController controller) {
+    public StartPage(Stage window, HashMap<String, Scene> otherScenes, HashMap<String, Text> textBoxes, ApplicationController controller) {
         TextField yearField = new TextField();
         yearField.setMaxWidth(200);
 

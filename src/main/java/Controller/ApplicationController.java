@@ -77,6 +77,7 @@ public class ApplicationController {
         this.appWindow = new ApplicationWindow(primaryStage, this);
     }
 
+    /** Sets the year for appFacade. */
     public String setYear(String year) {
         return this.appFacade.setYear(year);
     }

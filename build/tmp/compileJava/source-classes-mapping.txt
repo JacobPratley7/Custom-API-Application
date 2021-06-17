@@ -1,3 +1,17 @@
+Model/OutputAPI/ReportSenderImpl.java
+ Model.OutputAPI.ReportSenderImpl
+Model/InputAPI/InputFetcherImpl.java
+ Model.InputAPI.InputFetcherImpl
+Model/InputAPI/InputObjects/Tournament.java
+ Model.InputAPI.InputObjects.Tournament
+Model/OutputAPI/ReportSender.java
+ Model.OutputAPI.ReportSender
+Model/InputAPI/InputFetcherDummy.java
+ Model.InputAPI.InputFetcherDummy
+Model/OutputAPI/ReportSenderDummy.java
+ Model.OutputAPI.ReportSenderDummy
+Model/InputAPI/InputFetcher.java
+ Model.InputAPI.InputFetcher
 Model/OutputAPI/OutputFormatter.java
  Model.OutputAPI.OutputFormatter
 View/ApplicationWindow.java
@@ -6,12 +20,10 @@ View/ApplicationPages/SendPage.java
  View.ApplicationPages.SendPage
 View/ApplicationPages/LeaguesPage.java
  View.ApplicationPages.LeaguesPage
-Model/InputAPI/InputFetcherDummy.java
- Model.InputAPI.InputFetcherDummy
-View/ApplicationPages/StartupPage.java
- View.ApplicationPages.StartupPage
- View.ApplicationPages.StartupPage$1
- View.ApplicationPages.StartupPage$2
+View/ApplicationPages/StartPage.java
+ View.ApplicationPages.StartPage
+ View.ApplicationPages.StartPage$1
+ View.ApplicationPages.StartPage$2
 Model/ApplicationFacade.java
  Model.ApplicationFacade
 View/ApplicationPages/HomePage.java
@@ -30,18 +42,8 @@ View/ApplicationPages/InputModePage.java
  View.ApplicationPages.InputModePage$4
 Model/InputAPI/InputFormatter.java
  Model.InputAPI.InputFormatter
-Model/OutputAPI/ReportSenderImpl.java
- Model.OutputAPI.ReportSenderImpl
-Model/InputAPI/InputObjects/Tournament.java
- Model.InputAPI.InputObjects.Tournament
-Model/InputAPI/InputFetcherImpl.java
- Model.InputAPI.InputFetcherImpl
-Model/OutputAPI/ReportSenderDummy.java
- Model.OutputAPI.ReportSenderDummy
 Model/InputAPI/InputObjects/Series.java
  Model.InputAPI.InputObjects.Series
-Model/OutputAPI/ReportSender.java
- Model.OutputAPI.ReportSender
 View/ApplicationPages/SeriesPage.java
  View.ApplicationPages.SeriesPage
  View.ApplicationPages.SeriesPage$1
@@ -50,5 +52,3 @@ Model/InputAPI/InputObjects/League.java
  Model.InputAPI.InputObjects.League
 Controller/ApplicationController.java
  Controller.ApplicationController
-Model/InputAPI/InputFetcher.java
- Model.InputAPI.InputFetcher

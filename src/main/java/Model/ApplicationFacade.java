@@ -42,8 +42,7 @@ public class ApplicationFacade {
         this.inputFormatter = new InputFormatter();
         this.outputFormatter = new OutputFormatter();
 
-        System.out.println(this.dbManager.createTable());
-
+        this.dbManager.createTable();
         readConfigFile();
     }
 
@@ -165,6 +164,12 @@ public class ApplicationFacade {
         }
     }
 
+    /**
+     * Sets the year that application will use when retrieving data.
+     * Returns a string displaying whether or not the year was valid
+     *
+     * @return String displaying whether or not the year was valid.
+     */
     public String setYear(String year) {
         return checkYear(year);
     }

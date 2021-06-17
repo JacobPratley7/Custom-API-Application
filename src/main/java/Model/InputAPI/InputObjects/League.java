@@ -258,10 +258,20 @@ public class League {
         }
     }
 
+    /**
+     * Simple accessor for tooNew.
+     *
+     * @return League tooNew.
+     */
     public boolean isTooNew() {
         return this.tooNew;
     }
 
+    /**
+     * Sets tooNew for league object.
+     *
+     * @param year The year to compare with the League object.
+     */
     public void setTooNew(int year) {
         String modifiedAtYear = this.modifiedAt.substring(0, 4);
         int modYear = Integer.parseInt(modifiedAtYear);
