@@ -488,5 +488,73 @@ public class ApplicationFacadeTest {
 
     }
 
+    @Test
+    public void testSetYearValid() {
+        DataBaseManager dbManager = mock(DataBaseManager.class);
+        when(dbManager.deleteTable()).thenReturn("Table Leagues has successfully been created");
+        when(dbManager.createTable()).thenReturn("Table Leagues has successfully been created/loaded");
+        when(dbManager.insertData(anyString())).thenReturn("Data successfully inserted");
+        when(dbManager.retrieveData()).thenReturn("{\"error\":\"no cached data available\"}");
+        ApplicationFacade appFacade = new ApplicationFacade(null, null, dbManager);
+        assertEquals("Success", appFacade.setYear("2000"));
+    }
+
+    @Test
+    public void testSetYearEdgeOne() {
+        DataBaseManager dbManager = mock(DataBaseManager.class);
+        when(dbManager.deleteTable()).thenReturn("Table Leagues has successfully been created");
+        when(dbManager.createTable()).thenReturn("Table Leagues has successfully been created/loaded");
+        when(dbManager.insertData(anyString())).thenReturn("Data successfully inserted");
+        when(dbManager.retrieveData()).thenReturn("{\"error\":\"no cached data available\"}");
+        ApplicationFacade appFacade = new ApplicationFacade(null, null, dbManager);
+        assertEquals("Success", appFacade.setYear("1900"));
+    }
+
+    @Test
+    public void testSetYearEdgeTwo() {
+        DataBaseManager dbManager = mock(DataBaseManager.class);
+        when(dbManager.deleteTable()).thenReturn("Table Leagues has successfully been created");
+        when(dbManager.createTable()).thenReturn("Table Leagues has successfully been created/loaded");
+        when(dbManager.insertData(anyString())).thenReturn("Data successfully inserted");
+        when(dbManager.retrieveData()).thenReturn("{\"error\":\"no cached data available\"}");
+        ApplicationFacade appFacade = new ApplicationFacade(null, null, dbManager);
+        assertEquals("Success", appFacade.setYear("2021"));
+    }
+
+    @Test
+    public void testSetYearTooSmall() {
+        DataBaseManager dbManager = mock(DataBaseManager.class);
+        when(dbManager.deleteTable()).thenReturn("Table Leagues has successfully been created");
+        when(dbManager.createTable()).thenReturn("Table Leagues has successfully been created/loaded");
+        when(dbManager.insertData(anyString())).thenReturn("Data successfully inserted");
+        when(dbManager.retrieveData()).thenReturn("{\"error\":\"no cached data available\"}");
+        ApplicationFacade appFacade = new ApplicationFacade(null, null, dbManager);
+        assertEquals("Please enter a valid year", appFacade.setYear("1899"));
+    }
+
+    @Test
+    public void testSetYearTooLarge() {
+        DataBaseManager dbManager = mock(DataBaseManager.class);
+        when(dbManager.deleteTable()).thenReturn("Table Leagues has successfully been created");
+        when(dbManager.createTable()).thenReturn("Table Leagues has successfully been created/loaded");
+        when(dbManager.insertData(anyString())).thenReturn("Data successfully inserted");
+        when(dbManager.retrieveData()).thenReturn("{\"error\":\"no cached data available\"}");
+        ApplicationFacade appFacade = new ApplicationFacade(null, null, dbManager);
+        assertEquals("Please enter a valid year", appFacade.setYear("2022"));
+    }
+
+    @Test
+    public void testSetYearNotAnInteger() {
+        DataBaseManager dbManager = mock(DataBaseManager.class);
+        when(dbManager.deleteTable()).thenReturn("Table Leagues has successfully been created");
+        when(dbManager.createTable()).thenReturn("Table Leagues has successfully been created/loaded");
+        when(dbManager.insertData(anyString())).thenReturn("Data successfully inserted");
+        when(dbManager.retrieveData()).thenReturn("{\"error\":\"no cached data available\"}");
+        ApplicationFacade appFacade = new ApplicationFacade(null, null, dbManager);
+        assertEquals("Please enter a valid year", appFacade.setYear("hello there"));
+    }
+
+
+
 
 }

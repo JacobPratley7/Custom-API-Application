@@ -36,15 +36,15 @@ Model/InputAPI/InputFetcherImpl.java
  Model.InputAPI.InputFetcherImpl
 Model/OutputAPI/ReportSenderDummy.java
  Model.OutputAPI.ReportSenderDummy
-Controller/ApplicationController.java
- Controller.ApplicationController
+Model/OutputAPI/OutputFormatter.java
+ Model.OutputAPI.OutputFormatter
 Model/OutputAPI/ReportSender.java
  Model.OutputAPI.ReportSender
 Model/InputAPI/InputFormatter.java
  Model.InputAPI.InputFormatter
 Model/InputAPI/InputObjects/Series.java
  Model.InputAPI.InputObjects.Series
-Model/OutputAPI/OutputFormatter.java
- Model.OutputAPI.OutputFormatter
 Model/ApplicationFacade.java
  Model.ApplicationFacade
+Controller/ApplicationController.java
+ Controller.ApplicationController

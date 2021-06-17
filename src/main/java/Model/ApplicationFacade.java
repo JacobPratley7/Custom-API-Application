@@ -147,4 +147,8 @@ public class ApplicationFacade {
         return "Message sent Successfully!\n".concat(report);
     }
 
+    public String setYear(String year) {
+        return null;
+    }
+
 }
