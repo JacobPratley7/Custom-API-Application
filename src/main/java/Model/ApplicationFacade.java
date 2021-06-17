@@ -159,7 +159,7 @@ public class ApplicationFacade {
             this.year = potentialYear;
             return "Success";
         } catch(NumberFormatException n) {
-            return "Please enter a valid year";
+            return "Please enter a number";
         } catch(Exception e) {
             return "Something went wrong, please try again";
         }

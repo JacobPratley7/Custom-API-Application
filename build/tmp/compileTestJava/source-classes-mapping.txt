@@ -1,6 +1,6 @@
 InputFormatterTest.java
  InputFormatterTest
-ApplicationFacadeTest.java
- ApplicationFacadeTest
 OutputFormatterTest.java
  OutputFormatterTest
+ApplicationFacadeTest.java
+ ApplicationFacadeTest

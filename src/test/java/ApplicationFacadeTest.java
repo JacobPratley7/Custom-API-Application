@@ -551,7 +551,7 @@ public class ApplicationFacadeTest {
         when(dbManager.insertData(anyString())).thenReturn("Data successfully inserted");
         when(dbManager.retrieveData()).thenReturn("{\"error\":\"no cached data available\"}");
         ApplicationFacade appFacade = new ApplicationFacade(null, null, dbManager);
-        assertEquals("Please enter a valid year", appFacade.setYear("hello there"));
+        assertEquals("Please enter a number", appFacade.setYear("hello there"));
     }
 
 

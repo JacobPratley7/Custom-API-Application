@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="OutputFormatterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-06-17T11:37:59" hostname="LAPTOP-86H4GGTF" time="0.271">
+<testsuite name="OutputFormatterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-06-17T11:54:16" hostname="LAPTOP-86H4GGTF" time="0.331">
   <properties/>
   <testcase name="testGenerateReportError" classname="OutputFormatterTest" time="0.0"/>
-  <testcase name="testGenerateReportValid" classname="OutputFormatterTest" time="0.267"/>
-  <testcase name="testGenerateReportTooNew" classname="OutputFormatterTest" time="0.004"/>
+  <testcase name="testGenerateReportValid" classname="OutputFormatterTest" time="0.321"/>
+  <testcase name="testGenerateReportTooNew" classname="OutputFormatterTest" time="0.01"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
