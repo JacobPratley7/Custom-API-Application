@@ -27,6 +27,7 @@ public class ApplicationFacade {
     private List<Series> lastRetrievedSeries;
     private InputFormatter inputFormatter;
     private OutputFormatter outputFormatter;
+    private int year;
 
     /**
      * Class Constructor. Will also retrieve/store the contents of the config file.
@@ -147,8 +148,25 @@ public class ApplicationFacade {
         return "Message sent Successfully!\n".concat(report);
     }
 
+    private String checkYear(String year) {
+        try {
+            int potentialYear = Integer.parseInt(year);
+
+            if (potentialYear < 1900 || potentialYear > 2021) {
+                return "Please enter a valid year";
+            }
+
+            this.year = potentialYear;
+            return "Success";
+        } catch(NumberFormatException n) {
+            return "Please enter a valid year";
+        } catch(Exception e) {
+            return "Something went wrong, please try again";
+        }
+    }
+
     public String setYear(String year) {
-        return null;
+        return checkYear(year);
     }
 
 }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="InputFormatterTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-06-17T11:21:57" hostname="LAPTOP-86H4GGTF" time="0.078">
+<testsuite name="InputFormatterTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-06-17T11:37:59" hostname="LAPTOP-86H4GGTF" time="0.007">
   <properties/>
-  <testcase name="testGenerateLeagueOutputError" classname="InputFormatterTest" time="0.001"/>
+  <testcase name="testGenerateLeagueOutputError" classname="InputFormatterTest" time="0.0"/>
   <testcase name="testGenerateLeagueOutputValid" classname="InputFormatterTest" time="0.002"/>
   <testcase name="testGenerateSeriesOutputTooNew" classname="InputFormatterTest" time="0.001"/>
-  <testcase name="testGenerateLeagueOutputTooNew" classname="InputFormatterTest" time="0.063"/>
+  <testcase name="testGenerateLeagueOutputTooNew" classname="InputFormatterTest" time="0.0"/>
   <testcase name="testGenerateSeriesOutputError" classname="InputFormatterTest" time="0.0"/>
-  <testcase name="testGenerateSeriesOutputValid" classname="InputFormatterTest" time="0.009"/>
+  <testcase name="testGenerateSeriesOutputValid" classname="InputFormatterTest" time="0.001"/>
   <testcase name="testGenerateSeriesList" classname="InputFormatterTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
