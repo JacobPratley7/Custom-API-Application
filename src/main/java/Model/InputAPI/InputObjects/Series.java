@@ -28,18 +28,16 @@ public class Series {
 
 
     /**
-     * Simple accessor for beginAt.
-     *
-     * @return Series begin at time.
+     * Simple accessor for beginAt
+     * @return series begin at time
      */
     public String getBeginAt() {
         return this.beginAt;
     }
 
     /**
-     * Sets beginAt for series object.
-     *
-     * @param beginAt The beginAt time to assign to the series object.
+     * Sets beginAt for series object
+     * @param beginAt The beginAt time to assign to the series object
      */
     public void setBeginAt(Object beginAt) {
         if(beginAt.equals(JSONObject.NULL)) {
@@ -50,18 +48,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for description.
-     *
-     * @return Series description.
+     * Simple accessor for description
+     * @return series description
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Sets description for series object.
-     *
-     * @param description The description to assign to the series object.
+     * Sets description for series object
+     * @param description The description to assign to the series object
      */
     public void setDescription(Object description) {
         if(description.equals(JSONObject.NULL)) {
@@ -72,18 +68,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for endAt.
-     *
-     * @return Series end at time.
+     * Simple accessor for endAt
+     * @return series end at time
      */
     public String getEndAt() {
         return this.endAt;
     }
 
     /**
-     * Sets endAt for series object.
-     *
-     * @param endAt The endAt time to assign to the series object.
+     * Sets endAt for series object
+     * @param endAt The endAt time to assign to the series object
      */
     public void setEndAt(Object endAt) {
         if(endAt.equals(JSONObject.NULL)) {
@@ -94,18 +88,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for fullName.
-     *
-     * @return Series full name.
+     * Simple accessor for fullName
+     * @return series full name
      */
     public String getFullName() {
         return this.fullName;
     }
 
     /**
-     * Sets fullName for series object.
-     *
-     * @param fullName The full name to assign to the series object.
+     * Sets fullName for series object
+     * @param fullName The full name to assign to the series object
      */
     public void setFullName(Object fullName) {
         if(fullName.equals(JSONObject.NULL)) {
@@ -116,18 +108,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for id.
-     *
-     * @return Series id.
+     * Simple accessor for id
+     * @return series id
      */
     public String getID() {
         return this.id;
     }
 
     /**
-     * Sets id for series object.
-     *
-     * @param id The id to assign to the series object.
+     * Sets id for series object
+     * @param id The id to assign to the series object
      */
     public void setID(Object id) {
         if(id.equals(JSONObject.NULL)) {
@@ -139,18 +129,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for id.
-     *
-     * @return League id
+     * Simple accessor for id
+     * @return league id
      */
     public String getLeagueId() {
         return this.leagueId;
     }
 
     /**
-     * Sets leagueID for series object.
-     *
-     * @param leagueId The league id to assign to the series object.
+     * Sets leagueID for series object
+     * @param leagueId The league id to assign to the series object
      */
     public void setLeagueID(Object leagueId) {
         if(leagueId.equals(JSONObject.NULL)) {
@@ -162,18 +150,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for modifiedAt.
-     *
-     * @return Series modified at time.
+     * Simple accessor for modifiedAt
+     * @return series modified at time
      */
     public String getModifiedAt() {
         return this.modifiedAt;
     }
 
     /**
-     * Sets modifiedAt for series object.
-     *
-     * @param modifiedAt The modified at time to assign to the series object.
+     * Sets modifiedAt for series object
+     * @param modifiedAt The modified at time to assign to the series object
      */
     public void setModifiedAt(Object modifiedAt) {
         if(modifiedAt.equals(JSONObject.NULL)) {
@@ -184,18 +170,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for name.
-     *
-     * @return Series name.
+     * Simple accessor for name
+     * @return series name
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Sets name for series object.
-     *
-     * @param name The name to assign to the series object.
+     * Sets name for series object
+     * @param name The name to assign to the series object
      */
     public void setName(Object name) {
         if(name.equals(JSONObject.NULL)) {
@@ -206,18 +190,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for season.
-     *
-     * @return Series season.
+     * Simple accessor for season
+     * @return series season
      */
     public String getSeason() {
         return this.season;
     }
 
     /**
-     * Sets season for series object.
-     *
-     * @param season The season to assign to the series object.
+     * Sets season for series object
+     * @param season The season to assign to the series object
      */
     public void setSeason(Object season) {
         if(season.equals(JSONObject.NULL)) {
@@ -228,18 +210,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for slug.
-     *
-     * @return Series slug.
+     * Simple accessor for slug
+     * @return series slug
      */
     public String getSlug() {
         return this.slug;
     }
 
     /**
-     * Sets slug for series object.
-     *
-     * @param slug The slug to assign to the series object.
+     * Sets slug for series object
+     * @param slug The slug to assign to the series object
      */
     public void setSlug(Object slug) {
         if(slug.equals(JSONObject.NULL)) {
@@ -250,18 +230,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for tier.
-     *
-     * @return Series tier.
+     * Simple accessor for tier
+     * @return series tier
      */
     public String getTier() {
         return this.tier;
     }
 
     /**
-     * Sets tier for series object.
-     *
-     * @param tier The tier to assign to the series object.
+     * Sets tier for series object
+     * @param tier The tier to assign to the series object
      */
     public void setTier(Object tier) {
         if(tier.equals(JSONObject.NULL)) {
@@ -272,18 +250,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for videogameTitle.
-     *
-     * @return Series video game title.
+     * Simple accessor for videogameTitle
+     * @return series video game title
      */
     public String getVideoGameTitle() {
         return this.videoGameTitle;
     }
 
     /**
-     * Sets videogameTitle for series object.
-     *
-     * @param videoGameTitle The video game title to assign to the series object.
+     * Sets videogameTitle for series object
+     * @param videoGameTitle The video game title to assign to the series object
      */
     public void setVideoGameTitle(Object videoGameTitle) {
         if(videoGameTitle.equals(JSONObject.NULL)) {
@@ -294,18 +270,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for winnerId.
-     *
-     * @return Series winner id.
+     * Simple accessor for winnerId
+     * @return series winner id
      */
     public String getWinnerId() {
         return this.winnerId;
     }
 
     /**
-     * Sets winnerId for series object.
-     *
-     * @param winnerId The winner id to assign to the series object.
+     * Sets winnerId for series object
+     * @param winnerId The winner id to assign to the series object
      */
     public void setWinnerId(Object winnerId) {
         if(winnerId.equals(JSONObject.NULL)) {
@@ -317,18 +291,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for winnerType.
-     *
-     * @return Series winner type.
+     * Simple accessor for winnerType
+     * @return series winner type
      */
     public String getWinnerType() {
         return this.winnerType;
     }
 
     /**
-     * Sets winnerType for series object.
-     *
-     * @param winnerType The winner type to assign to the series object.
+     * Sets winnerType for series object
+     * @param winnerType The winner type to assign to the series object
      */
     public void setWinnerType(Object winnerType) {
         if(winnerType.equals(JSONObject.NULL)) {
@@ -339,18 +311,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for year.
-     *
-     * @return Series year.
+     * Simple accessor for year
+     * @return series year
      */
     public String getYear() {
         return this.year;
     }
 
     /**
-     * Sets year for series object.
-     *
-     * @param year The year to assign to the series object.
+     * Sets year for series object
+     * @param year The year to assign to the series object
      */
     public void setYear(Object year) {
         if(year.equals(JSONObject.NULL)) {
@@ -362,18 +332,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for videoGameID.
-     *
-     * @return Series video game id.
+     * Simple accessor for videoGameID
+     * @return series video game id
      */
     public String getVideoGameID() {
         return this.videoGameID;
     }
 
     /**
-     * Sets videoGameId for series object.
-     *
-     * @param videoGameID The video game id to assign to the series object.
+     * Sets videoGameId for series object
+     * @param videoGameID The video game id to assign to the series object
      */
     public void setVideoGameID(Object videoGameID) {
         if(videoGameID.equals(JSONObject.NULL)) {
@@ -385,18 +353,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for videoGameSlug.
-     *
-     * @return Series video game slug.
+     * Simple accessor for videoGameSlug
+     * @return series video game slug
      */
     public String getVideoGameSlug() {
         return this.videoGameSlug;
     }
 
     /**
-     * Sets videoGameSlug for series object.
-     *
-     * @param videoGameSlug The video game slug to assign to the series object.
+     * Sets videoGameSlug for series object
+     * @param videoGameSlug The video game slug to assign to the series object
      */
     public void setVideoGameSlug(Object videoGameSlug) {
         if(videoGameSlug.equals(JSONObject.NULL)) {
@@ -407,18 +373,16 @@ public class Series {
     }
 
     /**
-     * Simple accessor for videoGameName.
-     *
-     * @return Series video game name.
+     * Simple accessor for videoGameName
+     * @return series video game name
      */
     public String getVideoGameName() {
         return this.videoGameName;
     }
 
     /**
-     * Sets videoGameName for series object.
-     *
-     * @param videoGameName The video game name to assign to the series object.
+     * Sets videoGameName for series object
+     * @param videoGameName The video game name to assign to the series object
      */
     public void setVideoGameName(Object videoGameName) {
         if(videoGameName.equals(JSONObject.NULL)) {
@@ -429,36 +393,32 @@ public class Series {
     }
 
     /**
-     * Simple accessor for tournaments.
-     *
-     * @return Series tournaments.
+     * Simple accessor for tournaments
+     * @return series tournaments
      */
     public List<Tournament> getTournaments() {
         return this.tournaments;
     }
 
     /**
-     * Sets tournaments for series object.
-     *
-     * @param tournaments The list of tournaments to assign to the series object.
+     * Sets tournaments for series object
+     * @param tournaments The list of tournaments to assign to the series object
      */
     public void setTournaments(List<Tournament> tournaments) {
         this.tournaments = tournaments;
     }
 
     /**
-     * Simple accessor for league.
-     *
-     * @return Series league.
+     * Simple accessor for league
+     * @return series league
      */
     public League getLeague() {
         return this.league;
     }
 
     /**
-     * Sets league for series object.
-     *
-     * @param league The league to assign to the series object.
+     * Sets league for series object
+     * @param league The league to assign to the series object
      */
     public void setLeague(League league) {
         this.league = league;

@@ -16,12 +16,13 @@ public class LeaguesPage {
     /**
      * Constructs LeaguesPage object.
      * Also responsible for constructing the leaguesPage scene that will be
-     * used by the ApplicationWindow.
+     * used by the ApplicationWindow
      *
-     * @param window Primary stage used by the ApplicationWindow.
-     * @param otherScenes The other scenes used by the ApplicationWindow.
-     * @param textBoxes The other text boxes used by the ApplicationWindow.
-     * @param controller The ApplicationController used by the application.
+     * @param window Primary stage used by the ApplicationWindow
+     * @param otherScenes the other scenes used by the ApplicationWindow
+     * @param textBoxes the other text boxes used by the ApplicationWindow
+     * @param controller the ApplicationController used by the application
+     * @return new LeaguesPage instance
      */
     public LeaguesPage(Stage window, HashMap<String, Scene> otherScenes, HashMap<String, Text> textBoxes, ApplicationController controller) throws IOException {
         Scene leaguesPage;

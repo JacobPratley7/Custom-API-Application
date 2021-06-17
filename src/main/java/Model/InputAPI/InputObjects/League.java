@@ -18,19 +18,21 @@ public class League {
     private String videoGameSlug;
     private Boolean tooNew = false;
 
+    public League() {
+
+    }
+
     /**
-     * Simple accessor for id.
-     *
-     * @return League id.
+     * Simple accessor for id
+     * @return league id
      */
     public String getID() {
         return this.id;
     }
 
     /**
-     * Sets id for league object.
-     *
-     * @param id The id to assign to the league object.
+     * Sets id for league object
+     * @param id The id to assign to the league object
      */
     public void setID(Object id) {
         if(id.equals(JSONObject.NULL)) {
@@ -42,18 +44,16 @@ public class League {
     }
 
     /**
-     * Simple accessor for imageUrl.
-     *
-     * @return league image url.
+     * Simple accessor for imageUrl
+     * @return league image url
      */
     public String getImageUrl() {
         return this.imageUrl;
     }
 
     /**
-     * Sets imageUrl for league object.
-     *
-     * @param imageUrl The imageUrl to assign to the league object.
+     * Sets imageUrl for league object
+     * @param imageUrl The imageUrl to assign to the league object
      */
     public void setImageUrl(Object imageUrl) {
         if(imageUrl.equals(JSONObject.NULL)) {
@@ -64,18 +64,16 @@ public class League {
     }
 
     /**
-     * Simple accessor for modifiedAt.
-     *
-     * @return League modified at.
+     * Simple accessor for modifiedAt
+     * @return league modified at
      */
     public String getModifiedAt() {
         return this.modifiedAt;
     }
 
     /**
-     * Sets modifiedAt for league object.
-     *
-     * @param modifiedAt The modifiedAt time to assign to the league object.
+     * Sets modifiedAt for league object
+     * @param modifiedAt The modifiedAt time to assign to the league object
      */
     public void setModifiedAt(Object modifiedAt) {
         if(modifiedAt.equals(JSONObject.NULL)) {
@@ -86,18 +84,16 @@ public class League {
     }
 
     /**
-     * Simple accessor for name.
-     *
-     * @return League name.
+     * Simple accessor for name
+     * @return league name
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Sets name for league object.
-     *
-     * @param name The name to assign to the league object.
+     * Sets name for league object
+     * @param name The name to assign to the league object
      */
     public void setName(Object name) {
         if(name.equals(JSONObject.NULL)) {
@@ -108,36 +104,32 @@ public class League {
     }
 
     /**
-     * Simple accessor for series.
-     *
-     * @return League series.
+     * Simple accessor for series
+     * @return league series
      */
     public List<Series> getSeries() {
         return this.series;
     }
 
     /**
-     * Sets series for league object.
-     *
-     * @param series The list of series to assign to the league object.
+     * Sets series for league object
+     * @param series The list of series to assign to the league object
      */
     public void setSeries(List<Series> series) {
         this.series = series;
     }
 
     /**
-     * Simple accessor for slug.
-     *
-     * @return League slug.
+     * Simple accessor for slug
+     * @return league slug
      */
     public String getSlug() {
         return this.slug;
     }
 
     /**
-     * Sets slug for league object.
-     *
-     * @param slug The slug to assign to the league object.
+     * Sets slug for league object
+     * @param slug The slug to assign to the league object
      */
     public void setSlug(Object slug) {
         if(slug.equals(JSONObject.NULL)) {
@@ -148,18 +140,16 @@ public class League {
     }
 
     /**
-     * Simple accessor for url.
-     *
-     * @return League url.
+     * Simple accessor for url
+     * @return league url
      */
     public String getUrl() {
         return this.url;
     }
 
     /**
-     * Sets url for league object.
-     *
-     * @param url The url to assign to the league object.
+     * Sets url for league object
+     * @param url The url to assign to the league object
      */
     public void setUrl(Object url) {
         if(url.equals(JSONObject.NULL)) {
@@ -170,18 +160,16 @@ public class League {
     }
 
     /**
-     * Simple accessor for videoGameCurrentVersion.
-     *
-     * @return League video game current version.
+     * Simple accessor for videoGameCurrentVersion
+     * @return league video game current version
      */
     public String getVideoGameCurrentVersion() {
         return this.videoGameCurrentVersion;
     }
 
     /**
-     * Sets videoGameCurrentVersion for league object.
-     *
-     * @param currentVersion The current version to assign to the league object.
+     * Sets videoGameCurrentVersion for league object
+     * @param currentVersion The current version to assign to the league object
      */
     public void setVideoGameCurrentVersion(Object currentVersion) {
         if(currentVersion.equals(JSONObject.NULL)) {
@@ -192,18 +180,16 @@ public class League {
     }
 
     /**
-     * Simple accessor for videoGameID.
-     *
-     * @return League video game id.
+     * Simple accessor for videoGameID
+     * @return league video game id
      */
     public String getVideoGameID () {
         return this.videoGameID;
     }
 
     /**
-     * Sets videoGameID for league object.
-     *
-     * @param id The video game id to assign to the league object.
+     * Sets videoGameID for league object
+     * @param id The video game id to assign to the league object
      */
     public void setVideoGameID(Object id) {
         if(id.equals(JSONObject.NULL)) {
@@ -215,18 +201,16 @@ public class League {
     }
 
     /**
-     * Simple accessor for videoGameName.
-     *
-     * @return League video game name.
+     * Simple accessor for videoGameName
+     * @return league video game name
      */
     public String getVideoGameName() {
         return this.videoGameName;
     }
 
     /**
-     * Sets videoGameName for league object.
-     *
-     * @param name The video game name to assign to the league object.
+     * Sets videoGameName for league object
+     * @param name The video game name to assign to the league object
      */
     public void setVideoGameName(Object name) {
         if(name.equals(JSONObject.NULL)) {
@@ -237,18 +221,16 @@ public class League {
     }
 
     /**
-     * Simple accessor for videoGameSlug.
-     *
-     * @return League video game slug.
+     * Simple accessor for videoGameSlug
+     * @return league video game slug
      */
     public String getVideoGameSlug() {
         return this.videoGameSlug;
     }
 
     /**
-     * Sets videoGameSlug for league object.
-     *
-     * @param slug The video game slug to assign to the league object.
+     * Sets videoGameSlug for league object
+     * @param slug The video game slug to assign to the league object
      */
     public void setVideoGameSlug(Object slug) {
         if(slug.equals(JSONObject.NULL)) {

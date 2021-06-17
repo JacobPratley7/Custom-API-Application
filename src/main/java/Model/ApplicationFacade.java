@@ -30,10 +30,10 @@ public class ApplicationFacade {
     private int year;
 
     /**
-     * Class Constructor. Will also retrieve/store the contents of the config file.
-     *
-     * @param inputFetcher The InputFetcher object used to access the input API.
-     * @param reportSender The ReportSender object used to access the output API.
+     * Class Constructor. Will also retrieve/store the contents of the config file
+     * @param inputFetcher The InputFetcher object used to access the input API
+     * @param reportSender The ReportSender object used to access the output API
+     * @return new ApplicationFacade instance
      */
     public ApplicationFacade(InputFetcher inputFetcher, ReportSender reportSender, DataBaseManager dbManager) {
         this.inputFetcher = inputFetcher;
@@ -71,9 +71,9 @@ public class ApplicationFacade {
      * Retrieves league information from input API,
      * then formats this data into a more human readable string.
      *
-     * @param cachedDataWanted Indicates whether or not the user requested cached data.
-     * @return String in human readable format representing league data.
-     * @throws IOException If error is to occur whilst accessing input API.
+     * @param cachedDataWanted Indicates whether or not the user requested cached data
+     * @return String in human readable format representing league data
+     * @throws IOException if error is to occur whilst accessing input API
      */
     public String getLeagueData(boolean cachedDataWanted) throws IOException {
 
@@ -106,9 +106,9 @@ public class ApplicationFacade {
      * Retrieves series information from input API,
      * then formats this data into a more human readable string.
      *
-     * @param leagueID the id or the slug of the league the users wants series data on.
-     * @return String in human readable format representing series data.
-     * @throws IOException If error is to occur whilst accessing input API.
+     * @param leagueID the id or the slug of the league the users wants series data on
+     * @return String in human readable format representing series data
+     * @throws IOException if error is to occur whilst accessing input API
      */
     public String getSeriesData(String leagueID) throws IOException {
         if(confirmInputValid(leagueID) == false) {
@@ -127,10 +127,10 @@ public class ApplicationFacade {
     /**
      * Generates a report and sends it the the pre-configured number.
      * Returns a string displaying the report if the message was sent successfully,
-     * or the error message if the message was not able to send.
+     * or the error message if the message was not able to send
      *
-     * @return String displaying either the report or the error message.
-     * @throws IOException if error is to occur whilst accessing output API.
+     * @return String displaying either the report or the error message
+     * @throws IOException if error is to occur whilst accessing output API
      */
     public String sendReport() throws IOException {
         String report = this.outputFormatter.generateReport(this.lastRetrievedSeries);

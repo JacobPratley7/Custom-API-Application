@@ -1,9 +1,6 @@
 package View.ApplicationPages;
 
 import Controller.ApplicationController;
-import javafx.concurrent.Task;
-import javafx.concurrent.WorkerStateEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -12,21 +9,20 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class InputModePage {
 
     /**
      * Constructs InputModePage object.
      * Also responsible for constructing the inputModePage scene that will be
-     * used by the ApplicationWindow.
+     * used by the ApplicationWindow
      *
-     * @param window Primary stage used by the ApplicationWindow.
-     * @param otherScenes The other scenes used by the ApplicationWindow.
-     * @param textBoxes The other text boxes used by the ApplicationWindow.
-     * @param controller The ApplicationController used by the application.
+     * @param window Primary stage used by the ApplicationWindow
+     * @param otherScenes the other scenes used by the ApplicationWindow
+     * @param textBoxes the other text boxes used by the ApplicationWindow
+     * @param controller the ApplicationController used by the application
+     * @return new InputModePage instance
      */
     public InputModePage(Stage window, HashMap<String, Scene> otherScenes, HashMap<String, Text> textBoxes, ApplicationController controller) {
         Scene inputModePage;
@@ -36,6 +32,7 @@ public class InputModePage {
         inputModeLabel.setFont(Font.font("Modena", FontWeight.BOLD, Font.getDefault().getSize()));
         Button cachedData = new Button("Get cached data");
         Button liveData = new Button("Get live data");
+<<<<<<< HEAD
 
         cachedData.setOnAction(e -> {
             window.setScene(otherScenes.get("league"));
@@ -82,6 +79,21 @@ public class InputModePage {
                     });
             Thread getLeaguesThread = new Thread(getLeaguesTask);
             getLeaguesThread.start();
+=======
+        cachedData.setOnAction(e -> {window.setScene(otherScenes.get("league"));
+            try {
+                textBoxes.get("league").setText(controller.getLeagueData(true));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+        liveData.setOnAction(e -> {window.setScene(otherScenes.get("league"));
+            try {
+                textBoxes.get("league").setText(controller.getLeagueData(false));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+>>>>>>> parent of 18099c3... Implemented multi-threading, fixed up javadocs commenting
         });
 
         inputModeLayout.getChildren().addAll(inputModeLabel, liveData, cachedData);

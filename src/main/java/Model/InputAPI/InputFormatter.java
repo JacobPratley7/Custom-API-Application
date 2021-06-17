@@ -48,10 +48,9 @@ public class InputFormatter {
     }
 
     /**
-     * Generates a String representing data on all the leagues present in the given json String.
-     *
-     * @param jsonData The string containing data on leagues.
-     * @return List String containing leagues data, formatted in a human readable way.
+     * Generates a String representing data on all the leagues present in the given json String
+     * @param jsonData The string containing data on leagues
+     * @return List String containing leagues data, formatted in a human readable way
      */
     public String generateLeagueOutput(String jsonData, int year) {
         if(jsonData.contains("error")) {
@@ -183,10 +182,9 @@ public class InputFormatter {
     }
 
     /**
-     * Generates a String representing data pn all the series present in the given json String.
-     *
-     * @param jsonData The string containing data on series.
-     * @return List String containing series data, formatted in a human readable way.
+     * Generates a String representing data pn all the series present in the given json String
+     * @param jsonData The string containing data on series
+     * @return List String containing series data, formatted in a human readable way
      */
     public String generateSeriesOutput(String jsonData, int year) {
         if(jsonData.contains("error")) {
@@ -255,10 +253,9 @@ public class InputFormatter {
     }
 
     /**
-     * Generates a list of series objects given a json string.
-     *
-     * @param jsonData The string containing data on series.
-     * @return List of series objects.
+     * Generates a list of series objects given a json string
+     * @param jsonData The string containing data on series
+     * @return List of series objects
      */
     public List<Series> generateSeriesList(String jsonData, int year) {
         List<Series> lastRetrievedSeries = new ArrayList<>();

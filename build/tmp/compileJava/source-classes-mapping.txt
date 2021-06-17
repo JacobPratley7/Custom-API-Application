@@ -34,6 +34,7 @@ Model/InputAPI/InputFetcherImpl.java
  Model.InputAPI.InputFetcherImpl
 Model/OutputAPI/ReportSenderDummy.java
  Model.OutputAPI.ReportSenderDummy
+<<<<<<< HEAD
 Model/InputAPI/InputObjects/Series.java
  Model.InputAPI.InputObjects.Series
 Model/OutputAPI/ReportSender.java
@@ -46,5 +47,25 @@ Model/InputAPI/InputObjects/League.java
  Model.InputAPI.InputObjects.League
 Model/ApplicationFacade.java
  Model.ApplicationFacade
+=======
+Model/OutputAPI/OutputFormatter.java
+ Model.OutputAPI.OutputFormatter
+MainApplication.java
+ MainApplication
+View/ApplicationWindow.java
+ View.ApplicationWindow
+View/ApplicationPages/SendPage.java
+ View.ApplicationPages.SendPage
+View/ApplicationPages/InputModePage.java
+ View.ApplicationPages.InputModePage
+View/ApplicationPages/LeaguesPage.java
+ View.ApplicationPages.LeaguesPage
+Model/ApplicationFacade.java
+ Model.ApplicationFacade
+View/ApplicationPages/SeriesPage.java
+ View.ApplicationPages.SeriesPage
+View/ApplicationPages/HomePage.java
+ View.ApplicationPages.HomePage
+>>>>>>> parent of 18099c3... Implemented multi-threading, fixed up javadocs commenting
 Controller/ApplicationController.java
  Controller.ApplicationController

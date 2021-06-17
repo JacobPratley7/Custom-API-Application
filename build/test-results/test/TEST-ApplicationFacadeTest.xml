@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="ApplicationFacadeTest" tests="31" skipped="0" failures="0" errors="0" timestamp="2021-06-17T12:58:13" hostname="LAPTOP-86H4GGTF" time="1.735">
   <properties/>
   <testcase name="testSendReportNothingToReport" classname="ApplicationFacadeTest" time="1.469"/>
@@ -74,5 +75,28 @@ Table Leagues has successfully been created/loaded
 Table Leagues has successfully been created/loaded
 Table Leagues has successfully been created/loaded
 ]]></system-out>
+=======
+<testsuite name="ApplicationFacadeTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2021-06-05T08:09:34" hostname="LAPTOP-86H4GGTF" time="1.66">
+  <properties/>
+  <testcase name="testSendReportNothingToReport" classname="ApplicationFacadeTest" time="1.405"/>
+  <testcase name="testGetSeriesDataInputNonASCII" classname="ApplicationFacadeTest" time="0.004"/>
+  <testcase name="testGetLeagueDataDummy" classname="ApplicationFacadeTest" time="0.082"/>
+  <testcase name="testGetLeagueDataError" classname="ApplicationFacadeTest" time="0.007"/>
+  <testcase name="testGetSeriesDataInputNull" classname="ApplicationFacadeTest" time="0.004"/>
+  <testcase name="testGetSeriesDataInputEmpty" classname="ApplicationFacadeTest" time="0.014"/>
+  <testcase name="testSendReportOnline" classname="ApplicationFacadeTest" time="0.014"/>
+  <testcase name="testGetSeriesDataOnlineUpdated" classname="ApplicationFacadeTest" time="0.007"/>
+  <testcase name="testGetSeriesDataOnline" classname="ApplicationFacadeTest" time="0.008"/>
+  <testcase name="testGetSeriesDataDummy" classname="ApplicationFacadeTest" time="0.003"/>
+  <testcase name="testGetSeriesDataError" classname="ApplicationFacadeTest" time="0.004"/>
+  <testcase name="testGetSeriesDataDummyUpdated" classname="ApplicationFacadeTest" time="0.007"/>
+  <testcase name="testSendReportDummy" classname="ApplicationFacadeTest" time="0.004"/>
+  <testcase name="testSendReportError" classname="ApplicationFacadeTest" time="0.004"/>
+  <testcase name="testGetLeagueDataOnlineUpdated" classname="ApplicationFacadeTest" time="0.007"/>
+  <testcase name="testGetLeagueDataOnline" classname="ApplicationFacadeTest" time="0.009"/>
+  <testcase name="testGetLeagueDataCachedDataValid" classname="ApplicationFacadeTest" time="0.049"/>
+  <testcase name="testGetLeagueDataDummyUpdated" classname="ApplicationFacadeTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+>>>>>>> parent of 18099c3... Implemented multi-threading, fixed up javadocs commenting
   <system-err><![CDATA[]]></system-err>
 </testsuite>

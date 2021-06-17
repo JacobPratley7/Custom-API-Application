@@ -20,11 +20,11 @@ public class ApplicationController {
     /**
      * Constructs ApplicationManager object.
      * Also responsible for constructing the ApplicationFacade object that will be
-     * used by the rest of the application.
+     * used by the rest of the application
      *
-     * @param inputMode String representing the desired input API functionality.
-     * @param outputMode String representing the desired output API functionality.
-     * @return New ApplicationManager instance.
+     * @param inputMode String representing the desired input API functionality
+     * @param outputMode String representing the desired output API functionality
+     * @return new ApplicationManager instance
      */
     public ApplicationController(String inputMode, String outputMode) {
         InputFetcher inFetcher = null;
@@ -52,27 +52,27 @@ public class ApplicationController {
 
 
 
-    /** Calls the stored ApplicationFacade, returns league data. */
+    /** Calls the stored ApplicationFacade, returns league data */
     public String getLeagueData(boolean cachedWanted) throws IOException {
         return this.appFacade.getLeagueData(cachedWanted);
     }
 
-    /** Calls the stored ApplicationFacade, returns series data. */
+    /** Calls the stored ApplicationFacade, returns series data */
     public String getSeriesData(String leagueID) throws IOException {
         return this.appFacade.getSeriesData(leagueID);
     }
 
-    /** Calls the stored ApplicationFacade, returns the report. */
+    /** Calls the stored ApplicationFacade, returns the report */
     public String sendReport() throws IOException {
         return this.appFacade.sendReport();
     }
 
-    /** Returns the stored ApplicationWindow. */
+    /** Returns the stored ApplicationWindow */
     public ApplicationWindow getAppWindow() {
         return this.appWindow;
     }
 
-    /** Sets and creates a new ApplicationWindow. */
+    /** Sets and creates a new ApplicationWindow */
     public void setAppWindow(Stage primaryStage) {
         this.appWindow = new ApplicationWindow(primaryStage, this);
     }

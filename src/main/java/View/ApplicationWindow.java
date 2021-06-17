@@ -15,12 +15,7 @@ public class ApplicationWindow {
     private HashMap<String, Scene> allScenes = new HashMap<>();
     private HashMap<String, Text> allTextBoxes = new HashMap<>();
 
-    /**
-     * Constructs new ApplicationWindow object.
-     *
-     * @param window The primary stage used by the application.
-     * @param controller ApplicationController object used to retrieve data from Model.
-     */
+
     public ApplicationWindow(Stage window, ApplicationController controller) {
         this.window = window;
         this.controller = controller;

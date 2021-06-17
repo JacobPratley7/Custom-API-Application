@@ -23,14 +23,11 @@ public class MainApplication extends Application {
     }
 
 
-    /**
-     * The main method of the application.
-     *
-     * @param args indicates whether the dummy or live version will be used for the input
-     *             and output api.
-     */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         initializeController(args[0], args[1]);
+
+
+
         launch(args);
     }
 }
