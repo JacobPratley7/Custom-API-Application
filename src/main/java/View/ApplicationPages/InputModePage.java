@@ -38,6 +38,7 @@ public class InputModePage {
         Button liveData = new Button("Get live data");
 
         cachedData.setOnAction(e -> {
+            System.out.println("button pressed");
             window.setScene(otherScenes.get("league"));
             textBoxes.get("league").setText("");
             List<String> retrievedData = new ArrayList<>();

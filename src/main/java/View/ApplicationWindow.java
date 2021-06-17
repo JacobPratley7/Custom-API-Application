@@ -46,6 +46,8 @@ public class ApplicationWindow {
 
         SendPage newSendPage = new SendPage(window, allScenes, allTextBoxes, controller);
 
+        StartupPage startPage = new StartupPage(window, allScenes, allTextBoxes, controller);
+
         window.setScene(allScenes.get("home"));
         window.setTitle("My Application");
         window.show();

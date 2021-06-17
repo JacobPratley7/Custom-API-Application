@@ -1,5 +1,7 @@
 import Controller.ApplicationController;
 import java.io.IOException;
+
+import Model.Database.DataBaseManager;
 import View.ApplicationWindow;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -12,7 +14,6 @@ public class MainApplication extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         this.controller.setAppWindow(primaryStage);
-
 
         ApplicationWindow appWindow = controller.getAppWindow();
         appWindow.initialize();
