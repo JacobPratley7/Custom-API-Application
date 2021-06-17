@@ -125,5 +125,5 @@ It should also be noted that the code in ApplicationFacade in which the contents
 - REFACTOR: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/57969a1eed95f92a5bb4ef53a1ce349fd3c7577f
 
 16. ApplicationFacade Too New output
-- RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/462e41e6e0e6caad8da8544dc1ed65fe2418c15b
+- RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/b4f8cafb88abd4d3c60610f0276cf7221fb7082a
 - GREEN: 
