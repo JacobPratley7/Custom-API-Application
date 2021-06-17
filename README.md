@@ -117,4 +117,4 @@ It should also be noted that the code in ApplicationFacade in which the contents
 
 14. OutputFormatter GenerateReport Extension Task
 - RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/741669ad506a200d05f28954cba76f743d6d68a4
-- GREEN: 
+- GREEN: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/2f0e7a6deb8d15aa5a46254ff92e599b3a6be73d
