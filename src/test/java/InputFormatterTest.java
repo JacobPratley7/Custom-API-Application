@@ -14,6 +14,7 @@ public class InputFormatterTest {
 
         String output = formatter.generateLeagueOutput(json, 2021);
         assertNotNull(output);
+        assertFalse(output.contains("Too New"));
         assertTrue(output.contains("id: 5678"));
         assertTrue(output.contains("image url: https://cdn.pandascore.co/images/league/image/4590/600px-Oceanic_Esports.png"));
         assertTrue(output.contains("modified at: 2021-05-18T07:34:18Z"));
@@ -96,6 +97,7 @@ public class InputFormatterTest {
 
         assertNotNull(output);
 
+        assertFalse(output.contains("Too New"));
         assertTrue(output.contains("begin at: 2021-05-19T04:00:00Z"));
         assertTrue(output.contains("description: null"));
         assertTrue(output.contains("end at: 2021-05-23T14:10:00Z"));
@@ -148,7 +150,7 @@ public class InputFormatterTest {
         InputFormatter formatter = new InputFormatter();
 
         List<Series> series = new ArrayList<>();
-        String output = formatter.generateSeriesOutput(json, 2021);
+        String output = formatter.generateSeriesOutput(json, 2020);
 
         assertNotNull(output);
 

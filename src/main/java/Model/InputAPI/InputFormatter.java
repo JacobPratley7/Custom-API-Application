@@ -10,7 +10,7 @@ import java.util.List;
 public class InputFormatter {
 
 
-    private League convertToLeagueObjectSimple(org.json.JSONObject leagueData) {
+    private League convertToLeagueObjectSimple(org.json.JSONObject leagueData, int year) {
         League newLeague = new League();
         newLeague.setID(leagueData.get("id"));
         newLeague.setImageUrl(leagueData.get("image_url"));
@@ -18,10 +18,11 @@ public class InputFormatter {
         newLeague.setName(leagueData.get("name"));
         newLeague.setSlug(leagueData.get("slug"));
         newLeague.setUrl(leagueData.get("url"));
+        newLeague.setTooNew(year);
         return newLeague;
     }
 
-    private League convertToLeagueObject(org.json.JSONObject leagueData) {
+    private League convertToLeagueObject(org.json.JSONObject leagueData, int year) {
         League newLeague = new League();
         newLeague.setID(leagueData.get("id"));
         newLeague.setImageUrl(leagueData.get("image_url"));
@@ -29,11 +30,12 @@ public class InputFormatter {
         newLeague.setName(leagueData.get("name"));
         newLeague.setSlug(leagueData.get("slug"));
         newLeague.setUrl(leagueData.get("url"));
+        newLeague.setTooNew(year);
         JSONArray series = leagueData.getJSONArray("series");
         List<Series> leagueSeries = new ArrayList<>();
         for(int i = 0; i < series.length(); i++) {
             org.json.JSONObject currentSeriesInfo = (org.json.JSONObject) series.get(i);
-            Series currentSeries = convertToSeriesObjectSimple(currentSeriesInfo);
+            Series currentSeries = convertToSeriesObjectSimple(currentSeriesInfo, year);
             leagueSeries.add(currentSeries);
         }
         newLeague.setSeries(leagueSeries);
@@ -61,7 +63,10 @@ public class InputFormatter {
             String leagueOutput = "";
             for(int i = 0; i < leagueData.length(); i++) {
                 org.json.JSONObject current = (org.json.JSONObject) leagueData.get(i);
-                League currentLeague = convertToLeagueObject(current);
+                League currentLeague = convertToLeagueObject(current, year);
+                if(currentLeague.isTooNew()) {
+                    leagueOutput = leagueOutput.concat("Too New\n");
+                }
                 leagueOutput = (leagueOutput.concat("id: ")).concat(currentLeague.getID());
                 leagueOutput = (leagueOutput.concat("\nimage url: ")).concat(currentLeague.getImageUrl());
                 leagueOutput = (leagueOutput.concat("\nmodified at: ")).concat(currentLeague.getModifiedAt());
@@ -99,7 +104,7 @@ public class InputFormatter {
         }
     }
 
-    private Series convertToSeriesObjectSimple(org.json.JSONObject seriesData) {
+    private Series convertToSeriesObjectSimple(org.json.JSONObject seriesData, int year) {
         Series newSeries = new Series();
         newSeries.setID(seriesData.get("id"));
         newSeries.setBeginAt(seriesData.get("begin_at"));
@@ -119,7 +124,7 @@ public class InputFormatter {
         return newSeries;
     }
 
-    private Series convertToSeriesObject(org.json.JSONObject seriesData) {
+    private Series convertToSeriesObject(org.json.JSONObject seriesData, int year) {
         Series newSeries = new Series();
         newSeries.setID(seriesData.get("id"));
         newSeries.setBeginAt(seriesData.get("begin_at"));
@@ -134,7 +139,7 @@ public class InputFormatter {
         newSeries.setTier(seriesData.get("tier"));
 
         org.json.JSONObject newLeagueData = seriesData.getJSONObject("league");
-        League newLeague = convertToLeagueObjectSimple(newLeagueData);
+        League newLeague = convertToLeagueObjectSimple(newLeagueData, year);
         newSeries.setLeague(newLeague);
 
         newSeries.setVideoGameTitle(seriesData.get("videogame_title"));
@@ -193,7 +198,7 @@ public class InputFormatter {
             String seriesOutput = "";
             for(int i = 0; i < seriesData.length(); i++) {
                 org.json.JSONObject current = (org.json.JSONObject) seriesData.get(i);
-                Series currentSeries = convertToSeriesObject(current);
+                Series currentSeries = convertToSeriesObject(current, year);
                 seriesOutput = (seriesOutput.concat("begin at: ")).concat(currentSeries.getBeginAt());
                 seriesOutput = (seriesOutput.concat("\ndescription: ")).concat(currentSeries.getDescription());
                 seriesOutput = (seriesOutput.concat("\nend at: ")).concat(currentSeries.getEndAt());
@@ -206,6 +211,9 @@ public class InputFormatter {
                 seriesOutput = (seriesOutput.concat("\nslug: ")).concat(currentSeries.getSlug());
                 seriesOutput = (seriesOutput.concat("\ntier: ")).concat(currentSeries.getTier());
                 seriesOutput = seriesOutput.concat("\nleague: ");
+                if(currentSeries.getLeague().isTooNew()) {
+                    seriesOutput = seriesOutput.concat("\n\tToo New");
+                }
                 seriesOutput = (seriesOutput.concat("\n\tid: ")).concat(currentSeries.getLeague().getID());
                 seriesOutput = (seriesOutput.concat("\n\timage url: ")).concat(currentSeries.getLeague().getImageUrl());
                 seriesOutput = (seriesOutput.concat("\n\tmodified at: ")).concat(currentSeries.getLeague().getModifiedAt());
@@ -257,7 +265,7 @@ public class InputFormatter {
         JSONArray seriesData = new JSONArray(jsonData);
         for(int i = 0; i < seriesData.length(); i++) {
             org.json.JSONObject current = (org.json.JSONObject) seriesData.get(i);
-            Series currentSeries = convertToSeriesObject(current);
+            Series currentSeries = convertToSeriesObject(current, year);
             lastRetrievedSeries.add(currentSeries);
         }
 

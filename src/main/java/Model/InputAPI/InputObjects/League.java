@@ -16,6 +16,7 @@ public class League {
     private String videoGameID;
     private String videoGameName;
     private String videoGameSlug;
+    private Boolean tooNew = false;
 
     /**
      * Simple accessor for id.
@@ -256,6 +257,20 @@ public class League {
             this.videoGameSlug = (String) slug;
         }
     }
+
+    public boolean isTooNew() {
+        return this.tooNew;
+    }
+
+    public void setTooNew(int year) {
+        String modifiedAtYear = this.modifiedAt.substring(0, 4);
+        int modYear = Integer.parseInt(modifiedAtYear);
+        if(modYear > year) {
+            this.tooNew = true;
+        }
+    }
+
+
 
 
 
