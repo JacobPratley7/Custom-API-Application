@@ -110,3 +110,7 @@ It should also be noted that the code in ApplicationFacade in which the contents
 12. OutputFormatter GenerateReport
 - RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/e0346c81a6a920cf4c612049f0b359512da921eb
 - GREEN: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/0aa21fe61e6c813c56e2173c97d2a4857d8cd21e
+
+13. InputFormatter GenerateSeries/GenerateLeague Extension Task
+- RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/85cdafe29a4b7a8ba1a458235f1751d34409c48b
+- GREEN: 
