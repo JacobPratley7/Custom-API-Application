@@ -113,4 +113,4 @@ It should also be noted that the code in ApplicationFacade in which the contents
 
 13. InputFormatter GenerateSeries/GenerateLeague Extension Task
 - RED: tests do not pass: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/85cdafe29a4b7a8ba1a458235f1751d34409c48b
-- GREEN: 
+- GREEN: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/3ba82e6aed382f27edaf476ba4d65623e4db0d6f
