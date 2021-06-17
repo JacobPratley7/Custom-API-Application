@@ -8,8 +8,8 @@ View/ApplicationPages/LeaguesPage.java
  View.ApplicationPages.LeaguesPage
 Model/InputAPI/InputFetcherDummy.java
  Model.InputAPI.InputFetcherDummy
-Controller/ApplicationController.java
- Controller.ApplicationController
+Model/ApplicationFacade.java
+ Model.ApplicationFacade
 View/ApplicationPages/HomePage.java
  View.ApplicationPages.HomePage
  View.ApplicationPages.HomePage$1
@@ -24,8 +24,8 @@ View/ApplicationPages/InputModePage.java
  View.ApplicationPages.InputModePage$2
  View.ApplicationPages.InputModePage$3
  View.ApplicationPages.InputModePage$4
-Model/InputAPI/InputFetcher.java
- Model.InputAPI.InputFetcher
+Model/InputAPI/InputFormatter.java
+ Model.InputAPI.InputFormatter
 Model/OutputAPI/ReportSenderImpl.java
  Model.OutputAPI.ReportSenderImpl
 Model/InputAPI/InputObjects/Tournament.java
@@ -44,7 +44,7 @@ View/ApplicationPages/SeriesPage.java
  View.ApplicationPages.SeriesPage$2
 Model/InputAPI/InputObjects/League.java
  Model.InputAPI.InputObjects.League
-Model/InputAPI/InputFormatter.java
- Model.InputAPI.InputFormatter
-Model/ApplicationFacade.java
- Model.ApplicationFacade
+Controller/ApplicationController.java
+ Controller.ApplicationController
+Model/InputAPI/InputFetcher.java
+ Model.InputAPI.InputFetcher

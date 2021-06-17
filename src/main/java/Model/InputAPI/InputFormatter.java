@@ -47,12 +47,11 @@ public class InputFormatter {
 
     /**
      * Generates a String representing data on all the leagues present in the given json String.
-     * CHANGE: added an extra parameter for the year.
      *
      * @param jsonData The string containing data on leagues.
      * @return List String containing leagues data, formatted in a human readable way.
      */
-    public String generateLeagueOutput(String jsonData) {
+    public String generateLeagueOutput(String jsonData, int year) {
         if(jsonData.contains("error")) {
             org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
             String output = "error: ".concat(errorMessage.getString("error"));
@@ -184,7 +183,7 @@ public class InputFormatter {
      * @param jsonData The string containing data on series.
      * @return List String containing series data, formatted in a human readable way.
      */
-    public String generateSeriesOutput(String jsonData) {
+    public String generateSeriesOutput(String jsonData, int year) {
         if(jsonData.contains("error")) {
             org.json.JSONObject errorMessage = new org.json.JSONObject(jsonData);
             String output = "error: ".concat(errorMessage.getString("error"));
@@ -253,7 +252,7 @@ public class InputFormatter {
      * @param jsonData The string containing data on series.
      * @return List of series objects.
      */
-    public List<Series> generateSeriesList(String jsonData) {
+    public List<Series> generateSeriesList(String jsonData, int year) {
         List<Series> lastRetrievedSeries = new ArrayList<>();
         JSONArray seriesData = new JSONArray(jsonData);
         for(int i = 0; i < seriesData.length(); i++) {
