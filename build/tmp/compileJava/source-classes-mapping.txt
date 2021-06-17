@@ -1,5 +1,5 @@
-Model/OutputAPI/OutputFormatter.java
- Model.OutputAPI.OutputFormatter
+Model/InputAPI/InputObjects/League.java
+ Model.InputAPI.InputObjects.League
 View/ApplicationWindow.java
  View.ApplicationWindow
 View/ApplicationPages/SendPage.java
@@ -44,7 +44,7 @@ Model/InputAPI/InputFormatter.java
  Model.InputAPI.InputFormatter
 Model/InputAPI/InputObjects/Series.java
  Model.InputAPI.InputObjects.Series
+Model/OutputAPI/OutputFormatter.java
+ Model.OutputAPI.OutputFormatter
 Model/ApplicationFacade.java
  Model.ApplicationFacade
-Model/InputAPI/InputObjects/League.java
- Model.InputAPI.InputObjects.League

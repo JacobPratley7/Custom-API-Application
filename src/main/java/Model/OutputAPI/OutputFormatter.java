@@ -15,6 +15,7 @@ public class OutputFormatter {
         if(lastRetrievedSeries == null) {
             return "No data to report";
         }
+
         String report = "league id: ".concat(lastRetrievedSeries.get(0).getLeagueId());
         report = report.concat("\nseries:");
         for(Series s: lastRetrievedSeries) {

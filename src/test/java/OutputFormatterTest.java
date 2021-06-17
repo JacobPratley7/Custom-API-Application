@@ -18,10 +18,14 @@ public class OutputFormatterTest {
         when(newSeries.getTier()).thenReturn("d");
         when(newSeries.getYear()).thenReturn("2021");
         when(newSeries.getLeagueId()).thenReturn("4590");
+        League newLeague = mock(League.class);
+        when(newLeague.isTooNew()).thenReturn(false);
+        when(newSeries.getLeague()).thenReturn(newLeague);
         List<Series> series = new ArrayList<>();
         series.add(newSeries);
         OutputFormatter outputFormatter = new OutputFormatter();
         String report = outputFormatter.generateReport(series);
+        assertFalse(report.contains("*league id: 4590"));
         assertTrue(report.contains("league id: 4590"));
         assertTrue(report.contains("id: 3621"));
         assertTrue(report.contains("full name: 2021"));
