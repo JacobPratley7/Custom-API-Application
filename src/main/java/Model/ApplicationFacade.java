@@ -85,7 +85,7 @@ public class ApplicationFacade {
             this.dbManager.updateData(jsonData);
         }
 
-        return this.inputFormatter.generateLeagueOutput(jsonData, 2021);
+        return this.inputFormatter.generateLeagueOutput(jsonData, this.year);
     }
 
 
@@ -115,11 +115,11 @@ public class ApplicationFacade {
             return "error: please provide a valid id or slug";
         }
         String jsonData = this.inputFetcher.getSeries(inputAuth, leagueID);
-        String output = this.inputFormatter.generateSeriesOutput(jsonData, 2021);
+        String output = this.inputFormatter.generateSeriesOutput(jsonData, this.year);
         if(output.contains("error")) {
             this.lastRetrievedSeries = null;
         } else {
-            this.lastRetrievedSeries = this.inputFormatter.generateSeriesList(jsonData, 2021);
+            this.lastRetrievedSeries = this.inputFormatter.generateSeriesList(jsonData, this.year);
         }
         return output;
     }
