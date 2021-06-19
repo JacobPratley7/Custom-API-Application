@@ -8,7 +8,7 @@ I was unsure wheher or not I needed to disclose the reason needing the extension
 - DISTINCTION requirements met: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/18099c31b28dec88bafd4338bf83f1b9f2c19588
 
 # Running the Application
-To run the application, you will need to modify the configuration file, "config.json". Here, you will need to enter your credentials for the input and output APIs, and for the output API, you will also need to provide a valid 'To' and 'From' number. Credentials should be in String format. All keys in the config file correspond to the details you must enter. For the output api/twilio, authentication will be done through the use of your SID and your Auth token, so you will need to provide these details. The config file will appear as follows:
+To run the application, you will need to modify the configuration file, "config.json". Here, you will need to enter your credentials for the input and output APIs, and for the output API, you will also need to provide a valid 'To' and 'From' number. As the config file is a .json file, your credentials will need to be in String format. All keys in the config file correspond to the details you must enter. For the output api/twilio, authentication will be done through the use of your SID and your Auth token, so you will need to provide these details. The config file will appear as follows:
 - inputAuthToken: here, you will replace the place-holder string with your Auth token for the pandascore api.
 - outputAuthToken: here, you will replace the place-holder string with your Auth token for the twilio api. 
 - outputUsername: here, you will replace the place-holder string with your SID for the twilio api. 
