@@ -1,11 +1,4 @@
-# SCD2_2021_Exam
-Simple Extension was required to complete the assignment.
-
-I was unsure wheher or not I needed to disclose the reason needing the extension to staff, so I have opted not to write it here. Please email me if you need to know the reasons.
-
-- PASS requirements met: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/a100ba5c3735defd7b3bb82184dc6396bb8a9316
-- CREDIT requirements met: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/c6ead66b537641028449466eec99974cb535b4ac
-- DISTINCTION requirements met: https://github.sydney.edu.au/jpra3842/SCD2_2021_Exam/commit/18099c31b28dec88bafd4338bf83f1b9f2c19588
+# Custom API Application
 
 # Running the Application
 To run the application, you will need to modify the configuration file, "config.json". Here, you will need to enter your credentials for the input and output APIs, and for the output API, you will also need to provide a valid 'To' and 'From' number. As the config file is a .json file, your credentials will need to be in String format. All keys in the config file correspond to the details you must enter. For the output api/twilio, authentication will be done through the use of your SID and your Auth token, so you will need to provide these details. The config file will appear as follows:
