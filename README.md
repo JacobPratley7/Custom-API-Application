@@ -8,7 +8,7 @@ To run the application, you will need to modify the configuration file, "config.
 - outputNumberTo: here, you will replace the place-holder string with your "To" number for the twilio api. If you are using the free trial, you will need to configure this in your account beforehand.
 - outputNumberFrom: here, you will replace the place-holder string with your "From" number for the twilio api (the twilio number you get with your account).
 
-Due to an oversight when trying to create the database on the applications first run, the database wont actually work unless a .db file already exists. Deleting this file won,t cause the application to crash, however the database will never actually retrieve any data from the database if the file is removed. 
+Due to an oversight when trying to create the database on the applications first run, the database wont actually work unless a .db file already exists. Deleting this file won't cause the application to crash, however the database will never actually retrieve any data from the database if the file is removed. 
 
 When running the application, there are a total of 5 different scenes or pages the user can traverse to. In particular, there will be a page displaying leagues information, a page displaying series information, and a page displaying whether or not the message was successfully sent. On all three of these pages, there will be a button to traverse back to the home page. However, this button will be located at the bottom of each page, so, when on any of these pages, if you cannot see them home button, simply scroll to the bottom of the page to find it. There is also a page that asks the user to select between live data and cached data. This page does not have a back button, and thus the user must select one of these two options. This will take them to the leagues page, from which they can return to the home page.
 
@@ -38,9 +38,6 @@ For the concurrency, parts of the code took inspiration from the following link.
 
 For the API calls and apache client code, parts of the code took inspiration from the follwing link
 - https://www.tutorialspoint.com/apache_httpclient/apache_httpclient_http_get_request.htm
-
-It should also be noted that the code in ApplicationFacade in which the contents are read from the config file used code I had implemented for Stickman last year for SOFT2201. I acknowledge that I did not write this code this year.
-
 
 
 # RED-GREEN-REFACTOR LOG
